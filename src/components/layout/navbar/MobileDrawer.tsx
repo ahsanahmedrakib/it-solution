@@ -11,6 +11,7 @@ import {
   MegaMenuData,
   NAV_ITEMS,
   VOICE_MEGA_MENU,
+  WEB_MEGA_MENU,
 } from "../../../data/navbarData";
 
 const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
@@ -18,6 +19,7 @@ const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   VOICE: VOICE_MEGA_MENU,
   INTERNET: INTERNET_MEGA_MENU,
   CLOUD: CLOUD_MEGA_MENU,
+  WEB: WEB_MEGA_MENU,
 };
 
 interface MobileDrawerProps {
@@ -63,7 +65,11 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         <div key={category.title} className="space-y-2">
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-brand-blue font-bold text-sm border-b border-slate-200 pb-1">
-                              <CategoryIcon className="w-4 h-4 stroke-[2.5]" />
+                              {CategoryIcon ? (
+                                <CategoryIcon className="w-4 h-4 stroke-[2.5]" />
+                              ) : (
+                                <div className="h-5 invisible">Empty</div>
+                              )}
                               <span>{category.title}</span>
                             </div>
                             {category.description && (

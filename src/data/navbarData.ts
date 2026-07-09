@@ -19,6 +19,7 @@ import {
   Cpu,
   Database,
   DatabaseBackup,
+  Eye,
   FileCheck,
   FileKey,
   Fingerprint,
@@ -34,6 +35,7 @@ import {
   KeyRound,
   Landmark,
   Laptop,
+  LayoutGrid,
   ListOrdered,
   Lock,
   Mail,
@@ -87,13 +89,13 @@ export interface UtilityLink {
 export interface NavItemSubLink {
   label: string;
   href: string;
-  icon: React.ComponentType<{ className?: string }>;
-  image: string;
+  icon?: React.ComponentType<{ className?: string }> | "";
+  image?: string;
 }
 
 export interface MegaMenuCategory {
   title: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon?: React.ComponentType<{ className?: string }> | "";
   description: string;
   links: NavItemSubLink[];
 }
@@ -101,12 +103,12 @@ export interface MegaMenuCategory {
 export interface MegaMenuData {
   categories: Array<{
     title: string;
-    icon: React.ComponentType<{ className?: string }>;
+    icon?: React.ComponentType<{ className?: string }> | "";
     description?: string;
     links: Array<{
       label: string;
       href: string;
-      icon: React.ComponentType<{ className?: string }>;
+      icon?: React.ComponentType<{ className?: string }> | "";
       image?: string;
     }>;
   }>;
@@ -137,7 +139,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "VOICE", href: "/voice", icon: Phone, hasMegaMenu: true },
   { label: "INTERNET", href: "/internet", icon: AtSign, hasMegaMenu: true },
   { label: "CLOUD", href: "/cloud", icon: Cloud, hasMegaMenu: true },
-  { label: "WEB", href: "/web", icon: Code },
+  { label: "WEB", href: "/web", icon: Code, hasMegaMenu: true },
   { label: "INDUSTRIES", href: "/industries", icon: Landmark },
   { label: "CONTACT", href: "/contact", icon: Mail },
 ];
@@ -154,37 +156,37 @@ export const IT_MEGA_MENU = {
           label: "Cloud & Network Security",
           href: "/cyber-security/cloud",
           icon: ShieldCheck,
-          image: "/images/navbar/network.svg",
+          image: "/images/navbar/it/network.svg",
         },
         {
           label: "EndPoint Security",
           href: "/cyber-security/endpoint",
           icon: Monitor,
-          image: "/images/navbar/computer.svg",
+          image: "/images/navbar/it/computer.svg",
         },
         {
           label: "Essential Eight",
           href: "/cyber-security/essential-eight",
           icon: Shield,
-          image: "/images/navbar/internet-security.svg",
+          image: "/images/navbar/it/internet-security.svg",
         },
         {
           label: "Incident Response",
           href: "/cyber-security/incident-response",
           icon: FileCheck,
-          image: "/images/navbar/test.svg",
+          image: "/images/navbar/it/test.svg",
         },
         {
           label: "Security Awareness Training",
           href: "/cyber-security/training",
           icon: Users,
-          image: "/images/navbar/leadership.svg",
+          image: "/images/navbar/it/leadership.svg",
         },
         {
           label: "Zero Trust Framework",
           href: "/cyber-security/zero-trust",
           icon: CheckCircle,
-          image: "/images/navbar/requirement.svg",
+          image: "/images/navbar/it/requirement.svg",
         },
       ],
     },
@@ -198,37 +200,37 @@ export const IT_MEGA_MENU = {
           label: "Network Consulting and Design",
           href: "/networking/consulting",
           icon: Cpu,
-          image: "/images/navbar/networking.svg",
+          image: "/images/navbar/it/networking.svg",
         },
         {
           label: "Network Installation",
           href: "/networking/installation",
           icon: Globe,
-          image: "/images/navbar/net.svg",
+          image: "/images/navbar/it/net.svg",
         },
         {
           label: "Wi-Fi Networking",
           href: "/networking/wifi",
           icon: Wifi,
-          image: "/images/navbar/router.svg",
+          image: "/images/navbar/it/router.svg",
         },
         {
           label: "Network Security",
           href: "/networking/security",
           icon: ShieldAlert,
-          image: "/images/navbar/credibility.svg",
+          image: "/images/navbar/it/credibility.svg",
         },
         {
           label: "VPN Solutions",
           href: "/networking/vpn",
           icon: KeyRound,
-          image: "/images/navbar/vpn.svg",
+          image: "/images/navbar/it/vpn.svg",
         },
         {
           label: "Windows Server",
           href: "/networking/windows-server",
           icon: Server,
-          image: "/images/navbar/server.svg",
+          image: "/images/navbar/it/server.svg",
         },
       ],
     },
@@ -242,37 +244,37 @@ export const IT_MEGA_MENU = {
           label: "Managed IT Services",
           href: "/managed-it/services",
           icon: Headphones,
-          image: "/images/navbar/corporate.svg",
+          image: "/images/navbar/it/corporate.svg",
         },
         {
           label: "Procurement",
           href: "/managed-it/procurement",
           icon: ShoppingBag,
-          image: "/images/navbar/supply-chain.svg",
+          image: "/images/navbar/it/supply-chain.svg",
         },
         {
           label: "Help Desk Support",
           href: "/managed-it/help-desk",
           icon: HelpCircle,
-          image: "/images/navbar/leadership.svg",
+          image: "/images/navbar/it/leadership.svg",
         },
         {
           label: "Data Management",
           href: "/managed-it/data-management",
           icon: HardDrive,
-          image: "/images/navbar/development.svg",
+          image: "/images/navbar/it/development.svg",
         },
         {
           label: "IT Consulting",
           href: "/managed-it/consulting",
           icon: Laptop,
-          image: "/images/navbar/online-meeting.svg",
+          image: "/images/navbar/it/online-meeting.svg",
         },
         {
           label: "IT Outsourcing",
           href: "/managed-it/outsourcing",
           icon: Briefcase,
-          image: "/images/navbar/teamwork.svg",
+          image: "/images/navbar/it/teamwork.svg",
         },
       ],
     },
@@ -286,25 +288,25 @@ export const IT_MEGA_MENU = {
           label: "Virus/Malware Removal",
           href: "/device-repair/virus-removal",
           icon: Bug,
-          image: "/images/navbar/computer.svg",
+          image: "/images/navbar/it/computer.svg",
         },
         {
           label: "Data Recovery",
           href: "/device-repair/data-recovery",
           icon: Activity,
-          image: "/images/navbar/recovery.svg",
+          image: "/images/navbar/it/recovery.svg",
         },
         {
           label: "Upgrades",
           href: "/device-repair/upgrades",
           icon: Wrench,
-          image: "/images/navbar/supply-chain.svg",
+          image: "/images/navbar/it/supply-chain.svg",
         },
         {
           label: "PC & Laptop Repairs",
           href: "/device-repair/pc-repairs",
           icon: Monitor,
-          image: "/images/navbar/cloud-computing.svg",
+          image: "/images/navbar/it/cloud-computing.svg",
         },
       ],
     },
@@ -562,7 +564,7 @@ export const CLOUD_MEGA_MENU = {
     {
       id: "nullable",
       title: "",
-      icon: "",
+      // icon: ,
       links: [
         {
           label: "Conditional Access",
@@ -657,6 +659,53 @@ export const CLOUD_MEGA_MENU = {
           description: "Centralized branding for corporate email signatures",
         },
       ],
+    },
+  ],
+};
+
+export const WEB_MEGA_MENU = {
+  id: "web",
+  label: "WEB",
+  categories: [
+    {
+      id: "development",
+      title: "Development",
+      icon: Globe,
+      description: "Designed and developed for your business.",
+      href: "/web/development",
+      links: [],
+    },
+    {
+      id: "hosting",
+      title: "Hosting",
+      icon: Server,
+      description: "Domain and web hosting services.",
+      href: "/web/hosting",
+      links: [],
+    },
+    {
+      id: "seo",
+      title: "SEO",
+      icon: Eye,
+      description: "Reach your target audience.",
+      href: "/web/seo",
+      links: [],
+    },
+    {
+      id: "ecommerce",
+      title: "eCommerce",
+      icon: ShoppingBag,
+      description: "Get started on your online business.",
+      href: "/web/ecommerce",
+      links: [],
+    },
+    {
+      id: "portfolio",
+      title: "Portfolio",
+      icon: LayoutGrid,
+      description: "View our range of websites.",
+      href: "/web/portfolio",
+      links: [],
     },
   ],
 };
