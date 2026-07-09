@@ -1,0 +1,88 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { IT_MEGA_MENU, NAV_ITEMS } from "../../../data/navbarData";
+
+export default function DesktopNav() {
+  const [isItHovered, setIsItHovered] = useState(false);
+
+  return (
+    <nav className="hidden xl:flex items-center gap-4 2xl:gap-6">
+      {NAV_ITEMS.map((item) => {
+        const Icon = item.icon;
+        const isIT = item.hasMegaMenu;
+
+        return (
+          <div
+            key={item.label}
+            className="relative py-4"
+            onMouseEnter={() => isIT && setIsItHovered(true)}
+            onMouseLeave={() => isIT && setIsItHovered(false)}
+          >
+            <Link
+              href={item.href}
+              className={`flex items-center gap-1.5 text-nav-item font-nav text-brand-blue hover:text-brand-hover transition-colors duration-150 ${
+                isIT && isItHovered
+                  ? "text-brand-hover underline decoration-2 underline-offset-4"
+                  : ""
+              }`}
+            >
+              <Icon className="w-4 h-4 stroke-[2.5]" />
+              <span>{item.label}</span>
+            </Link>
+
+            {/* Desktop Mega Menu Overlay (Triggered on hovering 'IT') */}
+            {isIT && isItHovered && (
+              <div className="absolute top-full -left-112.5 2xl:-left-130 w-300 2xl:w-325 z-50 pt-2 transition-all duration-200 animate-in fade-in-50 slide-in-from-top-2">
+                <div className="bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-8 grid grid-cols-4 gap-8">
+                  {IT_MEGA_MENU.categories.map((category) => {
+                    const CategoryIcon = category.icon;
+                    return (
+                      <div
+                        key={category.title}
+                        className="flex flex-col space-y-4"
+                      >
+                        {/* Category Header */}
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 text-brand-blue">
+                            <CategoryIcon className="w-5 h-5 stroke-[2.5]" />
+                            <h3 className="font-bold text-base tracking-tight text-brand-blue">
+                              {category.title}
+                            </h3>
+                          </div>
+                          <p className="text-[12px] leading-relaxed text-slate-500 font-normal">
+                            {category.description}
+                          </p>
+                        </div>
+
+                        {/* Category Sub-links */}
+                        <ul className="space-y-3 pt-2 border-t border-slate-100">
+                          {category.links.map((subLink) => {
+                            const SubIcon = subLink.icon;
+                            return (
+                              <li key={subLink.label}>
+                                <Link
+                                  href={subLink.href}
+                                  className="flex items-center gap-2 text-[13px] font-semibold text-brand-blue hover:text-brand-hover hover:translate-x-1 transition-all duration-150"
+                                >
+                                  <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                                  <span>{subLink.label}</span>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </nav>
+  );
+}
+
