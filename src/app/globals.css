@@ -24,6 +24,11 @@
   --shadow-pill-glow: 0 2px 10px rgba(21, 124, 193, 0.2);
   --shadow-mega: 0 10px 30px -5px rgba(21, 124, 193, 0.15);
 
+  --width-300: 75rem;
+  --width-325: 81.25rem;
+  --width-345: 86.25rem;
+  --width-365: 91.25rem;
+
   --color-background: #ffffff;
   --color-foreground: #171717;
 }
