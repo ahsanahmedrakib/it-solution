@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Total Solutions IT",
   description: "IT Support | Cyber | Web | NBN | Phones",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
