@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
+  INTERNET_MEGA_MENU,
   IT_MEGA_MENU,
   MegaMenuData,
   NAV_ITEMS,
@@ -14,6 +15,7 @@ import {
 const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   IT: IT_MEGA_MENU,
   VOICE: VOICE_MEGA_MENU,
+  INTERNET: INTERNET_MEGA_MENU,
 };
 
 interface MobileDrawerProps {

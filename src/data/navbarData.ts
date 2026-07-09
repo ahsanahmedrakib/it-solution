@@ -8,19 +8,23 @@ import {
   Building,
   Building2,
   CheckCircle,
+  Clock,
   Cloud,
   Code,
   Cpu,
   Database,
   FileCheck,
   Globe,
+  Globe2,
   HardDrive,
   Headphones,
   HelpCircle,
+  Home,
   Info,
   KeyRound,
   Landmark,
   Laptop,
+  ListOrdered,
   Lock,
   Mail,
   MessagesSquare,
@@ -32,6 +36,7 @@ import {
   PhoneCall,
   PlusCircle,
   Radio,
+  RadioTower,
   Server,
   Share2,
   Shield,
@@ -44,7 +49,9 @@ import {
   Video,
   Volume2,
   Wifi,
+  WifiPen,
   Wrench,
+  Zap,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -111,6 +118,16 @@ export const UTILITY_LINKS: UtilityLink[] = [
   { label: "CUSTOMER PORTAL", href: "/portal", icon: User },
   { label: "SUCCESS CENTRE", href: "/success-centre", icon: BookOpen },
   { label: "STATUS", href: "/status", icon: Info },
+];
+
+export const NAV_ITEMS: NavItem[] = [
+  { label: "IT", href: "/it", icon: Network, hasMegaMenu: true },
+  { label: "VOICE", href: "/voice", icon: Phone, hasMegaMenu: true },
+  { label: "INTERNET", href: "/internet", icon: AtSign, hasMegaMenu: true },
+  { label: "CLOUD", href: "/cloud", icon: Cloud },
+  { label: "WEB", href: "/web", icon: Code },
+  { label: "INDUSTRIES", href: "/industries", icon: Landmark },
+  { label: "CONTACT", href: "/contact", icon: Mail },
 ];
 
 export const IT_MEGA_MENU = {
@@ -408,13 +425,78 @@ export const VOICE_MEGA_MENU = {
   ],
 };
 
-export const NAV_ITEMS: NavItem[] = [
-  { label: "IT", href: "/it", icon: Network, hasMegaMenu: true },
-  { label: "VOICE", href: "/voice", icon: Phone, hasMegaMenu: true },
-  { label: "INTERNET", href: "/internet", icon: AtSign },
-  { label: "CLOUD", href: "/cloud", icon: Cloud },
-  { label: "WEB", href: "/web", icon: Code },
-  { label: "INDUSTRIES", href: "/industries", icon: Landmark },
-  { label: "CONTACT", href: "/contact", icon: Mail },
-];
+export const INTERNET_MEGA_MENU = {
+  id: "internet",
+  label: "INTERNET",
+  categories: [
+    {
+      id: "nbn",
+      title: "NBN",
+      icon: Wifi,
+      description:
+        "Access Australia’s National Broadband Network (NBN) to delivery quality internet to your premises.",
+      links: [
+        {
+          label: "Free Fibre Upgrade",
+          href: "/internet/nbn/free-fibre-upgrade",
+          icon: Zap,
+        },
+        {
+          label: "Home and Small Business",
+          href: "/internet/nbn/home-small-business",
+          icon: Home,
+        },
+        {
+          label: "Business",
+          href: "/internet/nbn/business",
+          icon: Building,
+        },
+        {
+          label: "Enterprise Fibre",
+          href: "/internet/nbn/enterprise-fibre",
+          icon: Building2,
+        },
+        {
+          label: "Fixed Wireless (FW)",
+          href: "/internet/nbn/fixed-wireless",
+          icon: WifiPen,
+        },
+        {
+          label: "Sky Muster",
+          href: "/internet/nbn/sky-muster",
+          icon: Cloud,
+        },
+        {
+          label: "Order Now",
+          href: "/internet/nbn/order",
+          icon: ListOrdered,
+        },
+      ],
+    },
+    {
+      id: "cel-fi",
+      title: "Cel-Fi (4G/5G Boosters)",
+      icon: RadioTower,
+      description:
+        "Cel-Fi products are the first carrier-class cellular coverage solution for industry leading signal gain.",
+      links: [],
+    },
+    {
+      id: "starlink",
+      title: "StarLink",
+      icon: Globe2,
+      description:
+        "Starlink offers global broadband coverage to underserved and remote areas via satellite.",
+      links: [],
+    },
+    {
+      id: "4g-5g-internet",
+      title: "4G/5G Internet",
+      icon: Clock,
+      description:
+        "Ensure a seamless transition in the event of any disruptions by using a 4G/5G backup.",
+      links: [],
+    },
+  ],
+};
 
