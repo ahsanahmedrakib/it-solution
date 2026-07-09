@@ -5,13 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   IT_MEGA_MENU,
-  MegaMenuCategory,
+  MegaMenuData,
   NAV_ITEMS,
-  NavItemSubLink,
   VOICE_MEGA_MENU,
 } from "../../../data/navbarData";
 
-const MEGA_MENU_DATA: Record<string, any> = {
+const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   IT: IT_MEGA_MENU,
   VOICE: VOICE_MEGA_MENU,
 };
@@ -49,7 +48,7 @@ export default function DesktopNav() {
             {megaMenu && isHovered && (
               <div className="absolute top-full -left-112.5 2xl:-left-130 w-300 2xl:w-325 z-50 pt-2 transition-all duration-200 animate-in fade-in-50 slide-in-from-top-2">
                 <div className="bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-8 grid grid-cols-4 gap-8">
-                  {megaMenu.categories.map((category: MegaMenuCategory) => {
+                  {megaMenu.categories.map((category) => {
                     const CategoryIcon = category.icon;
                     return (
                       <div
@@ -73,7 +72,7 @@ export default function DesktopNav() {
 
                         {/* Category Sub-links */}
                         <ul className="space-y-3 pt-2 border-t border-slate-100">
-                          {category.links.map((subLink: NavItemSubLink) => {
+                          {category.links.map((subLink) => {
                             const SubIcon = subLink.icon;
                             return (
                               <li key={subLink.label}>

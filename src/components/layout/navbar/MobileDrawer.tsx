@@ -6,13 +6,12 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   IT_MEGA_MENU,
-  MegaMenuCategory,
+  MegaMenuData,
   NAV_ITEMS,
-  NavItemSubLink,
   VOICE_MEGA_MENU,
 } from "../../../data/navbarData";
 
-const MEGA_MENU_DATA: Record<string, any> = {
+const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   IT: IT_MEGA_MENU,
   VOICE: VOICE_MEGA_MENU,
 };
@@ -54,7 +53,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                 {/* Mobile Mega Menu Accordion */}
                 {isOpen && (
                   <div className="pl-4 pr-2 pt-2 space-y-4 bg-slate-50/50 rounded-lg p-3 mt-1 border border-brand-blue/20 grid sm:grid-cols-2 grid-cols-1">
-                    {megaMenu.categories.map((category: MegaMenuCategory) => {
+                    {megaMenu.categories.map((category) => {
                       const CategoryIcon = category.icon;
                       return (
                         <div key={category.title} className="space-y-2">
@@ -70,7 +69,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                             )}
                           </div>
                           <div className="grid grid-cols-1 gap-1.5 pl-2">
-                            {category.links.map((subLink: NavItemSubLink) => {
+                            {category.links.map((subLink) => {
                               const SubIcon = subLink.icon;
                               return (
                                 <Link

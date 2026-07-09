@@ -79,6 +79,20 @@ export interface MegaMenuCategory {
   links: NavItemSubLink[];
 }
 
+export interface MegaMenuData {
+  categories: Array<{
+    title: string;
+    icon: React.ComponentType<{ className?: string }>;
+    description?: string;
+    links: Array<{
+      label: string;
+      href: string;
+      icon: React.ComponentType<{ className?: string }>;
+      image?: string;
+    }>;
+  }>;
+}
+
 export interface NavItem {
   label: string;
   href: string;
