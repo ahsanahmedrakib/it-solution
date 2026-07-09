@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white border-b border-brand-subtle-border font-sans selection:bg-brand-blue selection:text-white relative">
-      {/* 1. TOP UTILITY BAR */}
+      {/* 1. TOP UTILITY BAR and SOCIALS*/}
       <div className="w-full border-b border-slate-100 bg-brand-light-bg/50">
         <div className="mx-auto max-w-365 px-2">
           <div className="flex flex-col sm:flex-row justify-between items-center py-header-top gap-2">
