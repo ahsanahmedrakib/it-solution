@@ -36,7 +36,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
 
   return (
     <div className="lg:hidden bg-white border-t border-brand-subtle-border px-4 pt-3 pb-6 space-y-4 shadow-lg max-h-[85vh] overflow-y-auto">
-      <div className="flex flex-col space-y-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isOpen = openMenuLabel === item.label;
@@ -60,7 +60,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
 
                 {/* Mobile Mega Menu Accordion */}
                 {isOpen && (
-                  <div className="pl-4 pr-2 pt-2 space-y-4 bg-slate-50/50 rounded-lg p-3 mt-1 border border-brand-blue/20 grid sm:grid-cols-2 grid-cols-1">
+                  <div className="pl-4 pr-2 pt-2 space-y-4 bg-slate-50/50 rounded-lg p-3 mt-1 border border-brand-blue/20">
                     {megaMenu.categories.map((category) => {
                       const CategoryIcon = category.icon;
                       return (
