@@ -51,7 +51,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                 >
                   <div className="flex items-center gap-2">
                     <Icon className="w-4 h-4 stroke-[2.5]" />
-                    <span>{item.label} Services</span>
+                    <span>{item.label}</span>
                   </div>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
