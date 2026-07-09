@@ -8,7 +8,7 @@ export default function DesktopNav() {
   const [isItHovered, setIsItHovered] = useState(false);
 
   return (
-    <nav className="hidden xl:flex items-center gap-4 2xl:gap-6">
+    <nav className="hidden lg:flex items-center gap-4 2xl:gap-6">
       {NAV_ITEMS.map((item) => {
         const Icon = item.icon;
         const isIT = item.hasMegaMenu;
@@ -82,6 +82,17 @@ export default function DesktopNav() {
           </div>
         );
       })}
+
+      {/* Phone Pill Button */}
+      <div className="hidden lg:flex items-center shrink-0 ml-2">
+        <a
+          href="tel:0260614222"
+          className="bg-brand-blue hover:bg-brand-hover active:bg-brand-active text-white px-pill-px py-pill-py rounded-pill text-phone shadow-pill-glow transition-all duration-200 hover:shadow-md inline-flex items-center gap-1"
+        >
+          <span className="font-normal">(02)</span>
+          <span className="font-extrabold">6061 4222</span>
+        </a>
+      </div>
     </nav>
   );
 }

@@ -16,7 +16,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
   if (!open) return null;
 
   return (
-    <div className="xl:hidden bg-white border-t border-brand-subtle-border px-4 pt-3 pb-6 space-y-4 shadow-lg max-h-[85vh] overflow-y-auto">
+    <div className="lg:hidden bg-white border-t border-brand-subtle-border px-4 pt-3 pb-6 space-y-4 shadow-lg max-h-[85vh] overflow-y-auto">
       <div className="flex flex-col space-y-1">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
@@ -40,26 +40,35 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
 
                 {/* Mobile IT Mega Menu Accordion */}
                 {mobileItOpen && (
-                  <div className="pl-4 pr-2 pt-2 space-y-4 bg-slate-50/50 rounded-lg p-3 mt-1 border border-brand-blue/20">
+                  <div className="pl-4 pr-2 pt-2 space-y-4 bg-slate-50/50 rounded-lg p-3 mt-1 border border-brand-blue/20 grid sm:grid-cols-2 grid-cols-1">
                     {IT_MEGA_MENU.categories.map((category) => {
                       const CategoryIcon = category.icon;
                       return (
                         <div key={category.title} className="space-y-2">
-                          <div className="flex items-center gap-2 text-brand-blue font-bold text-xs border-b border-slate-200 pb-1">
-                            <CategoryIcon className="w-4 h-4 stroke-[2.5]" />
-                            <span>{category.title}</span>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-brand-blue font-bold text-sm border-b border-slate-200 pb-1">
+                              <CategoryIcon className="w-4 h-4 stroke-[2.5]" />
+                              <span>{category.title}</span>
+                            </div>
+                            <p className="text-[12px] w-75 leading-relaxed text-slate-500 font-normal">
+                              {category.description}
+                            </p>
                           </div>
                           <div className="grid grid-cols-1 gap-1.5 pl-2">
-                            {category.links.map((subLink) => (
-                              <Link
-                                key={subLink.label}
-                                href={subLink.href}
-                                onClick={() => onClose()}
-                                className="text-xs font-semibold text-brand-blue hover:text-brand-hover py-1"
-                              >
-                                • {subLink.label}
-                              </Link>
-                            ))}
+                            {category.links.map((subLink) => {
+                              const SubIcon = subLink.icon;
+                              return (
+                                <Link
+                                  key={subLink.label}
+                                  href={subLink.href}
+                                  onClick={() => onClose()}
+                                  className="flex gap-1 text-xs font-semibold text-brand-blue hover:text-brand-hover py-1"
+                                >
+                                  <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                                  <span>{subLink.label}</span>
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                       );
