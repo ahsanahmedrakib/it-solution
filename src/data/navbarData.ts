@@ -65,7 +65,7 @@ export interface UtilityLink {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-export interface SubLink {
+export interface NavItemSubLink {
   label: string;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
@@ -76,7 +76,7 @@ export interface MegaMenuCategory {
   title: string;
   icon: React.ComponentType<{ className?: string }>;
   description: string;
-  links: SubLink[];
+  links: NavItemSubLink[];
 }
 
 export interface NavItem {
@@ -396,7 +396,7 @@ export const VOICE_MEGA_MENU = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "IT", href: "/it", icon: Network, hasMegaMenu: true },
-  { label: "VOICE", href: "/voice", icon: Phone },
+  { label: "VOICE", href: "/voice", icon: Phone, hasMegaMenu: true },
   { label: "INTERNET", href: "/internet", icon: AtSign },
   { label: "CLOUD", href: "/cloud", icon: Cloud },
   { label: "WEB", href: "/web", icon: Code },
