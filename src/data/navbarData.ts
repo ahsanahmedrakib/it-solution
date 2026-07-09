@@ -2,6 +2,7 @@ import {
   Activity,
   AppWindow,
   AtSign,
+  Bird,
   BookOpen,
   Bot,
   Box,
@@ -27,8 +28,11 @@ import {
   Globe,
   Globe2,
   GlobeLock,
+  GraduationCap,
   HardDrive,
+  HardHat,
   Headphones,
+  HeartPulse,
   HelpCircle,
   Home,
   Info,
@@ -58,6 +62,9 @@ import {
   ShieldCheck,
   ShoppingBag,
   Smartphone,
+  Sprout,
+  Stethoscope,
+  Truck,
   User,
   Users,
   Video,
@@ -140,7 +147,12 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "INTERNET", href: "/internet", icon: AtSign, hasMegaMenu: true },
   { label: "CLOUD", href: "/cloud", icon: Cloud, hasMegaMenu: true },
   { label: "WEB", href: "/web", icon: Code, hasMegaMenu: true },
-  { label: "INDUSTRIES", href: "/industries", icon: Landmark },
+  {
+    label: "INDUSTRIES",
+    href: "/industries",
+    icon: Landmark,
+    hasMegaMenu: true,
+  },
   { label: "CONTACT", href: "/contact", icon: Mail },
 ];
 
@@ -706,6 +718,117 @@ export const WEB_MEGA_MENU = {
       description: "View our range of websites.",
       href: "/web/portfolio",
       links: [],
+    },
+  ],
+};
+
+export const INDUSTRIES_MEGA_MENU = {
+  id: "industries",
+  label: "INDUSTRIES",
+  categories: [
+    {
+      id: "healthcare-community",
+      title: "Healthcare & Care Services",
+      icon: HeartPulse,
+      links: [
+        {
+          label: "Community/aged care",
+          href: "/industries/community-aged-care",
+          icon: Home,
+          description:
+            "Secure systems for healthcare workers and care facilities",
+        },
+        {
+          label: "Medical and fertility",
+          href: "/industries/medical-and-fertility",
+          icon: Stethoscope,
+          description:
+            "Compliant infrastructure for clinics & medical practices",
+        },
+        {
+          label: "IT Support for Veterinary",
+          href: "/industries/veterinary",
+          icon: Bird,
+          description:
+            "Specialized software and network support for vet clinics",
+        },
+      ],
+    },
+    {
+      id: "corporate-finance",
+      title: "Corporate & Financial Services",
+      icon: Landmark,
+      links: [
+        {
+          label: "Professional Services",
+          href: "/industries/professional-services",
+          icon: Briefcase,
+          description:
+            "IT support and security for legal, consulting, and corporate firms",
+        },
+        {
+          label: "Accounting and financial",
+          href: "/industries/accounting-and-financial",
+          icon: Landmark,
+          description:
+            "Encrypted networks and compliance tools for financial practices",
+        },
+        {
+          label: "Government and non-profit",
+          href: "/industries/government-and-non-profit",
+          icon: GraduationCap,
+          description:
+            "Budget-friendly, highly secure systems for public sectors and NPOs",
+        },
+      ],
+    },
+    {
+      id: "property-logistics",
+      title: "Property, Trade & Logistics",
+      icon: Building2,
+      links: [
+        {
+          label: "Freight and logistics",
+          href: "/industries/freight-and-logistics",
+          icon: Truck,
+          description:
+            "Supply chain connectivity and fleet management technology",
+        },
+        {
+          label: "Real estate and storage",
+          href: "/industries/real-estate-and-storage",
+          icon: Building,
+          description: "Property management software & cloud hosting solutions",
+        },
+        {
+          label: "Construction and projects",
+          href: "/industries/construction-and-projects",
+          icon: HardHat,
+          description:
+            "Mobile workforce connectivity and site setup technology",
+        },
+      ],
+    },
+    {
+      id: "science-agriculture",
+      title: "Science, Engineering & Primary Industries",
+      icon: Cpu,
+      links: [
+        {
+          label: "Agriculture and microbials",
+          href: "/industries/agriculture-and-microbials",
+          icon: Sprout,
+          description:
+            "Tailored IT solutions for agricultural and bio-tech operations",
+        },
+        {
+          label: "Engineering & Science",
+          href: "/industries/engineering-and-science",
+          icon: Wrench,
+          description:
+            "High-performance computing and secure data infrastructure",
+        },
+      ],
     },
   ],
 };

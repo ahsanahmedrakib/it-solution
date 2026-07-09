@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   CLOUD_MEGA_MENU,
+  INDUSTRIES_MEGA_MENU,
   INTERNET_MEGA_MENU,
   IT_MEGA_MENU,
   MegaMenuData,
@@ -20,6 +21,7 @@ const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   INTERNET: INTERNET_MEGA_MENU,
   CLOUD: CLOUD_MEGA_MENU,
   WEB: WEB_MEGA_MENU,
+  INDUSTRIES: INDUSTRIES_MEGA_MENU,
 };
 
 interface MobileDrawerProps {

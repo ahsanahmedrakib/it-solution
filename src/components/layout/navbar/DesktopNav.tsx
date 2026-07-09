@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   CLOUD_MEGA_MENU,
+  INDUSTRIES_MEGA_MENU,
   INTERNET_MEGA_MENU,
   IT_MEGA_MENU,
   MegaMenuData,
@@ -19,6 +20,7 @@ const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   INTERNET: INTERNET_MEGA_MENU,
   CLOUD: CLOUD_MEGA_MENU,
   WEB: WEB_MEGA_MENU,
+  INDUSTRIES: INDUSTRIES_MEGA_MENU,
 };
 
 export default function DesktopNav() {
@@ -57,7 +59,7 @@ export default function DesktopNav() {
                 style={{ left: "50%", transform: "translateX(-50%)" }}
               >
                 <div
-                  className={`bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-8 grid ${hoveredMenu === "WEB" ? "grid-cols-5" : "grid-cols-4"} gap-8`}
+                  className={`bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-4 grid ${hoveredMenu === "WEB" ? "grid-cols-5" : "grid-cols-4"} gap-8`}
                 >
                   {megaMenu.categories.map((category) => {
                     const CategoryIcon = category.icon;
