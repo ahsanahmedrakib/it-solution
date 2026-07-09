@@ -57,6 +57,7 @@ export interface SubLink {
   label: string;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
+  image: string;
 }
 
 export interface MegaMenuCategory {
@@ -98,31 +99,37 @@ export const IT_MEGA_MENU = {
           label: "Cloud & Network Security",
           href: "/cyber-security/cloud",
           icon: ShieldCheck,
+          image: "/images/navbar/network.svg",
         },
         {
           label: "EndPoint Security",
           href: "/cyber-security/endpoint",
           icon: Monitor,
+          image: "/images/navbar/computer.svg",
         },
         {
           label: "Essential Eight",
           href: "/cyber-security/essential-eight",
           icon: Shield,
+          image: "/images/navbar/internet-security.svg",
         },
         {
           label: "Incident Response",
           href: "/cyber-security/incident-response",
           icon: FileCheck,
+          image: "/images/navbar/test.svg",
         },
         {
           label: "Security Awareness Training",
           href: "/cyber-security/training",
           icon: Users,
+          image: "/images/navbar/leadership.svg",
         },
         {
           label: "Zero Trust Framework",
           href: "/cyber-security/zero-trust",
           icon: CheckCircle,
+          image: "/images/navbar/requirement.svg",
         },
       ],
     },
@@ -136,23 +143,37 @@ export const IT_MEGA_MENU = {
           label: "Network Consulting and Design",
           href: "/networking/consulting",
           icon: Cpu,
+          image: "/images/navbar/networking.svg",
         },
         {
           label: "Network Installation",
           href: "/networking/installation",
           icon: Globe,
+          image: "/images/navbar/net.svg",
         },
-        { label: "Wi-Fi Networking", href: "/networking/wifi", icon: Wifi },
+        {
+          label: "Wi-Fi Networking",
+          href: "/networking/wifi",
+          icon: Wifi,
+          image: "/images/navbar/router.svg",
+        },
         {
           label: "Network Security",
           href: "/networking/security",
           icon: ShieldAlert,
+          image: "/images/navbar/credibility.svg",
         },
-        { label: "VPN Solutions", href: "/networking/vpn", icon: KeyRound },
+        {
+          label: "VPN Solutions",
+          href: "/networking/vpn",
+          icon: KeyRound,
+          image: "/images/navbar/vpn.svg",
+        },
         {
           label: "Windows Server",
           href: "/networking/windows-server",
           icon: Server,
+          image: "/images/navbar/server.svg",
         },
       ],
     },
@@ -166,31 +187,37 @@ export const IT_MEGA_MENU = {
           label: "Managed IT Services",
           href: "/managed-it/services",
           icon: Headphones,
+          image: "/images/navbar/corporate.svg",
         },
         {
           label: "Procurement",
           href: "/managed-it/procurement",
           icon: ShoppingBag,
+          image: "/images/navbar/supply-chain.svg",
         },
         {
           label: "Help Desk Support",
           href: "/managed-it/help-desk",
           icon: HelpCircle,
+          image: "/images/navbar/leadership.svg",
         },
         {
           label: "Data Management",
           href: "/managed-it/data-management",
           icon: HardDrive,
+          image: "/images/navbar/development.svg",
         },
         {
           label: "IT Consulting",
           href: "/managed-it/consulting",
           icon: Laptop,
+          image: "/images/navbar/online-meeting.svg",
         },
         {
           label: "IT Outsourcing",
           href: "/managed-it/outsourcing",
           icon: Briefcase,
+          image: "/images/navbar/teamwork.svg",
         },
       ],
     },
@@ -204,17 +231,25 @@ export const IT_MEGA_MENU = {
           label: "Virus/Malware Removal",
           href: "/device-repair/virus-removal",
           icon: Bug,
+          image: "/images/navbar/computer.svg",
         },
         {
           label: "Data Recovery",
           href: "/device-repair/data-recovery",
           icon: Activity,
+          image: "/images/navbar/recovery.svg",
         },
-        { label: "Upgrades", href: "/device-repair/upgrades", icon: Wrench },
+        {
+          label: "Upgrades",
+          href: "/device-repair/upgrades",
+          icon: Wrench,
+          image: "/images/navbar/supply-chain.svg",
+        },
         {
           label: "PC & Laptop Repairs",
           href: "/device-repair/pc-repairs",
           icon: Monitor,
+          image: "/images/navbar/cloud-computing.svg",
         },
       ],
     },

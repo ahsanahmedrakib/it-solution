@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IT_MEGA_MENU, NAV_ITEMS } from "../../../data/navbarData";
@@ -59,14 +60,24 @@ export default function DesktopNav() {
                         {/* Category Sub-links */}
                         <ul className="space-y-3 pt-2 border-t border-slate-100">
                           {category.links.map((subLink) => {
-                            const SubIcon = subLink.icon;
+                            // Icon
+                            // const SubIcon = subLink.icon;
                             return (
                               <li key={subLink.label}>
                                 <Link
                                   href={subLink.href}
                                   className="flex items-center gap-2 text-[13px] font-semibold text-brand-blue hover:text-brand-hover hover:translate-x-1 transition-all duration-150"
                                 >
-                                  <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                                  {/* Icon  */}
+                                  {/* <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" /> */}
+
+                                  {/* Image  */}
+                                  <Image
+                                    src={subLink.image}
+                                    alt={subLink.label}
+                                    width={20}
+                                    height={20}
+                                  />
                                   <span>{subLink.label}</span>
                                 </Link>
                               </li>

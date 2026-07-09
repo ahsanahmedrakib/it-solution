@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IT_MEGA_MENU, NAV_ITEMS } from "../../../data/navbarData";
@@ -56,7 +57,8 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                           </div>
                           <div className="grid grid-cols-1 gap-1.5 pl-2">
                             {category.links.map((subLink) => {
-                              const SubIcon = subLink.icon;
+                              // Icon
+                              // const SubIcon = subLink.icon;
                               return (
                                 <Link
                                   key={subLink.label}
@@ -64,7 +66,16 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                                   onClick={() => onClose()}
                                   className="flex gap-1 text-xs font-semibold text-brand-blue hover:text-brand-hover py-1"
                                 >
-                                  <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                                  {/* Icon  */}
+                                  {/* <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" /> */}
+
+                                  {/* Image  */}
+                                  <Image
+                                    src={subLink.image}
+                                    alt={subLink.label}
+                                    width={20}
+                                    height={20}
+                                  />
                                   <span>{subLink.label}</span>
                                 </Link>
                               );
