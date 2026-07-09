@@ -6,6 +6,8 @@
   --color-brand-active: #0c4f7d;
   --color-brand-light-bg: #f8fafc;
   --color-brand-subtle-border: #e2e8f0;
+  --color-brand-green: #25d366; /* Quick Support green badge */
+  --color-brand-green-hover: #1da851;
 
   --font-weight-utility: 700;
   --font-weight-nav: 700;
@@ -17,8 +19,10 @@
 
   --radius-pill: 9999px;
   --radius-drawer: 12px;
+  --radius-mega: 18px;
 
   --shadow-pill-glow: 0 2px 10px rgba(21, 124, 193, 0.2);
+  --shadow-mega: 0 10px 30px -5px rgba(21, 124, 193, 0.15);
 
   --color-background: #ffffff;
   --color-foreground: #171717;
