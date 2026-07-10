@@ -31,10 +31,10 @@ export default function Navbar() {
           <div className="flex flex-col items-start shrink-0 relative">
             <Link href="/" className="flex items-center gap-3.5 group">
               <Image
-                src={"/images/logo.png"}
-                width={260}
+                src={"/logo.svg"}
+                width={180}
                 height={70}
-                alt="Total Solutions IT Logo"
+                alt="Logo"
                 priority
                 className="object-contain"
               />

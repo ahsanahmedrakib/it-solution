@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Total Solutions IT",
+  title: "Bismillah Computer & Technology",
   description: "IT Support | Cyber | Web | NBN | Phones",
   icons: {
     icon: "/favicon.png",

@@ -75,7 +75,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                               <span>{category.title}</span>
                             </div>
                             {category.description && (
-                              <p className="text-[12px] w-75 leading-relaxed text-slate-500 font-normal">
+                              <p className="text-[12px] leading-relaxed text-slate-500 font-normal">
                                 {category.description}
                               </p>
                             )}

@@ -153,7 +153,7 @@ export const NAV_ITEMS: NavItem[] = [
     icon: Landmark,
     hasMegaMenu: true,
   },
-  { label: "CONTACT", href: "/contact", icon: Mail },
+  { label: "CONTACT", href: "/contact", icon: Mail, hasMegaMenu: true },
 ];
 
 export const IT_MEGA_MENU = {
@@ -851,4 +851,3 @@ export const INDUSTRIES_MEGA_MENU = {
     },
   ],
 };
-

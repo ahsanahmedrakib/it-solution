@@ -105,7 +105,7 @@ export default function DesktopNav() {
           style={{ top: menuTop }}
         >
           <div
-            className={`bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-8 grid ${hoveredMenu === "WEB" ? "grid-cols-5" : "grid-cols-4"} gap-8`}
+            className={`bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-8 grid ${hoveredMenu === "WEB" ? "grid-cols-5" : hoveredMenu === "CONTACT" ? "grid-cols-1" : "grid-cols-4"} gap-8`}
           >
             {megaMenu.categories.map((category) => {
               const CategoryIcon = category.icon;
