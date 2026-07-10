@@ -1,9 +1,9 @@
-import Navbar from "@/components/layout/navbar/Navbar";
+import Homepage from "@/components/screen/Homepage";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <Homepage />
     </div>
   );
 }
