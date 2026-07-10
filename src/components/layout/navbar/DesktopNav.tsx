@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import {
   CLOUD_MEGA_MENU,
   INDUSTRIES_MEGA_MENU,
@@ -30,11 +30,30 @@ export default function DesktopNav() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [menuTop, setMenuTop] = useState(0);
 
-  useEffect(() => {
-    if (megaMenu && wrapperRef.current) {
+  const handleMouseEnter = (label: string, hasMegaMenu: boolean) => {
+    if (!hasMegaMenu) return;
+    if (wrapperRef.current) {
       const rect = wrapperRef.current.getBoundingClientRect();
       setMenuTop(rect.bottom);
     }
+    setHoveredMenu(label);
+  };
+
+  useLayoutEffect(() => {
+    if (!megaMenu) return;
+    const updatePosition = () => {
+      if (wrapperRef.current) {
+        const rect = wrapperRef.current.getBoundingClientRect();
+        setMenuTop(rect.bottom);
+      }
+    };
+    updatePosition();
+    window.addEventListener("scroll", updatePosition, { passive: true });
+    window.addEventListener("resize", updatePosition, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("resize", updatePosition);
+    };
   }, [megaMenu]);
 
   return (
@@ -49,7 +68,7 @@ export default function DesktopNav() {
               key={item.label}
               className="py-4"
               onMouseEnter={() =>
-                item.hasMegaMenu && setHoveredMenu(item.label)
+                handleMouseEnter(item.label, !!item.hasMegaMenu)
               }
             >
               <Link
@@ -82,7 +101,7 @@ export default function DesktopNav() {
       {/* Single Mega Menu Dropdown — centered on viewport */}
       {megaMenu && (
         <div
-          className="fixed left-1/2 -translate-x-1/2 w-full px-10 z-50 pt-2 transition-all duration-200 animate-in fade-in-50 slide-in-from-top-2"
+          className="fixed left-1/2 -translate-x-1/2 w-full px-10 z-50 pt-2 animate-in fade-in-50 slide-in-from-top-2"
           style={{ top: menuTop }}
         >
           <div
