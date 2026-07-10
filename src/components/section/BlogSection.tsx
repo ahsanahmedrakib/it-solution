@@ -48,7 +48,7 @@ const blogData: BlogCardProps[] = [
 export default function BlogSection() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xl font-bold tracking-widest text-brand-blue uppercase">
@@ -60,7 +60,7 @@ export default function BlogSection() {
         </div>
 
         {/* Grid Setup - strictly same height cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-stretch">
           {blogData.map((post, idx) => (
             <article
               key={idx}
