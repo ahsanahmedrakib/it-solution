@@ -76,7 +76,7 @@ export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-8 md:pt-16 pb-6">
+    <section className="relative w-full overflow-hidden bg-white py-8 md:pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Swiper Window */}
         <Swiper
