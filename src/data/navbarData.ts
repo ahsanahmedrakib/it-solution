@@ -142,7 +142,7 @@ export const UTILITY_LINKS: UtilityLink[] = [
 ];
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "IT", href: "/it", icon: Network, hasMegaMenu: true },
+  { label: "IT", href: "/it-support", icon: Network, hasMegaMenu: true },
   { label: "VOICE", href: "/voice", icon: Phone, hasMegaMenu: true },
   { label: "INTERNET", href: "/internet", icon: AtSign, hasMegaMenu: true },
   { label: "CLOUD", href: "/cloud", icon: Cloud, hasMegaMenu: true },
