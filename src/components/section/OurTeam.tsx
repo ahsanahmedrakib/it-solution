@@ -99,8 +99,11 @@ export default function OurTeam() {
                 </div>
 
                 {/* Vertical Large Background Text */}
-                <div className="absolute -right-2 bottom-4 origin-bottom-right -rotate-90 select-none pointer-events-none">
-                  <span className="text-white/20 text-6xl font-extrabold tracking-wide uppercase">
+                <div className="absolute -right-4 bottom-1 select-none pointer-events-none">
+                  <span
+                    className="text-5xl font-bold tracking-normal uppercase text-white"
+                    style={{ writingMode: "vertical-rl" }}
+                  >
                     {member.bgLabel}
                   </span>
                 </div>
