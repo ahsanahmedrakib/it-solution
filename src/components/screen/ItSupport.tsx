@@ -1,17 +1,17 @@
 import {
   ArrowRight,
   CheckCircle2,
-  Cloud,
   Cpu,
   Database,
   HardDrive,
-  HeadphonesIcon,
   Lock,
   Monitor,
+  MonitorCloud,
   Network,
   Phone,
   Server,
   Shield,
+  Wifi,
   Wrench,
 } from "lucide-react";
 import Image from "next/image";
@@ -62,18 +62,17 @@ export default function ItSupport() {
           </div>
 
           {/* Hero Illustration (Placeholder) */}
-          <div className="relative w-full h-100 flex items-center justify-center">
+          {/* <div className="relative w-full h-100 flex items-center justify-center">
             <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
-            <div className="relative z-10 w-4/5 h-4/5">
-              <Image
-                src="/images/it-support/hero.svg"
-                alt="IT Support Illustration"
-                fill
-                className="object-cover rounded-[3rem] shadow-2xl shadow-blue-900/10 border-4 border-white"
-                sizes="(max-width: 1024px) 80vw, 40vw"
-              />
-            </div>
-          </div>
+            <div className="relative z-10 w-4/5 h-4/5"> */}
+          <Image
+            src="/images/it-support/hero.png"
+            alt="IT Support Illustration"
+            height={400}
+            width={400}
+          />
+          {/* </div>
+          </div> */}
         </div>
 
         {/* Bottom SVG Wave */}
@@ -163,33 +162,72 @@ export default function ItSupport() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "IT Support",
-                icon: <HeadphonesIcon className="w-8 h-8 text-blue-600 mb-4" />,
+                title: "Hardware Experience",
+                icon: <HardDrive className="w-8 h-8 text-blue-600 mb-4" />,
                 text: "Proactive monitoring and rapid response times for all your daily IT concerns.",
+                services: [
+                  "Servers/desktops/laptops",
+                  "Modems/routers/access points",
+                  "Printers and scanners",
+                  "Phone systems and handsets",
+                  "Replacement parts",
+                  "Site deployment/migration",
+                ],
               },
               {
-                title: "Cyber Security",
-                icon: <Shield className="w-8 h-8 text-blue-600 mb-4" />,
+                title: "Network Experience",
+                icon: <Wifi className="w-8 h-8 text-blue-600 mb-4" />,
                 text: "Enterprise-grade protection against malware, phishing, and external threats.",
+                services: [
+                  "  Wireless troubleshooting",
+                  "Network segregation",
+                  "Hotel/Motel infrastructure",
+                  "VLAN tagging",
+                  "Firewall/security setup",
+                  "Routing/switching",
+                ],
               },
               {
-                title: "Cloud Solutions",
-                icon: <Cloud className="w-8 h-8 text-blue-600 mb-4" />,
+                title: "Infrastructure Experience",
+                icon: <MonitorCloud className="w-8 h-8 text-blue-600 mb-4" />,
                 text: "Seamless migrations to scalable cloud infrastructure for modern teams.",
+                services: [
+                  "File sharing and security",
+                  "Domain controllers and AD",
+                  "Windows operating systems",
+                  "Virtual machines",
+                  "Microsoft Office applications",
+                ],
               },
             ].map((card, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all"
+                className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all"
               >
                 {card.icon}
+
                 <h3 className="text-xl font-bold text-slate-800 mb-3">
                   {card.title}
                 </h3>
+
                 <p className="text-slate-600 mb-4 text-sm">{card.text}</p>
+
+                {/* Used flex-wrap and gap-2 for better tag wrapping, and mb-6 to push it away from the bottom link */}
+                <div className="my-1">
+                  {card.services.map((a) => (
+                    <span
+                      key={a}
+                      className="block w-fit px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mr-2 mb-2"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                </div>
+
+                {/* mt-auto pushes this element to the very bottom of the flex container */}
                 <a
                   href="#"
-                  className="text-blue-600 font-medium flex items-center text-sm hover:text-blue-800"
+                  className="mt-auto text-blue-600 font-medium flex items-center text-sm hover:text-blue-800"
                 >
                   Read More <ArrowRight className="w-4 h-4 ml-1" />
                 </a>
@@ -200,15 +238,14 @@ export default function ItSupport() {
 
         {/* 2. Cyber Security */}
         <section className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="grid lg:grid-cols-2 gap-6 items-center mb-12">
             <div className="order-2 lg:order-1 relative h-75 w-full flex justify-center">
               <div className="relative w-full max-w-md h-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+                  src="/images/it-support/laptop.png"
                   alt="Cyber Security"
-                  fill
-                  className="object-cover rounded-[4rem] shadow-xl"
-                  sizes="(max-width: 768px) 100vw, 448px"
+                  height={300}
+                  width={300}
                 />
               </div>
             </div>
@@ -234,11 +271,14 @@ export default function ItSupport() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: <Lock />, label: "Endpoint Security" },
-              { icon: <Shield />, label: "Firewall Management" },
-              { icon: <CheckCircle2 />, label: "Compliance Audits" },
-              { icon: <Database />, label: "Data Backups" },
-              { icon: <Network />, label: "Network Monitoring" },
+              { icon: <Lock />, label: "ESSENTIAL 8 SECURITY" },
+              { icon: <Shield />, label: "CLOUD RISK ASSESSMENT" },
+              { icon: <CheckCircle2 />, label: "VULNERABILITY ASSESSMENT" },
+              { icon: <Database />, label: "WEB APPLICATION FIREWALL" },
+              { icon: <Network />, label: "SECURITY AWARENESS TRAINING" },
+              { icon: <Network />, label: "DARK WEB MONITORING" },
+              { icon: <Network />, label: "INCIDENT RESPONSE" },
+              { icon: <Network />, label: "PENETRATION TESTING" },
             ].map((feature, i) => (
               <div
                 key={i}
@@ -290,10 +330,11 @@ export default function ItSupport() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: <Server />, label: "Server Setup" },
-              { icon: <Network />, label: "Network Design" },
-              { icon: <Cpu />, label: "Hardware Upgrades" },
-              { icon: <HardDrive />, label: "Storage Solutions" },
+              { icon: <Server />, label: "PROJECT SUPPORT" },
+              { icon: <Network />, label: "DEVICE SUPPORT" },
+              { icon: <Cpu />, label: "SERVER SUPPORT" },
+              { icon: <HardDrive />, label: "DESKTOP SUPPORT" },
+              { icon: <HardDrive />, label: "24/4 MONITORING & SUPPORT" },
             ].map((feature, i) => (
               <div
                 key={i}
@@ -341,6 +382,29 @@ export default function ItSupport() {
               </a>
             </div>
           </div>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              { icon: <Monitor />, label: "IT SUPPORT" },
+              { icon: <Wrench />, label: "NETWORK SERVICES" },
+              { icon: <Database />, label: "IT PROCUREMENT" },
+              { icon: <Phone />, label: "IT CONNECTIVITY" },
+              { icon: <Phone />, label: "IT COMMUNICATION" },
+              { icon: <Phone />, label: "IT OUTSOURCING" },
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 w-36 md:w-44 hover:bg-blue-50 transition-colors"
+              >
+                <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
+                  {feature.icon}
+                </div>
+                <span className="text-xs font-semibold text-center text-slate-700">
+                  {feature.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* 5. Device Repair */}
@@ -377,10 +441,11 @@ export default function ItSupport() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: <Monitor />, label: "Screen Replacement" },
-              { icon: <Wrench />, label: "Hardware Diagnostics" },
-              { icon: <Database />, label: "Data Recovery" },
-              { icon: <Phone />, label: "Mobile Fleet Support" },
+              { icon: <Monitor />, label: "MOBILE PHONE" },
+              { icon: <Wrench />, label: "LAPTOP'S" },
+              { icon: <Database />, label: "DESKTOP'S" },
+              { icon: <Phone />, label: "TABLETS" },
+              { icon: <Phone />, label: "SERVER'S" },
             ].map((feature, i) => (
               <div
                 key={i}
