@@ -106,7 +106,7 @@ export default function ItSupport() {
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
       {/* ================= HERO SECTION ================= */}
       <section className="relative bg-linear-to-b from-[#f3f5ff] via-[#f9f5ff] to-white pt-24 pb-32 lg:pt-32 lg:pb-48">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
           {/* Hero Content */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
@@ -124,19 +124,33 @@ export default function ItSupport() {
             {/* Tag Pills */}
             <div className="flex flex-wrap gap-3 max-w-lg">
               {[
-                { icon: HeadphonesIcon, label: "IT Support" },
-                { icon: Shield, label: "Cyber Security" },
-                { icon: Server, label: "Servers & Networking" },
-                { icon: Wrench, label: "Device Repair" },
-                { icon: Cloud, label: "Cloud Services" },
-              ].map(({ icon: Icon, label }) => (
-                <span
+                {
+                  icon: HeadphonesIcon,
+                  label: "Our Partners",
+                  href: "#partners",
+                },
+                {
+                  icon: Cloud,
+                  label: "Our Capabilities",
+                  href: "#capabilities",
+                },
+                { icon: Shield, label: "Cyber Security", href: "#security" },
+                {
+                  icon: Server,
+                  label: "Servers & Networking",
+                  href: "#networking",
+                },
+                { icon: Wrench, label: "IT Services", href: "#it" },
+                { icon: Wrench, label: "Device Repair", href: "#repair" },
+              ].map(({ icon: Icon, label, href }) => (
+                <a
                   key={label}
+                  href={href}
                   className="px-4 py-2 bg-slate-800 text-white text-sm font-medium rounded-full shadow-sm hover:bg-blue-600 transition-colors cursor-default flex items-center gap-2"
                 >
                   <Icon className="w-4 h-4" />
-                  {label}
-                </span>
+                  <span>{label}</span>
+                </a>
               ))}
             </div>
 
@@ -147,10 +161,6 @@ export default function ItSupport() {
             </div>
           </div>
 
-          {/* Hero Illustration (Placeholder) */}
-          {/* <div className="relative w-full h-100 flex items-center justify-center">
-            <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
-            <div className="relative z-10 w-4/5 h-4/5"> */}
           <div className="flex justify-end">
             <Image
               src="/images/it-support/hero.png"
@@ -159,8 +169,6 @@ export default function ItSupport() {
               width={400}
             />
           </div>
-          {/* </div>
-          </div> */}
         </div>
 
         {/* Bottom SVG Wave */}
@@ -181,8 +189,8 @@ export default function ItSupport() {
       </section>
 
       {/* ================= PARTNERS SECTION ================= */}
-      <section className="bg-white py-12 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="bg-white py-12 relative z-10" id="partners">
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
           <p className="text-blue-600 font-bold tracking-wide uppercase text-sm mb-8 text-center lg:text-left">
             Our Partners
           </p>
@@ -218,7 +226,10 @@ export default function ItSupport() {
       {/* ================= CORE FEATURES LOOP ================= */}
       <div className="bg-slate-50 py-24 space-y-32">
         {/* 1. Our Capabilities */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section
+          className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8"
+          id="capabilities"
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
@@ -338,7 +349,10 @@ export default function ItSupport() {
         </section>
 
         {/* 2. Cyber Security */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section
+          className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8"
+          id="security"
+        >
           <div className="grid lg:grid-cols-2 gap-6 items-center mb-12">
             <div className="order-2 lg:order-1 relative h-75 w-full flex justify-center">
               <div className="relative w-full max-w-md h-full">
@@ -397,7 +411,10 @@ export default function ItSupport() {
         </section>
 
         {/* 3. Servers + Networking */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section
+          className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8"
+          id="networking"
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
@@ -453,7 +470,7 @@ export default function ItSupport() {
         </section>
 
         {/* 4. Managed IT Services */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8" id="it">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="order-2 lg:order-1 relative h-75 w-full">
               <Image
@@ -509,7 +526,10 @@ export default function ItSupport() {
         </section>
 
         {/* 5. Device Repair */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
+        <section
+          className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 pb-20"
+          id="repair"
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
