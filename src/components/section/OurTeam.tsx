@@ -1,4 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const socialIconMap: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
+  Facebook: FaFacebookF,
+  X: FaXTwitter,
+  Instagram: FaInstagram,
+  LinkedIn: FaLinkedinIn,
+};
 
 const teamMembers = [
   {
@@ -7,6 +20,12 @@ const teamMembers = [
     role: "IT Consultant",
     bgLabel: "Consultant",
     image: "/images/home/team/1.png",
+    social: [
+      { label: "Facebook", href: "#" },
+      { label: "X", href: "#" },
+      { label: "Instagram", href: "#" },
+      { label: "LinkedIn", href: "#" },
+    ],
   },
   {
     id: 2,
@@ -14,6 +33,10 @@ const teamMembers = [
     role: "Director",
     bgLabel: "Director",
     image: "/images/home/team/2.jpg",
+    social: [
+      { label: "Facebook", href: "#" },
+      { label: "LinkedIn", href: "#" },
+    ],
   },
   {
     id: 3,
@@ -21,6 +44,12 @@ const teamMembers = [
     role: "Web Developer",
     bgLabel: "Developer",
     image: "/images/home/team/3.png",
+    social: [
+      { label: "Facebook", href: "#" },
+      { label: "X", href: "#" },
+      { label: "Instagram", href: "#" },
+      { label: "LinkedIn", href: "#" },
+    ],
   },
   {
     id: 4,
@@ -28,6 +57,12 @@ const teamMembers = [
     role: "Software Engineer",
     bgLabel: "Engineer",
     image: "/images/home/team/4.jpg",
+    social: [
+      { label: "Facebook", href: "#" },
+      { label: "X", href: "#" },
+      { label: "Instagram", href: "#" },
+      { label: "LinkedIn", href: "#" },
+    ],
   },
 ];
 
@@ -48,97 +83,45 @@ export default function OurTeam() {
           {teamMembers.map((member) => (
             <div key={member.id} className="group cursor-pointer flex flex-col">
               {/* ------------ Image Card ------------ */}
-              <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden bg-gray-100">
-                {/* Profile Image */}
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
+              <div className="relative w-full aspect-4/5 rounded-xl bg-gray-100">
+                <div className="absolute inset-0 rounded-xl overflow-hidden">
+                  {/* Profile Image */}
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
 
-                {/* Dark Gradient Overlay for bottom text legibility */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#111620]/90 via-[#111620]/20 to-transparent transition-opacity duration-300" />
+                  {/* Dark Gradient Overlay for bottom text legibility */}
+                  <div className="absolute inset-0 bg-linear-to-t from-[#111620]/90 via-[#111620]/20 to-transparent transition-opacity duration-300" />
+                </div>
 
                 {/* Vertical Large Background Text */}
-                <div className="absolute -right-2 bottom-4 origin-bottom-right -rotate-90 select-none">
-                  <span className="text-white/40 text-6xl font-extrabold tracking-wide uppercase mix-blend-overlay">
+                <div className="absolute -right-2 bottom-4 origin-bottom-right -rotate-90 select-none pointer-events-none">
+                  <span className="text-white/20 text-6xl font-extrabold tracking-wide uppercase">
                     {member.bgLabel}
                   </span>
                 </div>
 
                 {/* Orange Hover Social Menu */}
                 <div className="absolute left-4 bottom-4 bg-[#f05c26] text-white p-3 rounded-lg shadow-xl flex flex-col gap-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out z-10">
-                  {/* Facebook Icon */}
-                  <a
-                    href="#"
-                    className="hover:text-white/80 transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                    </svg>
-                  </a>
-                  {/* X (Twitter) Icon */}
-                  <a
-                    href="#"
-                    className="hover:text-white/80 transition-colors"
-                    aria-label="X (Twitter)"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </a>
-                  {/* Instagram Icon */}
-                  <a
-                    href="#"
-                    className="hover:text-white/80 transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect
-                        width="20"
-                        height="20"
-                        x="2"
-                        y="2"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                    </svg>
-                  </a>
-                  {/* LinkedIn Icon */}
-                  <a
-                    href="#"
-                    className="hover:text-white/80 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                  </a>
+                  {member.social?.map(({ label, href }) => {
+                    const Icon = socialIconMap[label];
+                    if (!Icon) return null;
+                    return (
+                      <Link
+                        key={label}
+                        href={href}
+                        className="hover:text-white/80 transition-colors"
+                        aria-label={label}
+                        target="_blank"
+                      >
+                        <Icon className="w-4 h-4" />
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -158,3 +141,4 @@ export default function OurTeam() {
     </section>
   );
 }
+
