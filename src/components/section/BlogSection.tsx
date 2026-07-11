@@ -54,7 +54,7 @@ export default function BlogSection() {
           <span className="text-xl font-bold tracking-widest text-brand-blue uppercase">
             OUR BLOG
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight mt-3 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mt-3 leading-tight">
             Innovations shaping the digital world
           </h2>
         </div>
