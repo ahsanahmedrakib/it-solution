@@ -106,7 +106,7 @@ export default function ItSupport() {
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
       {/* ================= HERO SECTION ================= */}
       <section className="relative bg-linear-to-b from-[#f3f5ff] via-[#f9f5ff] to-white pt-24 pb-32 lg:pt-32 lg:pb-48">
-        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
           {/* Hero Content */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
