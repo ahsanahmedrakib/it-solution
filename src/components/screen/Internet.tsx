@@ -38,7 +38,7 @@ export default function InternetPage() {
               <p className="text-sky-700 font-semibold text-sm">
                 Need help with your internet service?
               </p>
-              <button className="px-6 py-2.5 bg-white border border-sky-200 text-sky-700 text-xs font-bold tracking-wider uppercase rounded-full shadow-sm hover:bg-sky-50 transition-colors">
+              <button className="px-6 py-2.5 bg-white border border-sky-200 text-sky-700 text-xs font-bold tracking-wider uppercase rounded-full shadow-sm hover:bg-[#2a4a7f] hover:text-white cursor-pointer transition-colors">
                 Contact Us
               </button>
             </div>
@@ -57,9 +57,9 @@ export default function InternetPage() {
         </div>
 
         {/* Soft SVG Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0">
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0 rotate-180">
           <svg
-            className="relative block w-full h-15 md:h-30"
+            className="relative block w-full h-25 md:h-35"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
@@ -67,7 +67,7 @@ export default function InternetPage() {
           >
             <path
               d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              className="fill-slate-50"
+              className="fill-white"
             ></path>
           </svg>
         </div>
@@ -101,7 +101,7 @@ export default function InternetPage() {
             ].map((card, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+                className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border-2 border-blue-100 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
               >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
@@ -141,7 +141,7 @@ export default function InternetPage() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center bg-white rounded-[3rem] p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center bg-white rounded-2xl p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/internet/voip.jfif"
@@ -265,7 +265,7 @@ export default function InternetPage() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center bg-white rounded-[3rem] p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center bg-white rounded-2xl p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/internet/connected.png"
