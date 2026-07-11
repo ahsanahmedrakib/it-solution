@@ -79,7 +79,7 @@ export default function HowWeDo() {
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
         <div className="">
           <div className="text-center md:text-left mb-12">
-            <span className="text-xs font-bold tracking-widest text-gray-400 uppercase bg-gray-100/80 px-2.5 py-1 rounded">
+            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-3 py-1.5 rounded-md ring-1 ring-blue-600/10">
               Ecosystem
             </span>
             <h2 className="text-3xl font-black text-gray-900 tracking-tight mt-3">

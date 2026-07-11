@@ -25,7 +25,7 @@ const slides: SlideData[] = [
     subtitle:
       "Secure email, collaboration and cloud services — set up the right way.",
     buttonText: "FIND OUT MORE >",
-    image: "/images/home/cloud-hero.png",
+    image: "/images/home/hero/cloud-hero.png",
     indicatorTitle: "Cloud Services & Microsoft 365",
     indicatorSubtitle: "Modern cloud tools",
   },
@@ -35,7 +35,7 @@ const slides: SlideData[] = [
     subtitle:
       "Professional, reliable tech support and system engineering when you need it.",
     buttonText: "FIND OUT MORE >",
-    image: "/images/home/administrator-hero.png",
+    image: "/images/home/hero/administrator-hero.png",
     indicatorTitle: "IT Services for Business and Home",
     indicatorSubtitle: "Fully Managed & AdHoc",
   },
@@ -45,7 +45,7 @@ const slides: SlideData[] = [
     subtitle:
       "Proactive real-time monitoring and defenses to keep your data safe.",
     buttonText: "FIND OUT MORE >",
-    image: "/images/home/cybersecurity-hero.png",
+    image: "/images/home/hero/cybersecurity-hero.png",
     indicatorTitle: "Cyber Security & Data Protection",
     indicatorSubtitle: "Proactive Security",
   },
@@ -55,7 +55,7 @@ const slides: SlideData[] = [
     subtitle:
       "Modern voice solutions configured seamlessly for modern remote workflows.",
     buttonText: "FIND OUT MORE >",
-    image: "/images/home/telecom-hero.png",
+    image: "/images/home/hero/telecom-hero.png",
     indicatorTitle: "Telecommunications & Phone Systems",
     indicatorSubtitle: "Modern voice solutions",
   },
@@ -65,7 +65,7 @@ const slides: SlideData[] = [
     subtitle:
       "High-speed, redundant pipelines keeping your office fast and reliable.",
     buttonText: "FIND OUT MORE >",
-    image: "/images/home/internet-hero.png",
+    image: "/images/home/hero/internet-hero.png",
     indicatorTitle: "NBN & Business Internet",
     indicatorSubtitle: "Internet, Home & Business",
   },
