@@ -1,27 +1,112 @@
+"use client";
+
 import {
+  Activity,
+  AlertTriangle,
   ArrowRight,
-  CheckCircle2,
+  Briefcase,
+  Bug,
+  Cloud,
   Cpu,
-  Database,
+  Eye,
+  GraduationCap,
   HardDrive,
+  HeadphonesIcon,
+  Laptop,
+  Link,
   Lock,
+  MessageSquare,
   Monitor,
   MonitorCloud,
-  Network,
-  Phone,
+  Package,
   Server,
   Shield,
+  Smartphone,
+  Target,
+  Users,
   Wifi,
   Wrench,
 } from "lucide-react";
 import Image from "next/image";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+
+interface PartnerLogo {
+  name: string;
+  logo: string;
+}
+
+const partnersData: PartnerLogo[] = [
+  {
+    name: "MikroTik",
+    logo: "/images/home/how-we-do/mikrotik.png",
+  },
+  {
+    name: "N-Able",
+    logo: "/images/home/how-we-do/nable.png",
+  },
+  {
+    name: "Grandstream",
+    logo: "/images/home/how-we-do/grandstream.png",
+  },
+  {
+    name: "WordPress",
+    logo: "/images/home/how-we-do/wordpress.png",
+  },
+  {
+    name: "Microsoft 365",
+    logo: "/images/home/how-we-do/microsoft365.png",
+  },
+  {
+    name: "Ingram",
+    logo: "/images/home/how-we-do/ingram.png",
+  },
+  {
+    name: "Cellfi",
+    logo: "/images/home/how-we-do/cellfi.png",
+  },
+  {
+    name: "Ipecs",
+    logo: "/images/home/how-we-do/ipecs.png",
+  },
+  {
+    name: "HPE",
+    logo: "/images/home/how-we-do/hpe.png",
+  },
+  {
+    name: "Avaya",
+    logo: "/images/home/how-we-do/avaya.png",
+  },
+  {
+    name: "Cove",
+    logo: "/images/home/how-we-do/cove.png",
+  },
+  {
+    name: "Veeam",
+    logo: "/images/home/how-we-do/veeam.png",
+  },
+  {
+    name: "Datto",
+    logo: "/images/home/how-we-do/datto.png",
+  },
+  {
+    name: "Recaptcha",
+    logo: "/images/home/how-we-do/recaptcha.png",
+  },
+  {
+    name: "Woo",
+    logo: "/images/home/how-we-do/woo.png",
+  },
+];
 
 export default function ItSupport() {
   return (
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
       {/* ================= HERO SECTION ================= */}
       <section className="relative bg-linear-to-b from-[#f3f5ff] via-[#f9f5ff] to-white pt-24 pb-32 lg:pt-32 lg:pb-48">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
           {/* Hero Content */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
@@ -39,23 +124,24 @@ export default function ItSupport() {
             {/* Tag Pills */}
             <div className="flex flex-wrap gap-3 max-w-lg">
               {[
-                "IT Support",
-                "Cyber Security",
-                "Servers & Networking",
-                "Device Repair",
-                "Cloud Services",
-              ].map((tag) => (
+                { icon: HeadphonesIcon, label: "IT Support" },
+                { icon: Shield, label: "Cyber Security" },
+                { icon: Server, label: "Servers & Networking" },
+                { icon: Wrench, label: "Device Repair" },
+                { icon: Cloud, label: "Cloud Services" },
+              ].map(({ icon: Icon, label }) => (
                 <span
-                  key={tag}
-                  className="px-4 py-2 bg-slate-800 text-white text-sm font-medium rounded-full shadow-sm hover:bg-blue-600 transition-colors cursor-default"
+                  key={label}
+                  className="px-4 py-2 bg-slate-800 text-white text-sm font-medium rounded-full shadow-sm hover:bg-blue-600 transition-colors cursor-default flex items-center gap-2"
                 >
-                  {tag}
+                  <Icon className="w-4 h-4" />
+                  {label}
                 </span>
               ))}
             </div>
 
             <div className="pt-4">
-              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg shadow-blue-200 transition-all hover:-translate-y-1 flex items-center gap-2">
+              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg shadow-blue-200 transition-all hover:-translate-y-1 flex items-center gap-2">
                 Get a Quote <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -65,12 +151,14 @@ export default function ItSupport() {
           {/* <div className="relative w-full h-100 flex items-center justify-center">
             <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
             <div className="relative z-10 w-4/5 h-4/5"> */}
-          <Image
-            src="/images/it-support/hero.png"
-            alt="IT Support Illustration"
-            height={400}
-            width={400}
-          />
+          <div className="flex justify-end">
+            <Image
+              src="/images/it-support/hero.png"
+              alt="IT Support Illustration"
+              height={400}
+              width={400}
+            />
+          </div>
           {/* </div>
           </div> */}
         </div>
@@ -98,19 +186,32 @@ export default function ItSupport() {
           <p className="text-blue-600 font-bold tracking-wide uppercase text-sm mb-8 text-center lg:text-left">
             Our Partners
           </p>
-          <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Partner Logos placeheld by text for structural accuracy */}
-            {["Microsoft", "HP", "Lenovo", "Veeam", "Datto", "Cisco"].map(
-              (partner) => (
-                <div
-                  key={partner}
-                  className="text-2xl font-black text-slate-400"
-                >
-                  {partner}
-                </div>
-              ),
-            )}
-          </div>
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            loop
+            breakpoints={{
+              0: { slidesPerView: 2, spaceBetween: 20 },
+              640: { slidesPerView: 3, spaceBetween: 30 },
+              768: { slidesPerView: 4, spaceBetween: 30 },
+              1024: { slidesPerView: 5, spaceBetween: 40 },
+            }}
+          >
+            {partnersData.map((partner) => (
+              <SwiperSlide
+                key={partner.name}
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={160}
+                  height={80}
+                  className="object-contain h-20 w-auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
@@ -119,7 +220,7 @@ export default function ItSupport() {
         {/* 1. Our Capabilities */}
         <section className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Our Capabilities
@@ -132,16 +233,16 @@ export default function ItSupport() {
               </p>
               <ul className="space-y-3">
                 {[
-                  "24/7 IT Support",
-                  "Strategic Planning",
-                  "Cloud Integrations",
-                ].map((item) => (
+                  { icon: HeadphonesIcon, label: "24/7 IT Support" },
+                  { icon: Briefcase, label: "Strategic Planning" },
+                  { icon: Cloud, label: "Cloud Integrations" },
+                ].map(({ icon: Icon, label }) => (
                   <li
-                    key={item}
+                    key={label}
                     className="flex items-center text-blue-700 font-medium"
                   >
-                    <CheckCircle2 className="w-5 h-5 mr-3 text-blue-500" />{" "}
-                    {item}
+                    <Icon className="w-5 h-5 mr-3 text-blue-500" />
+                    {label}
                   </li>
                 ))}
               </ul>
@@ -202,7 +303,7 @@ export default function ItSupport() {
             ].map((card, i) => (
               <div
                 key={i}
-                className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all"
+                className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border-2 border-blue-100 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all"
               >
                 {card.icon}
 
@@ -250,7 +351,7 @@ export default function ItSupport() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative">
+            <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Cyber Security.
@@ -272,17 +373,17 @@ export default function ItSupport() {
           <div className="flex flex-wrap justify-center gap-6">
             {[
               { icon: <Lock />, label: "ESSENTIAL 8 SECURITY" },
-              { icon: <Shield />, label: "CLOUD RISK ASSESSMENT" },
-              { icon: <CheckCircle2 />, label: "VULNERABILITY ASSESSMENT" },
-              { icon: <Database />, label: "WEB APPLICATION FIREWALL" },
-              { icon: <Network />, label: "SECURITY AWARENESS TRAINING" },
-              { icon: <Network />, label: "DARK WEB MONITORING" },
-              { icon: <Network />, label: "INCIDENT RESPONSE" },
-              { icon: <Network />, label: "PENETRATION TESTING" },
+              { icon: <Cloud />, label: "CLOUD RISK ASSESSMENT" },
+              { icon: <Bug />, label: "VULNERABILITY ASSESSMENT" },
+              { icon: <Shield />, label: "WEB APPLICATION FIREWALL" },
+              { icon: <GraduationCap />, label: "SECURITY AWARENESS TRAINING" },
+              { icon: <Eye />, label: "DARK WEB MONITORING" },
+              { icon: <AlertTriangle />, label: "INCIDENT RESPONSE" },
+              { icon: <Target />, label: "PENETRATION TESTING" },
             ].map((feature, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 w-36 md:w-44 hover:bg-blue-50 transition-colors"
+                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
               >
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
                   {feature.icon}
@@ -298,7 +399,7 @@ export default function ItSupport() {
         {/* 3. Servers + Networking */}
         <section className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Servers + Networking
@@ -330,15 +431,15 @@ export default function ItSupport() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: <Server />, label: "PROJECT SUPPORT" },
-              { icon: <Network />, label: "DEVICE SUPPORT" },
+              { icon: <Briefcase />, label: "PROJECT SUPPORT" },
+              { icon: <Monitor />, label: "DEVICE SUPPORT" },
               { icon: <Cpu />, label: "SERVER SUPPORT" },
               { icon: <HardDrive />, label: "DESKTOP SUPPORT" },
-              { icon: <HardDrive />, label: "24/4 MONITORING & SUPPORT" },
+              { icon: <Activity />, label: "24/4 MONITORING & SUPPORT" },
             ].map((feature, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 w-36 md:w-44 hover:bg-blue-50 transition-colors"
+                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
               >
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
                   {feature.icon}
@@ -364,7 +465,7 @@ export default function ItSupport() {
               />
             </div>
 
-            <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative">
+            <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Managed IT Services
@@ -385,16 +486,16 @@ export default function ItSupport() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: <Monitor />, label: "IT SUPPORT" },
-              { icon: <Wrench />, label: "NETWORK SERVICES" },
-              { icon: <Database />, label: "IT PROCUREMENT" },
-              { icon: <Phone />, label: "IT CONNECTIVITY" },
-              { icon: <Phone />, label: "IT COMMUNICATION" },
-              { icon: <Phone />, label: "IT OUTSOURCING" },
+              { icon: <HeadphonesIcon />, label: "IT SUPPORT" },
+              { icon: <Wifi />, label: "NETWORK SERVICES" },
+              { icon: <Package />, label: "IT PROCUREMENT" },
+              { icon: <Link />, label: "IT CONNECTIVITY" },
+              { icon: <MessageSquare />, label: "IT COMMUNICATION" },
+              { icon: <Users />, label: "IT OUTSOURCING" },
             ].map((feature, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 w-36 md:w-44 hover:bg-blue-50 transition-colors"
+                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
               >
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
                   {feature.icon}
@@ -410,7 +511,7 @@ export default function ItSupport() {
         {/* 5. Device Repair */}
         <section className="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Device Repair
@@ -441,15 +542,15 @@ export default function ItSupport() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { icon: <Monitor />, label: "MOBILE PHONE" },
-              { icon: <Wrench />, label: "LAPTOP'S" },
-              { icon: <Database />, label: "DESKTOP'S" },
-              { icon: <Phone />, label: "TABLETS" },
-              { icon: <Phone />, label: "SERVER'S" },
+              { icon: <Smartphone />, label: "MOBILE PHONE" },
+              { icon: <Laptop />, label: "LAPTOP'S" },
+              { icon: <Monitor />, label: "DESKTOP'S" },
+              { icon: <Smartphone />, label: "TABLETS" },
+              { icon: <Server />, label: "SERVER'S" },
             ].map((feature, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 w-36 md:w-44 hover:bg-blue-50 transition-colors"
+                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
               >
                 <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
                   {feature.icon}
