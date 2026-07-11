@@ -1,11 +1,11 @@
-import AboutSection from "../section/AboutSection";
-import BlogSection from "../section/BlogSection";
-import HeroSlider from "../section/HeroSlider";
-import HowWeDo from "../section/HowWeDo";
-import OurApproach from "../section/OurApproach";
-import OurTeam from "../section/OurTeam";
-import Testimonials from "../section/Testimonials";
-import WhatWeDo from "../section/WhatWeDo";
+import AboutSection from "../section/Homepage/AboutSection";
+import BlogSection from "../section/Homepage/BlogSection";
+import HeroSlider from "../section/Homepage/HeroSlider";
+import HowWeDo from "../section/Homepage/HowWeDo";
+import OurApproach from "../section/Homepage/OurApproach";
+import OurTeam from "../section/Homepage/OurTeam";
+import Testimonials from "../section/Homepage/Testimonials";
+import WhatWeDo from "../section/Homepage/WhatWeDo";
 
 const Homepage = () => {
   return (
