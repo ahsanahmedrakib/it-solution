@@ -2,19 +2,19 @@ import Image from "next/image";
 
 export default function TelecomPage() {
   return (
-    <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-white">
+    <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION */}
-      <section className="relative bg-[#fdfaf2] pt-20 pb-32 overflow-hidden">
+      <section className="relative bg-linear-to-t from-[#c2dde6] to-white pt-20 pb-32 overflow-hidden">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           <div className="space-y-8 z-10 col-span-2">
-            <h1 className="text-4xl lg:text-6xl font-bold text-blue-700 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold text-blue-900 leading-tight">
               Telecom Systems to help simplify your business
             </h1>
             <p className="text-slate-600 text-lg max-w-md">
               Connecting with our dedicated team of professionals to ensure your
               business communication runs smoothly.
             </p>
-            <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
               Get Started
             </button>
 
@@ -23,13 +23,13 @@ export default function TelecomPage() {
                 What Telecom System Do You Need?
               </h3>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#1e3a5f] text-white px-6 py-2 rounded-md hover:bg-blue-900 transition-colors">
+                <button className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
                   Office
                 </button>
-                <button className="bg-[#1e3a5f] text-white px-6 py-2 rounded-md hover:bg-blue-900 transition-colors">
+                <button className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
                   Small Biz
                 </button>
-                <button className="bg-[#1e3a5f] text-white px-6 py-2 rounded-md hover:bg-blue-900 transition-colors">
+                <button className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
                   Large
                 </button>
               </div>
@@ -65,7 +65,7 @@ export default function TelecomPage() {
 
       {/* TESTIMONIALS SECTION */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">
+        <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">
           What people are talking about us
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -89,9 +89,9 @@ export default function TelecomPage() {
           ].map((testimonial, i) => (
             <div
               key={i}
-              className="bg-[#2a2a2a] text-gray-200 p-8 rounded-2xl shadow-lg relative"
+              className="bg-[#2a2a2a] text-gray-200 p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 relative"
             >
-              <span className="text-5xl text-blue-500 absolute top-6 left-6 font-serif">
+              <span className="text-5xl text-blue-600 absolute top-6 left-6 font-serif">
                 &quot;
               </span>
               <p className="mt-8 mb-6 text-sm leading-relaxed">
@@ -106,21 +106,21 @@ export default function TelecomPage() {
       </section>
 
       {/* UPGRADE & FORM SECTION */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="pt-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 leading-snug">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-snug">
               Upgrade to the latest smart business phone system technology and
               save up to 40% on your current bill.
             </h2>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+          <div className="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <form className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">
                   How Many Locations / Users?
                 </label>
-                <select className="w-full border border-gray-300 rounded-md p-3 bg-gray-50 text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none">
+                <select className="w-full border border-blue-100 rounded-md p-3 bg-gray-50 text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none">
                   <option>1-10 Users</option>
                   <option>11-50 Users</option>
                   <option>50+ Users</option>
@@ -133,7 +133,7 @@ export default function TelecomPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border border-gray-300 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full border border-blue-100 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="John"
                   />
                 </div>
@@ -143,7 +143,7 @@ export default function TelecomPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border border-gray-300 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full border border-blue-100 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="Doe"
                   />
                 </div>
@@ -155,7 +155,7 @@ export default function TelecomPage() {
                   </label>
                   <input
                     type="email"
-                    className="w-full border border-gray-300 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full border border-blue-100 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -165,7 +165,7 @@ export default function TelecomPage() {
                   </label>
                   <input
                     type="tel"
-                    className="w-full border border-gray-300 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full border border-blue-100 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="(555) 000-0000"
                   />
                 </div>
@@ -176,7 +176,7 @@ export default function TelecomPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full border border-blue-100 rounded-md p-3 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
                   placeholder="Company Name"
                 />
               </div>
@@ -194,7 +194,7 @@ export default function TelecomPage() {
       {/* INFO SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-112.5 rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative h-112.5 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
             <Image
               src="/images/telecom/info.webp"
               alt="Customer Support Agent"
@@ -229,9 +229,9 @@ export default function TelecomPage() {
       </section>
 
       {/* PRODUCTS / SERVICES GRID */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
-          <h2 className="text-3xl font-bold text-blue-700 mb-12">
+          <h2 className="text-3xl font-bold text-blue-900 mb-12">
             Phone Systems Support
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -264,21 +264,21 @@ export default function TelecomPage() {
             ].map((service, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col"
+                className="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
               >
-                <div className="relative h-48 w-full">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={service.img}
                     alt={service.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="font-bold text-lg text-slate-800 mb-3">
+                  <h3 className="font-bold text-lg text-slate-900 mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-slate-500">{service.desc}</p>
+                  <p className="text-sm text-slate-600">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -287,9 +287,9 @@ export default function TelecomPage() {
       </section>
 
       {/* DARK BANNER */}
-      <section className="bg-[#333333] py-16 ">
+      <section className="bg-[#2a2a2a] py-16">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shrink-0 border-4 border-gray-600">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shrink-0 border-2 border-blue-100">
             <Image
               src="/images/telecom/dark.jpg"
               alt="Optimum Sound"
@@ -330,9 +330,9 @@ export default function TelecomPage() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="border border-gray-200 rounded-xl p-6 shadow-sm bg-white"
+                className="border-2 border-blue-100 hover:border-blue-300 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all"
               >
-                <h3 className="text-xl font-bold text-slate-800 mb-3">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
                   • {feature.title}
                 </h3>
                 <p className="text-slate-600 text-sm mb-4">{feature.desc}</p>
@@ -345,7 +345,7 @@ export default function TelecomPage() {
               </div>
             ))}
           </div>
-          <div className="relative h-150 rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-150 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
             <Image
               src="/images/telecom/feature.jpg"
               alt="Team Collaboration"
@@ -357,10 +357,10 @@ export default function TelecomPage() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-800 mb-6">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
               Provide the Best Communications For your Business.
               <br />
               Choose the Best Provider.
@@ -371,7 +371,7 @@ export default function TelecomPage() {
                   <span className="text-blue-600 font-bold">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800">
+                  <h4 className="font-bold text-slate-900">
                     State-of-the-art technology
                   </h4>
                   <p className="text-sm text-slate-600 mt-1">
@@ -385,7 +385,7 @@ export default function TelecomPage() {
                   <span className="text-blue-600 font-bold">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800">
+                  <h4 className="font-bold text-slate-900">
                     Dedicated customer support
                   </h4>
                   <p className="text-sm text-slate-600 mt-1">
@@ -396,7 +396,7 @@ export default function TelecomPage() {
               </li>
             </ul>
           </div>
-          <div className="relative h-75 rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative h-75 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
             <Image
               src="/images/telecom/choose.webp"
               alt="Modern Office Room"
@@ -440,7 +440,7 @@ export default function TelecomPage() {
       {/* BENEFITS GRID */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-800 mb-16">
+          <h2 className="text-3xl font-bold text-center text-slate-900 mb-16">
             Increase Time To Money and Boost Productivity with Phone Systems.
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
@@ -477,8 +477,8 @@ export default function TelecomPage() {
                 <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl font-bold">
                   ✓
                 </div>
-                <h3 className="font-bold text-slate-800">{benefit.title}</h3>
-                <p className="text-sm text-slate-500">{benefit.desc}</p>
+                <h3 className="font-bold text-slate-900">{benefit.title}</h3>
+                <p className="text-sm text-slate-600">{benefit.desc}</p>
               </div>
             ))}
           </div>
@@ -486,10 +486,10 @@ export default function TelecomPage() {
       </section>
 
       {/* PARTNERSHIP */}
-      <section className="py-16 bg-gray-50 border-t border-gray-200">
+      <section className="py-16 bg-slate-50 border-t border-blue-100">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Partnership With Us
             </h2>
             <p className="text-slate-600">
@@ -498,7 +498,7 @@ export default function TelecomPage() {
               aligns with your operational goals.
             </p>
           </div>
-          <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <Image
               src="/images/telecom/partnership.jpg"
               alt="Partnership Meeting"
@@ -510,9 +510,9 @@ export default function TelecomPage() {
       </section>
 
       {/* FAQS */}
-      <section className="py-20  bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">
+          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
             FAQs
           </h2>
           <div className="space-y-4">
@@ -525,7 +525,7 @@ export default function TelecomPage() {
             ].map((question, i) => (
               <div
                 key={i}
-                className="border-b border-gray-200 py-4 flex justify-between items-center cursor-pointer hover:text-blue-600 transition-colors"
+                className="border-b border-blue-100 py-4 flex justify-between items-center cursor-pointer hover:text-blue-600 transition-colors"
               >
                 <span className="font-medium text-slate-700">{question}</span>
                 <span className="text-2xl text-slate-400">+</span>
@@ -537,3 +537,4 @@ export default function TelecomPage() {
     </main>
   );
 }
+
