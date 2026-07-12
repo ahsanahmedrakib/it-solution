@@ -105,7 +105,7 @@ export default function ItSupport() {
   return (
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-linear-to-b from-[#f3f5ff] via-[#f9f5ff] to-white pt-24 pb-32 lg:pt-32 lg:pb-48">
+      <section className="relative bg-linear-to-t from-[#c2dde6] to-white pt-24 pb-32 lg:pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
           {/* Hero Content */}
           <div className="space-y-8">
@@ -171,18 +171,18 @@ export default function ItSupport() {
           </div>
         </div>
 
-        {/* Bottom SVG Wave */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0 rotate-180">
+        {/* Curved bottom shape */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg
-            className="relative block w-full h-25"
+            className="relative block w-full h-16"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
           >
             <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              className="fill-white"
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,28.79,158.46,59.39,235.9,67.65,264.44,70.67,293.12,61.7,321.39,56.44Z"
+              fill="#ffffff"
             ></path>
           </svg>
         </div>

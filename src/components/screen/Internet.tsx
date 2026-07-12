@@ -5,7 +5,7 @@ export default function InternetPage() {
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-800 overflow-x-hidden">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-linear-to-b from-[#eaf6fa] to-white pt-24 pb-32 lg:pt-32 lg:pb-48">
+      <section className="relative bg-linear-to-t from-[#c2dde6] to-white pt-24 pb-32 lg:pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
           {/* Hero Content */}
           <div className="space-y-8 max-w-2xl">
@@ -56,25 +56,25 @@ export default function InternetPage() {
           </div>
         </div>
 
-        {/* Soft SVG Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0 rotate-180">
+        {/* Curved bottom shape */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg
-            className="relative block w-full h-25 md:h-35"
+            className="relative block w-full h-16"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
           >
             <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              className="fill-white"
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,28.79,158.46,59.39,235.9,67.65,264.44,70.67,293.12,61.7,321.39,56.44Z"
+              fill="#ffffff"
             ></path>
           </svg>
         </div>
       </section>
 
       {/* ================= SERVICES GRID SECTION ================= */}
-      <section className="relative bg-slate-50 py-12 lg:py-16 -mt-16 z-20">
+      <section className="relative bg-slate-50 py-12 lg:py-16 z-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[

@@ -86,7 +86,7 @@ export default function TelecomPage() {
         {/* Curved bottom shape */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg
-            className="relative block w-full h-25"
+            className="relative block w-full h-16"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
