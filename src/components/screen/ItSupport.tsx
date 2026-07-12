@@ -101,7 +101,7 @@ const partnersData: PartnerLogo[] = [
   },
 ];
 
-const data = {
+const heroData = {
   title1: "IT Support Services",
   title2: "for Professionals",
   description:
@@ -130,7 +130,7 @@ export default function ItSupport() {
   return (
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
       {/* ================= HERO SECTION ================= */}
-      <Hero data={data} />
+      <Hero data={heroData} />
 
       {/* ================= PARTNERS SECTION ================= */}
       <section className="bg-white py-12 relative z-10" id="partners">

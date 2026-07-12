@@ -1,3 +1,5 @@
+"use client";
+
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,9 +20,9 @@ interface Data {
 const Hero = ({ data }: { data: Data }) => {
   return (
     <section className="relative bg-linear-to-t from-[#c2dde6] to-white pt-24 pb-32 lg:pt-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-24 items-center relative z-10">
         {/* Hero Content */}
-        <div className="space-y-8 order-2 lg:order-1">
+        <div className="space-y-8 order-2 lg:order-1 lg:col-span-2">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
             {data?.title1 && data?.title1} <br />
             {data?.title2 && (
@@ -33,7 +35,7 @@ const Hero = ({ data }: { data: Data }) => {
 
           {/* Action Buttons Grid */}
           {!!data?.actionButtons && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 md:w-1/2 w-full">
               {data?.actionButtons?.map(
                 (btn) =>
                   btn?.href && (
@@ -46,14 +48,6 @@ const Hero = ({ data }: { data: Data }) => {
                       <ChevronRight className="w-4 h-4 text-sky-300 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   ),
-                // <a
-                //   href={btn.href}
-                //   key={btn.label}
-                //   className="group flex cursor-pointer items-center justify-between px-6 py-4 bg-[#1a365d] hover:bg-[#2a4a7f] text-white text-sm font-semibold rounded-xl shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
-                // >
-                //   {btn.label}
-                //   <ChevronRight className="w-4 h-4 text-sky-300 group-hover:translate-x-1 transition-transform" />
-                // </a>
               )}
             </div>
           )}
@@ -68,12 +62,12 @@ const Hero = ({ data }: { data: Data }) => {
         </div>
 
         {data?.bgImage && (
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:col-span-1">
             <Image
               src={data?.bgImage}
               alt="IT Support Illustration"
               height={400}
-              width={400}
+              width={600}
             />
           </div>
         )}

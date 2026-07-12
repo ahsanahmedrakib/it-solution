@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Hero from "../ui/Hero";
 
 const faqs = [
   {
@@ -38,67 +39,34 @@ export default function TelecomPage() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const heroData = {
+    title1: "Telecom Systems to help",
+    title2: "simplify your business",
+    description:
+      " Connecting with our dedicated team of professionals to ensure your business communication runs smoothly.",
+    bgImage: "/images/telecom/hero.png",
+
+    actionButtons: [
+      {
+        label: "VODIA",
+        href: "#partners",
+      },
+      {
+        label: "GRAND STREAM",
+        href: "#capabilities",
+      },
+      { label: "AVAYA", href: "#security" },
+      {
+        label: "IPECS",
+        href: "#networking",
+      },
+    ],
+  };
+
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION */}
-      <section className="relative bg-linear-to-t from-[#c2dde6] to-white pt-20 pb-32 overflow-hidden">
-        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-          <div className="space-y-8 z-10 col-span-2">
-            <h1 className="text-4xl lg:text-6xl font-bold text-blue-900 leading-tight">
-              Telecom Systems to help simplify your business
-            </h1>
-            <p className="text-slate-600 text-lg max-w-md">
-              Connecting with our dedicated team of professionals to ensure your
-              business communication runs smoothly.
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
-              Get Started
-            </button>
-
-            <div className="pt-8">
-              <h3 className="text-blue-700 font-semibold mb-4 text-lg">
-                What Telecom System Do You Need?
-              </h3>
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
-                  Office
-                </button>
-                <button className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
-                  Small Biz
-                </button>
-                <button className="bg-slate-800 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
-                  Large
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="relative h-64 lg:h-100 w-full flex justify-center lg:justify-end z-10 col-span-1">
-            <Image
-              src="/images/telecom/hero.png"
-              alt="Telecom Illustration"
-              width={400}
-              height={300}
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
-        {/* Curved bottom shape */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-full h-16"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,28.79,158.46,59.39,235.9,67.65,264.44,70.67,293.12,61.7,321.39,56.44Z"
-              fill="#ffffff"
-            ></path>
-          </svg>
-        </div>
-      </section>
+      <Hero data={heroData} />
 
       {/* TESTIMONIALS SECTION */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
