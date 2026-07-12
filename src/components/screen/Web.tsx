@@ -45,7 +45,7 @@ export default function WebPage() {
             {/* Support Link */}
             <div className="pt-6 border-t border-slate-200/60 flex flex-col items-start gap-3">
               <p className="text-sky-700 font-semibold text-sm">
-                Cloud Services Questions?
+                Web Services Questions?
               </p>
               <button className="px-6 py-2.5 bg-white border border-sky-200 text-sky-700 text-xs font-bold tracking-wider uppercase rounded-full shadow-sm hover:bg-[#2a4a7f] hover:text-white cursor-pointer transition-colors">
                 Contact Us

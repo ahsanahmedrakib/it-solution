@@ -25,13 +25,13 @@ import {
   Target,
   Users,
   Wifi,
-  Wrench,
 } from "lucide-react";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import Hero from "../ui/Hero";
 
 interface PartnerLogo {
   name: string;
@@ -101,92 +101,36 @@ const partnersData: PartnerLogo[] = [
   },
 ];
 
+const data = {
+  title1: "IT Support Services",
+  title2: "for Professionals",
+  description:
+    "We provide enterprise-grade IT support and secure digital workspaces for small to medium businesses. Focus on your growth while we handle the technology.",
+  bgImage: "/images/it-support/hero.png",
+  actionButtons: [
+    {
+      label: "Our Partners",
+      href: "#partners",
+    },
+    {
+      label: "Our Capabilities",
+      href: "#capabilities",
+    },
+    { label: "Cyber Security", href: "#security" },
+    {
+      label: "Servers & Networking",
+      href: "#networking",
+    },
+    { label: "IT Services", href: "#it" },
+    { label: "Device Repair", href: "#repair" },
+  ],
+};
+
 export default function ItSupport() {
   return (
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative bg-linear-to-t from-[#c2dde6] to-white pt-24 pb-32 lg:pt-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
-          {/* Hero Content */}
-          <div className="space-y-8">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-              IT Support Services <br />
-              <span className="text-blue-600 block mt-2">
-                for Professionals.
-              </span>
-            </h1>
-            <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-              We provide enterprise-grade IT support and secure digital
-              workspaces for small to medium businesses. Focus on your growth
-              while we handle the technology.
-            </p>
-
-            {/* Tag Pills */}
-            <div className="flex flex-wrap gap-3 max-w-lg">
-              {[
-                {
-                  icon: HeadphonesIcon,
-                  label: "Our Partners",
-                  href: "#partners",
-                },
-                {
-                  icon: Cloud,
-                  label: "Our Capabilities",
-                  href: "#capabilities",
-                },
-                { icon: Shield, label: "Cyber Security", href: "#security" },
-                {
-                  icon: Server,
-                  label: "Servers & Networking",
-                  href: "#networking",
-                },
-                { icon: Wrench, label: "IT Services", href: "#it" },
-                { icon: Wrench, label: "Device Repair", href: "#repair" },
-              ].map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="px-4 py-2 bg-slate-800 text-white text-sm font-medium rounded-full shadow-sm hover:bg-blue-600 transition-colors cursor-default flex items-center gap-2"
-                >
-                  <Icon className="w-4 h-4" />
-                  <span>{label}</span>
-                </a>
-              ))}
-            </div>
-
-            <div className="pt-4">
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg shadow-blue-200 transition-all hover:-translate-y-1 flex items-center gap-2">
-                Get a Quote <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          <div className="flex justify-end">
-            <Image
-              src="/images/it-support/hero.png"
-              alt="IT Support Illustration"
-              height={400}
-              width={400}
-            />
-          </div>
-        </div>
-
-        {/* Curved bottom shape */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-full h-16"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,28.79,158.46,59.39,235.9,67.65,264.44,70.67,293.12,61.7,321.39,56.44Z"
-              fill="#ffffff"
-            ></path>
-          </svg>
-        </div>
-      </section>
+      <Hero data={data} />
 
       {/* ================= PARTNERS SECTION ================= */}
       <section className="bg-white py-12 relative z-10" id="partners">
