@@ -1,6 +1,43 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
+const faqs = [
+  {
+    question: "What is a VoIP phone system?",
+    answer:
+      "VoIP (Voice over Internet Protocol) is a technology that allows you to make voice calls using a broadband internet connection instead of a traditional analog phone line. It converts your voice into digital signals that travel over the internet, offering greater flexibility, lower costs, and advanced features compared to conventional phone systems.",
+  },
+  {
+    question: "How much does a phone system cost?",
+    answer:
+      "Pricing depends on the number of users, features required, and whether you choose a cloud-hosted or on-premise solution. Cloud systems typically start from a low monthly per-user fee with no upfront hardware costs, while on-premise systems involve an initial investment but may be more cost-effective long-term for larger teams. Contact us for a tailored quote.",
+  },
+  {
+    question: "Can I keep my current phone numbers?",
+    answer:
+      "Yes. We handle full number porting from your existing provider so there is zero disruption to your business. The porting process is managed end-to-end by our team, and your numbers will seamlessly transfer to the new system with no downtime.",
+  },
+  {
+    question: "Is it hard to set up a phone system?",
+    answer:
+      "Not at all. Our team manages the entire setup process from start to finish. For cloud-based systems, we configure everything remotely so your team can be up and running within hours. For on-premise installations, we handle all hardware deployment, cabling, and configuration with minimal disruption to your operations.",
+  },
+  {
+    question: "What features come with the phone system?",
+    answer:
+      "Our phone systems include call routing, auto-attendant, voicemail-to-email, call recording, call analytics, conference bridging, mobile app integration, and more. Advanced features like CRM integration, AI call transcription, and real-time dashboards are also available depending on the plan you choose.",
+  },
+];
 
 export default function TelecomPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION */}
@@ -515,22 +552,45 @@ export default function TelecomPage() {
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
             FAQs
           </h2>
-          <div className="space-y-4">
-            {[
-              "What is a VoIP phone system?",
-              "How much does a phone system cost?",
-              "Can I keep my current phone numbers?",
-              "Is it hard to set up a phone system?",
-              "What features come with the phone system?",
-            ].map((question, i) => (
-              <div
-                key={i}
-                className="border-b border-blue-100 py-4 flex justify-between items-center cursor-pointer hover:text-blue-600 transition-colors"
-              >
-                <span className="font-medium text-slate-700">{question}</span>
-                <span className="text-2xl text-slate-400">+</span>
-              </div>
-            ))}
+          <div className="space-y-4 mx-auto">
+            {faqs.map((faq, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div
+                  key={i}
+                  className="border-2 border-blue-100 rounded-xl overflow-hidden transition-all"
+                >
+                  <button
+                    onClick={() => toggle(i)}
+                    className="w-full flex justify-between items-center px-6 py-5 text-left cursor-pointer hover:bg-slate-50 transition-colors"
+                  >
+                    <span className="font-medium text-slate-900 pr-4">
+                      {faq.question}
+                    </span>
+                    <span
+                      className={`text-2xl text-blue-600 font-semibold shrink-0 transition-transform duration-300 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                    >
+                      +
+                    </span>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
