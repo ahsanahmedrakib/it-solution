@@ -34,7 +34,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
 
   return (
     <div
-      className={`lg:hidden bg-white border-t border-brand-subtle-border space-y-4 transition-all duration-300 ease-in-out ${open ? "opacity-100 translate-y-0 pointer-events-auto px-4 pt-3 pb-6 shadow-lg max-h-[85vh] overflow-y-auto visible" : "opacity-0 -translate-y-4 pointer-events-none max-h-0 min-h-0 pt-0 pb-0 px-0 border-t-0 overflow-hidden invisible"}`}
+      className={`lg:hidden absolute left-0 right-0 top-full bg-white border-t border-brand-subtle-border space-y-4 transition-all duration-300 ease-in-out z-50 ${open ? "opacity-100 translate-y-0 pointer-events-auto px-4 pt-3 pb-6 shadow-lg max-h-[85vh] overflow-y-auto visible" : "opacity-0 -translate-y-4 pointer-events-none max-h-0 min-h-0 pt-0 pb-0 px-0 border-t-0 overflow-hidden invisible"}`}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
         {NAV_ITEMS.map((item) => {
@@ -55,6 +55,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                     onClick={(e) => {
                       e.stopPropagation();
                       onClose();
+                      setOpenMenuLabel(null);
                     }}
                   >
                     <Icon className="w-4 h-4 stroke-[2.5]" />
