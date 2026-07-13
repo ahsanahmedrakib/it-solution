@@ -119,7 +119,8 @@ export default function TelecomPage() {
               save up to 40% on your current bill.
             </h2>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
+          <div className="bg-white p-8 relative rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <form className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">
@@ -313,7 +314,7 @@ export default function TelecomPage() {
 
       {/* FEATURES ACCORDION & IMAGE */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative">
           <div className="space-y-6">
             {[
               {
@@ -335,8 +336,9 @@ export default function TelecomPage() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="border-2 border-blue-100 hover:border-blue-300 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all"
+                className="border-2 border-blue-100 hover:border-blue-300 rounded-2xl relative p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all"
               >
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
                   • {feature.title}
                 </h3>

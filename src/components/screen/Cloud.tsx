@@ -60,8 +60,10 @@ export default function CloudPage() {
           ].map((feature, i) => (
             <div
               key={i}
-              className="border-2 border-blue-100 hover:border-blue-300 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all"
+              className="border-2 border-blue-100 hover:border-blue-300 relative rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all"
             >
+              {" "}
+              <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 • {feature.title}
               </h3>
