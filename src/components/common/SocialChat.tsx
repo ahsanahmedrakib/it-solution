@@ -3,7 +3,7 @@
 import { ArrowUp } from "lucide-react";
 
 const MESSENGER_PAGE = "rakibahsanahmed";
-const WHATSAPP = `https://wa.me/+8801631112475?text=${encodeURIComponent("Hi there! I am interested in your services.")}`;
+const WHATSAPP = `https://wa.me/+8801972721388?text=${encodeURIComponent("Hi there! I am interested in your services.")}`;
 
 export default function SocialChat() {
   const scrollToTop = () => {

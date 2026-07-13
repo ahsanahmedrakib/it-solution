@@ -161,10 +161,10 @@ export default function Footer() {
                   <span>Email</span>
                 </div>
                 <a
-                  href="mailto:support@tsit.au"
+                  href="mailto:support@bct.com.bd"
                   className="text-[15px] text-gray-200 hover:text-white transition-colors"
                 >
-                  support@tsit.au
+                  support@bct.com.bd
                 </a>
               </div>
 
@@ -175,10 +175,10 @@ export default function Footer() {
                   <span>Phone</span>
                 </div>
                 <a
-                  href="tel:0260614222"
+                  href="tel:+8801972721388"
                   className="text-[15px] text-gray-200 hover:text-white transition-colors"
                 >
-                  (02) 6061 4222
+                  +880 1972-721388
                 </a>
               </div>
 
@@ -189,9 +189,9 @@ export default function Footer() {
                   <span>Address</span>
                 </div>
                 <address className="text-[15px] text-gray-200 not-italic leading-relaxed">
-                  Rd No 6/A,
+                  House#6, Road#Shera Bangal Avenue,
                   <br />
-                  Dhaka 1230
+                  Block#B, Dolipara Uttara Dhaka-1230
                 </address>
               </div>
             </div>
