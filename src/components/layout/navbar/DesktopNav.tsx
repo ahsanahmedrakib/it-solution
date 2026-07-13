@@ -36,6 +36,14 @@ export default function DesktopNav() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [menuTop, setMenuTop] = useState(0);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(null);
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setIsTop(window.scrollY === 0);
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const clearCloseTimer = useCallback(() => {
     if (closeTimer.current) {
@@ -83,7 +91,7 @@ export default function DesktopNav() {
   return (
     <div ref={wrapperRef}>
       <nav
-        ref={wrapperRef}
+        // ref={wrapperRef}
         className="hidden lg:flex items-center gap-4 2xl:gap-6"
         onMouseLeave={scheduleClose}
       >
@@ -129,7 +137,7 @@ export default function DesktopNav() {
       {/* Single Mega Menu Dropdown — centered on viewport */}
       {megaMenu && (
         <div
-          className="fixed left-1/2 -translate-x-1/2 w-full px-10 z-50 pt-2 animate-in fade-in-50 slide-in-from-top-2"
+          className={`fixed left-1/2 -translate-x-1/2 w-full px-10 z-50 pt-3 animate-in fade-in-50 slide-in-from-top-2 ${isTop ? "-mt-8" : null}`}
           style={{ top: menuTop }}
           onMouseEnter={clearCloseTimer}
           onMouseLeave={scheduleClose}
@@ -195,4 +203,3 @@ export default function DesktopNav() {
     </div>
   );
 }
-
