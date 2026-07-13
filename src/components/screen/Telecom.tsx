@@ -43,7 +43,7 @@ export default function TelecomPage() {
     title1: "Telecom Systems to help",
     title2: "simplify your business",
     description:
-      " Connecting with our dedicated team of professionals to ensure your business communication runs smoothly.",
+      "Connecting with our dedicated team of professionals to ensure your business communication runs smoothly.",
     bgImage: "/images/telecom/hero.png",
 
     actionButtons: [

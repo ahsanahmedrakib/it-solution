@@ -29,13 +29,13 @@ const Hero = ({ data }: { data: Data }) => {
               <span className="text-blue-600 block mt-2"> {data?.title2}</span>
             )}
           </h1>
-          <p className="text-lg md:text-xl text-slate-700 font-medium leading-relaxed">
+          <p className="text-lg text-justify md:text-xl text-slate-700 font-medium leading-relaxed">
             {data?.description && data?.description}
           </p>
 
           {/* Action Buttons Grid */}
           {!!data?.actionButtons && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 md:w-1/2 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 md:w-3/4 w-full">
               {data?.actionButtons?.map(
                 (btn) =>
                   btn?.href && (
