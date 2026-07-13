@@ -74,7 +74,7 @@ export default function HowWeDo() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Background Decorative Ambient Blurs */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-125 h-125 bg-blue-200/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-125 h-125 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(191,219,254,0.15) 0%, transparent 70%)", willChange: "transform" }} />
 
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
         <div className="">

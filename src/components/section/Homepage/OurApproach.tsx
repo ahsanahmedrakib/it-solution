@@ -53,9 +53,9 @@ const approachData: CardItem[] = [
 export default function OurApproach() {
   return (
     <section className="bg-[#0b0f19] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Aesthetic Background glow accents */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Aesthetic Background glow accents — using fixed-size composited layers */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", willChange: "transform" }} />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%)", willChange: "transform" }} />
 
       <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
