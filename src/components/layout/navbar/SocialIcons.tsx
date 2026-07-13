@@ -3,7 +3,7 @@ import { SOCIAL_ICONS } from "../../../data/navbarData";
 
 export default function SocialIcons() {
   return (
-    <div className="flex items-center -mt-2">
+    <div className="flex items-center">
       {SOCIAL_ICONS.map((item) => {
         const Icon = item.icon;
         return (

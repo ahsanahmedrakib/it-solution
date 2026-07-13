@@ -44,7 +44,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-[15px] leading-relaxed text-gray-200 pr-4">
+            <p className="text-[15px] leading-relaxed text-gray-200 pr-4 text-justify">
               Bismillah Computer & Technology provides modern and secure digital
               workplaces, focusing on the B2B market with comprehensive services
               in Telecommunications, Internet, Cloud, IT Managed Services, and

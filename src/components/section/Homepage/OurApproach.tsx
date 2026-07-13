@@ -54,8 +54,22 @@ export default function OurApproach() {
   return (
     <section className="bg-[#0b0f19] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Aesthetic Background glow accents — using fixed-size composited layers */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", willChange: "transform" }} />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%)", willChange: "transform" }} />
+      <div
+        className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)",
+          willChange: "transform",
+        }}
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%)",
+          willChange: "transform",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
@@ -66,7 +80,7 @@ export default function OurApproach() {
           <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-linear-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-6">
             Complete 360° Care of Your IT.
           </p>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light text-justify">
             At Total Solutions IT, we take a proactive, end-to-end approach to
             managing your technology. Our proven three-stage framework
             transforms IT from a constant frustration into a reliable, secure,
@@ -107,7 +121,7 @@ export default function OurApproach() {
               </div>
 
               {/* Subtitle / Description Section */}
-              <p className="text-gray-400 text-sm leading-relaxed text-center font-light mb-8">
+              <p className="text-gray-400 text-sm leading-relaxed font-light mb-8 text-justify">
                 {item.subtitle}
               </p>
 

@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   CLOUD_MEGA_MENU,
   INDUSTRIES_MEGA_MENU,
@@ -29,9 +35,27 @@ export default function DesktopNav() {
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [menuTop, setMenuTop] = useState(0);
+  const closeTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
-  const handleMouseEnter = (label: string, hasMegaMenu: boolean) => {
+  const clearCloseTimer = useCallback(() => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+
+  const scheduleClose = useCallback(() => {
+    clearCloseTimer();
+    closeTimer.current = setTimeout(() => setHoveredMenu(null), 150);
+  }, [clearCloseTimer]);
+
+  useEffect(() => {
+    return () => clearCloseTimer();
+  }, [clearCloseTimer]);
+
+  const handleNavEnter = (label: string, hasMegaMenu: boolean) => {
     if (!hasMegaMenu) return;
+    clearCloseTimer();
     if (wrapperRef.current) {
       const rect = wrapperRef.current.getBoundingClientRect();
       setMenuTop(rect.bottom);
@@ -57,32 +81,36 @@ export default function DesktopNav() {
   }, [megaMenu]);
 
   return (
-    <div ref={wrapperRef} onMouseLeave={() => setHoveredMenu(null)}>
-      <nav className="hidden lg:flex items-center gap-4 2xl:gap-6">
+    <div ref={wrapperRef}>
+      <nav
+        ref={wrapperRef}
+        className="hidden lg:flex items-center gap-4 2xl:gap-6"
+        onMouseLeave={scheduleClose}
+      >
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isHovered = hoveredMenu === item.label;
 
           return (
-            <div
+            <Link
+              href={item.href}
               key={item.label}
-              className="py-4"
+              className={`py-2 cursor-pointer text-brand-blue hover:text-brand-hover transition-colors duration-150 ${
+                isHovered
+                  ? "text-brand-hover underline decoration-2 underline-offset-4"
+                  : ""
+              }`}
               onMouseEnter={() =>
-                handleMouseEnter(item.label, !!item.hasMegaMenu)
+                handleNavEnter(item.label, !!item.hasMegaMenu)
               }
             >
-              <Link
-                href={item.href}
-                className={`flex items-center gap-1.5 text-nav-item font-nav text-brand-blue hover:text-brand-hover transition-colors duration-150 ${
-                  isHovered
-                    ? "text-brand-hover underline decoration-2 underline-offset-4"
-                    : ""
-                }`}
+              <span
+                className={`flex items-center gap-1.5 text-nav-item font-nav`}
               >
                 <Icon className="w-4 h-4 stroke-[2.5]" />
                 <span>{item.label}</span>
-              </Link>
-            </div>
+              </span>
+            </Link>
           );
         })}
 
@@ -103,6 +131,8 @@ export default function DesktopNav() {
         <div
           className="fixed left-1/2 -translate-x-1/2 w-full px-10 z-50 pt-2 animate-in fade-in-50 slide-in-from-top-2"
           style={{ top: menuTop }}
+          onMouseEnter={clearCloseTimer}
+          onMouseLeave={scheduleClose}
         >
           <div
             className={`bg-white border-2 border-brand-blue rounded-[20px] shadow-2xl p-8 grid ${hoveredMenu === "WEB" ? "grid-cols-5" : hoveredMenu === "CONTACT" ? "grid-cols-1" : "grid-cols-4"} gap-8`}

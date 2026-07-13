@@ -32,10 +32,10 @@ interface MobileDrawerProps {
 export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
   const [openMenuLabel, setOpenMenuLabel] = useState<string | null>(null);
 
-  if (!open) return null;
-
   return (
-    <div className="lg:hidden bg-white border-t border-brand-subtle-border px-4 pt-3 pb-6 space-y-4 shadow-lg max-h-[85vh] overflow-y-auto">
+    <div
+      className={`lg:hidden bg-white border-t border-brand-subtle-border space-y-4 transition-all duration-300 ease-in-out ${open ? "opacity-100 translate-y-0 pointer-events-auto px-4 pt-3 pb-6 shadow-lg max-h-[85vh] overflow-y-auto visible" : "opacity-0 -translate-y-4 pointer-events-none max-h-0 min-h-0 pt-0 pb-0 px-0 border-t-0 overflow-hidden invisible"}`}
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
@@ -49,10 +49,17 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                   onClick={() => setOpenMenuLabel(isOpen ? null : item.label)}
                   className="w-full flex items-center justify-between p-2.5 rounded-lg text-brand-blue font-bold text-sm hover:bg-slate-50"
                 >
-                  <div className="flex items-center gap-2">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-2 cusor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onClose();
+                    }}
+                  >
                     <Icon className="w-4 h-4 stroke-[2.5]" />
                     <span>{item.label}</span>
-                  </div>
+                  </Link>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
                   />

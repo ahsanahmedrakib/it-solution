@@ -138,7 +138,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
               We offer our services to small businesses, medium-sized businesses
               and private customers in Albury, Wodonga and surrounding areas.
               Bismillah Computer has the skills and the capacity to guide you
