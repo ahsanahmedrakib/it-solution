@@ -129,7 +129,11 @@ export interface NavItem {
 }
 
 export const SOCIAL_ICONS: SocialIcon[] = [
-  { href: "https://www.facebook.com", icon: FaFacebookF, color: "#1877F2" },
+  {
+    href: "https://www.facebook.com/bct.com.bd",
+    icon: FaFacebookF,
+    color: "#1877F2",
+  },
   { href: "https://www.twitter.com", icon: FaXTwitter, color: "#000000" },
   { href: "https://www.linkedin.com", icon: FaLinkedinIn, color: "#0A66C2" },
   { href: "https://www.instagram.com", icon: FaInstagram, color: "#E4405F" },

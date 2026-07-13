@@ -1,6 +1,5 @@
-import React from "react";
-// Make sure to install lucide-react if you haven't: npm install lucide-react
 import { Cloud, Globe, PhoneCall, Wrench } from "lucide-react";
+import React from "react";
 
 interface ServiceItem {
   icon: React.ReactNode;

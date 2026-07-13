@@ -258,8 +258,9 @@ export default function ItSupport() {
             ].map((card, i) => (
               <div
                 key={i}
-                className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border-2 border-blue-100 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all"
+                className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border-2 border-blue-100 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all relative"
               >
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
                 {card.icon}
 
                 <h3 className="text-xl font-bold text-slate-800 mb-3">

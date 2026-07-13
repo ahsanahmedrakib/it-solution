@@ -64,7 +64,7 @@ export default function BlogSection() {
           {blogData.map((post, idx) => (
             <article
               key={idx}
-              className="group relative flex flex-col h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(21,124,193,0.15)] hover:-translate-y-1 outline-none overflow-hidden border border-gray-100 hover:border-brand-blue/30"
+              className="group relative flex flex-col h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.04)] duration-300 outline-none overflow-hidden border  border-blue-200 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all"
             >
               {/* Image Container with Badges */}
               <div className="relative w-full aspect-4/3 bg-gray-100 overflow-hidden">
