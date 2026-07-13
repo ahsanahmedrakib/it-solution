@@ -1,14 +1,10 @@
 "use client";
 
-import { ArrowUp, Home, Mail, MessageSquare, Phone } from "lucide-react";
+import { Home, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="relative bg-brand-dark-bg text-white font-sans antialiased pb-20 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-16 pb-8">
@@ -212,24 +208,6 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </div>
-      </div>
-
-      {/* Floating Action Buttons (Right Aligned) */}
-      <div className="fixed bottom-6 right-6 flex flex-col items-center space-y-3 z-50">
-        <button
-          onClick={scrollToTop}
-          className="bg-brand-secondary cursor-pointer p-2 rounded-full transition-colors group focus:outline-none"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={20} strokeWidth={4} className="text-white" />
-        </button>
-
-        <button
-          className="bg-brand-secondary  text-white p-4 rounded-full shadow-lg transition-transform hover:scale-105 focus:outline-none"
-          aria-label="Open chat"
-        >
-          <MessageSquare className="w-6 h-6 fill-current" />
-        </button>
       </div>
     </footer>
   );
