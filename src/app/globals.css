@@ -65,6 +65,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.custom-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-bullet-active {
+  background-color: #da3825 !important;
+  transform: scale(1.2);
+}
+
 @utility text-utility {
   font-size: 11px;
   line-height: 14px;

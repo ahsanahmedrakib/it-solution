@@ -165,22 +165,7 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Embedded CSS for custom Swiper dots matching design */}
-      <style jsx global>{`
-        .custom-bullet {
-          width: 8px;
-          height: 8px;
-          display: inline-block;
-          border-radius: 50%;
-          background-color: #4b5563;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-        }
-        .custom-bullet-active {
-          background-color: #da3825 !important;
-          transform: scale(1.2);
-        }
-      `}</style>
+
     </section>
   );
 }

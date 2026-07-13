@@ -9,7 +9,6 @@ interface BlogCardProps {
   month: string;
   author: string;
   commentsCount: number;
-  isFirst: boolean;
 }
 
 const blogData: BlogCardProps[] = [
@@ -21,7 +20,6 @@ const blogData: BlogCardProps[] = [
     month: "APR",
     author: "Admin",
     commentsCount: 0,
-    isFirst: true,
   },
   {
     image: "/images/home/blog/blog-02.jpg",
@@ -31,7 +29,6 @@ const blogData: BlogCardProps[] = [
     month: "APR",
     author: "Admin",
     commentsCount: 0,
-    isFirst: false,
   },
   {
     image: "/images/home/blog/blog-03.jpg",
@@ -41,7 +38,6 @@ const blogData: BlogCardProps[] = [
     month: "APR",
     author: "Admin",
     commentsCount: 0,
-    isFirst: false,
   },
 ];
 
@@ -72,7 +68,7 @@ export default function BlogSection() {
                   src={post.image}
                   alt={post.title}
                   fill
-                  priority={post.isFirst}
+                  loading="lazy"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
