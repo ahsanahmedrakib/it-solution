@@ -87,11 +87,12 @@ export default function InternetPage() {
       {/* ================= INTRO TEXT SECTION ================= */}
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-10">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6">
+          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+            <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Business Internet and Voice
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-slate-600 mb-6 leading-relaxed">
               {
                 "In today's digital landscape, a fast and reliable internet connection is crucial for the success of any business. Total Solutions IT provides comprehensive Business Internet and Voice solutions designed  to keep your operations running smoothly, ensuring you stay connected with clients, colleagues, and partners. Our services offer the speed, reliability, and flexibility your business needs to excel in a  competitive environment."
               }
@@ -99,7 +100,7 @@ export default function InternetPage() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center bg-white rounded-2xl p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
+          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/internet/voip.jfif"
@@ -117,43 +118,43 @@ export default function InternetPage() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Illustration */}
-          <Image
-            src="/images/internet/section.png"
-            alt="Working seamlessly online"
-            height={400}
-            width={400}
-            className="object-cover"
-          />
-
+          <div className="order-2 lg:order-1">
+            <Image
+              src="/images/internet/section.png"
+              alt="Working seamlessly online"
+              height={400}
+              width={400}
+              className="object-cover"
+            />
+          </div>
           {/* Right Content */}
-          <div className="order-1 lg:order-2 space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+          <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+            <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Keeping you online, <br className="hidden lg:block" /> without the
               hassle.
             </h2>
-            <div className="space-y-4 text-slate-600 text-[17px] leading-relaxed">
-              <p>
-                Opting for our NBN services provides you with additional peace
-                of mind and convenience compared to dealing with mainstream,
-                large-scale internet connectivity. We understand the importance
-                of supporting our communities and our commitment extends to
-                providing tailored internet solutions that cater to the unique
-                needs of the area.
-              </p>
-              <p>
-                With a focus on customer satisfaction, our local support team is
-                readily available to assist you, offering a personalized touch
-                to your internet experience. By choosing us for NBN and local
-                internet solutions, you&apos;re not just accessing cutting-edge
-                technology, but also supporting a local business that invests in
-                the well-being and connectivity of your local community.
-              </p>
-            </div>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Opting for our NBN services provides you with additional peace of
+              mind and convenience compared to dealing with mainstream,
+              large-scale internet connectivity. We understand the importance of
+              supporting our communities and our commitment extends to providing
+              tailored internet solutions that cater to the unique needs of the
+              area.
+            </p>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              With a focus on customer satisfaction, our local support team is
+              readily available to assist you, offering a personalized touch to
+              your internet experience. By choosing us for NBN and local
+              internet solutions, you&apos;re not just accessing cutting-edge
+              technology, but also supporting a local business that invests in
+              the well-being and connectivity of your local community.
+            </p>
             <a
               href="#"
-              className="inline-flex items-center text-[#1a5b8f] font-bold text-sm tracking-wide uppercase mt-4 hover:text-[#2a7bbd] transition-colors group"
+              className="text-blue-600 font-medium flex items-center hover:text-blue-800"
             >
-              <ChevronRight className="w-5 h-5 mr-1 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 mr-2" />
               Is it connected, now what?
             </a>
           </div>
@@ -164,8 +165,9 @@ export default function InternetPage() {
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-10">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+            <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Let us keep you <br className="hidden lg:block" /> connected.
             </h2>
 
@@ -223,7 +225,7 @@ export default function InternetPage() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center bg-white rounded-2xl p-6 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
+          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/internet/connected.png"

@@ -208,28 +208,31 @@ export default function TelecomPage() {
               className="object-cover"
             />
           </div>
-          <div className="space-y-6 text-slate-600 leading-relaxed">
-            <p>
-              <strong>Seamless communication is essential</strong> to modern
-              operations. With a dedicated support system, you are ensuring a
-              smooth flow of business internally and externally. We provide
-              enterprise-grade quality voice networks tailored specifically to
-              your company needs.
-            </p>
-            <p>
-              Through advanced features like flexible call routing, dedicated
-              virtual receptionists, and seamless team collaboration apps, we
-              enable your workforce to stay connected. Boost productivity,
-              reduce operating costs, and secure your business communications.
-            </p>
-            <p>
-              <strong>Built on a reliable foundation,</strong> our
-              telecommunications solutions guarantee maximum uptime,
-              crystal-clear voice clarity, and robust security protocols. Focus
-              on your core business strategies while we manage the complex
-              backend infrastructure. Experience true mobility, giving you and
-              your team access from anywhere.
-            </p>
+          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+            <div className="space-y-6 text-slate-600 leading-relaxed mt-4">
+              <p>
+                <strong>Seamless communication is essential</strong> to modern
+                operations. With a dedicated support system, you are ensuring a
+                smooth flow of business internally and externally. We provide
+                enterprise-grade quality voice networks tailored specifically to
+                your company needs.
+              </p>
+              <p>
+                Through advanced features like flexible call routing, dedicated
+                virtual receptionists, and seamless team collaboration apps, we
+                enable your workforce to stay connected. Boost productivity,
+                reduce operating costs, and secure your business communications.
+              </p>
+              <p>
+                <strong>Built on a reliable foundation,</strong> our
+                telecommunications solutions guarantee maximum uptime,
+                crystal-clear voice clarity, and robust security protocols. Focus
+                on your core business strategies while we manage the complex
+                backend infrastructure. Experience true mobility, giving you and
+                your team access from anywhere.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -366,13 +369,14 @@ export default function TelecomPage() {
       {/* WHY CHOOSE US */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+            <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Provide the Best Communications For your Business.
               <br />
               Choose the Best Provider.
             </h2>
-            <ul className="space-y-6 mt-8">
+            <ul className="space-y-6">
               <li className="flex gap-4">
                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-1">
                   <span className="text-blue-600 font-bold">✓</span>
