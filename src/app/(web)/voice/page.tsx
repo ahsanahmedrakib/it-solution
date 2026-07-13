@@ -1,9 +1,9 @@
-import TelecomPage from "@/components/screen/Telecom";
+import VoicePage from "@/components/screen/Voice";
 
 const page = () => {
   return (
     <div>
-      <TelecomPage />
+      <VoicePage />
     </div>
   );
 };

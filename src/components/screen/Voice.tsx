@@ -32,7 +32,7 @@ const faqs = [
   },
 ];
 
-export default function TelecomPage() {
+export default function VoicePage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -44,7 +44,7 @@ export default function TelecomPage() {
     title2: "simplify your business",
     description:
       "Connecting with our dedicated team of professionals to ensure your business communication runs smoothly.",
-    bgImage: "/images/telecom/hero.png",
+    bgImage: "/images/voice/hero.png",
 
     actionButtons: [
       {
@@ -202,7 +202,7 @@ export default function TelecomPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-112.5 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
             <Image
-              src="/images/telecom/info.webp"
+              src="/images/voice/info.webp"
               alt="Customer Support Agent"
               fill
               className="object-cover"
@@ -227,10 +227,10 @@ export default function TelecomPage() {
               <p>
                 <strong>Built on a reliable foundation,</strong> our
                 telecommunications solutions guarantee maximum uptime,
-                crystal-clear voice clarity, and robust security protocols. Focus
-                on your core business strategies while we manage the complex
-                backend infrastructure. Experience true mobility, giving you and
-                your team access from anywhere.
+                crystal-clear voice clarity, and robust security protocols.
+                Focus on your core business strategies while we manage the
+                complex backend infrastructure. Experience true mobility, giving
+                you and your team access from anywhere.
               </p>
             </div>
           </div>
@@ -247,27 +247,27 @@ export default function TelecomPage() {
             {[
               {
                 title: "Cloud Phone System Setup",
-                img: "/images/telecom/cloud.webp",
+                img: "/images/voice/cloud.webp",
                 desc: "Experience seamless mobility and zero hardware maintenance with our secure cloud architecture.",
               },
               {
                 title: "On-Premise",
-                img: "/images/telecom/premise.webp",
+                img: "/images/voice/premise.webp",
                 desc: "Maintain full internal control with robust on-site communication hardware deployments.",
               },
               {
                 title: "VoIP",
-                img: "/images/telecom/voip.webp",
+                img: "/images/voice/voip.webp",
                 desc: "Cut costs without compromising quality using industry-leading Voice over IP protocols.",
               },
               {
                 title: "Data",
-                img: "/images/telecom/data.webp",
+                img: "/images/voice/data.webp",
                 desc: "Ensure your voice and data packets travel securely and swiftly across optimized networks.",
               },
               {
                 title: "Security",
-                img: "/images/telecom/security.webp",
+                img: "/images/voice/security.webp",
                 desc: "End-to-end encryption providing peace of mind for sensitive internal communications.",
               },
             ].map((service, i) => (
@@ -300,7 +300,7 @@ export default function TelecomPage() {
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shrink-0 border-2 border-blue-100">
             <Image
-              src="/images/telecom/dark.jpg"
+              src="/images/voice/dark.jpg"
               alt="Optimum Sound"
               fill
               className="object-cover"
@@ -357,7 +357,7 @@ export default function TelecomPage() {
           </div>
           <div className="relative h-150 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
             <Image
-              src="/images/telecom/feature.jpg"
+              src="/images/voice/feature.jpg"
               alt="Team Collaboration"
               fill
               className="object-cover"
@@ -409,7 +409,7 @@ export default function TelecomPage() {
           </div>
           <div className="relative h-75 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
             <Image
-              src="/images/telecom/choose.webp"
+              src="/images/voice/choose.webp"
               alt="Modern Office Room"
               fill
               className="object-cover"
@@ -423,7 +423,7 @@ export default function TelecomPage() {
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 items-center">
           <div className="relative h-64 md:h-80 w-full">
             <Image
-              src="/images/telecom/telephone.png"
+              src="/images/voice/telephone.png"
               alt="VoIP Desk Phone"
               fill
               className="object-contain"
@@ -511,7 +511,7 @@ export default function TelecomPage() {
           </div>
           <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <Image
-              src="/images/telecom/partnership.jpg"
+              src="/images/voice/partnership.jpg"
               alt="Partnership Meeting"
               fill
               className="object-cover"
