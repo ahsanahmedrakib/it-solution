@@ -499,15 +499,18 @@ export default function VoicePage() {
       {/* PARTNERSHIP */}
       <section className="py-16 bg-slate-50 border-t border-blue-100">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Partnership With Us
-            </h2>
-            <p className="text-slate-600">
-              We understand that every business is unique and has different
-              communication needs. Let us tailor a solution that perfectly
-              aligns with your operational goals.
-            </p>
+          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                Partnership With Us
+              </h2>
+              <p className="text-slate-600">
+                We understand that every business is unique and has different
+                communication needs. Let us tailor a solution that perfectly
+                aligns with your operational goals.
+              </p>
+            </div>
           </div>
           <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <Image
@@ -532,8 +535,9 @@ export default function VoicePage() {
               return (
                 <div
                   key={i}
-                  className="border-2 border-blue-100 rounded-xl overflow-hidden transition-all"
+                  className="border-2 border-blue-100 rounded-xl overflow-hidden transition-all relative"
                 >
+                  <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
                   <button
                     onClick={() => toggle(i)}
                     className="w-full flex justify-between items-center px-6 py-5 text-left cursor-pointer hover:bg-slate-50 transition-colors"
