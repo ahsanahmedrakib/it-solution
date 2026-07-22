@@ -190,7 +190,7 @@ export const IT_MEGA_MENU = {
         },
         {
           label: "Incident Response",
-          href: "/cyber-security/incident-response",
+          href: "/it-support/cyber-security/incident-response",
           icon: FileCheck,
           image: "/images/navbar/it/test.svg",
         },

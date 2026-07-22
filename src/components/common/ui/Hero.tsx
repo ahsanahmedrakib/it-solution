@@ -100,6 +100,7 @@ const Hero = ({ data }: { data: Data }) => {
               alt="BG Image"
               height={400}
               width={600}
+              className="rounded-lg"
             />
           </div>
         )}
