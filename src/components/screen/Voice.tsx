@@ -238,15 +238,7 @@ export default function VoicePage() {
       {/* INFO SECTION */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-112.5 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
-            <Image
-              src="/images/voice/info.webp"
-              alt="Customer Support Agent"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+          <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
             <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <div className="space-y-6 text-slate-600 leading-relaxed mt-4">
               <p>
@@ -271,6 +263,14 @@ export default function VoicePage() {
                 you and your team access from anywhere.
               </p>
             </div>
+          </div>{" "}
+          <div className="order-1 lg:order-2 relative h-112.5 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
+            <Image
+              src="/images/voice/info.webp"
+              alt="Customer Support Agent"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -318,7 +318,13 @@ export default function VoicePage() {
       {/* DARK BANNER */}
       <section className="bg-[#2a2a2a] py-16">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shrink-0 border-2 border-blue-100">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-white leading-relaxed">
+              As well as taking incoming calls on fixed line phones, IP
+              terminals provide optimum sound.
+            </h2>
+          </div>
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-blue-100">
             <Image
               src="/images/voice/dark.jpg"
               alt="Optimum Sound"
@@ -326,18 +332,20 @@ export default function VoicePage() {
               className="object-cover"
             />
           </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-white leading-relaxed">
-              As well as taking incoming calls on fixed line phones, IP
-              terminals provide optimum sound.
-            </h2>
-          </div>
         </div>
       </section>
 
       {/* FEATURES ACCORDION & IMAGE */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative">
+          <div className="relative h-150 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
+            <Image
+              src="/images/voice/feature.jpg"
+              alt="Team Collaboration"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div className="space-y-6">
             {[
               {
@@ -375,21 +383,13 @@ export default function VoicePage() {
               </div>
             ))}
           </div>
-          <div className="relative h-150 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
-            <Image
-              src="/images/voice/feature.jpg"
-              alt="Team Collaboration"
-              fill
-              className="object-cover"
-            />
-          </div>
         </div>
       </section>
 
       {/* WHY CHOOSE US */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+          <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
             <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Provide the Best Communications For your Business.
@@ -427,7 +427,7 @@ export default function VoicePage() {
               </li>
             </ul>
           </div>
-          <div className="relative h-75 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100">
+          <div className="relative h-75 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 order-1 lg:order-2">
             <Image
               src="/images/voice/choose.webp"
               alt="Modern Office Room"
@@ -519,7 +519,7 @@ export default function VoicePage() {
       {/* PARTNERSHIP */}
       <section className="py-16 bg-slate-50 border-t border-blue-100">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+          <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
             <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
@@ -532,7 +532,7 @@ export default function VoicePage() {
               </p>
             </div>
           </div>
-          <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
+          <div className="order-1 lg:order-2 relative h-64 w-full rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 transition-all">
             <Image
               src="/images/voice/partnership.jpg"
               alt="Partnership Meeting"
@@ -595,4 +595,3 @@ export default function VoicePage() {
     </main>
   );
 }
-

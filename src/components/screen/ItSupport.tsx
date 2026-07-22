@@ -250,7 +250,7 @@ export default function ItSupport() {
           id="capabilities"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Our Capabilities
@@ -278,7 +278,7 @@ export default function ItSupport() {
               </ul>
             </div>
 
-            <div className="relative h-75 w-full">
+            <div className="relative h-75 w-full order-1 lg:order-2">
               <Image
                 src="/images/it-support/capablities.jpg"
                 alt="Capabilities"
@@ -342,7 +342,7 @@ export default function ItSupport() {
           id="security"
         >
           <div className="grid lg:grid-cols-2 gap-6 items-center mb-12">
-            <div className="order-2 lg:order-1 relative h-75 w-full flex justify-center">
+            <div className="relative h-75 w-full flex justify-center">
               <div className="relative w-full max-w-md h-full">
                 <Image
                   src="/images/it-support/laptop.png"
@@ -353,7 +353,7 @@ export default function ItSupport() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Cyber Security.
@@ -394,7 +394,7 @@ export default function ItSupport() {
           id="networking"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Servers + Networking
@@ -413,7 +413,7 @@ export default function ItSupport() {
               </a>
             </div>
 
-            <div className="relative h-75 w-full">
+            <div className="relative h-75 w-full order-1 lg:order-2">
               <Image
                 src="/images/it-support/networking.jpg"
                 alt="Servers"
@@ -440,7 +440,7 @@ export default function ItSupport() {
         {/* 4. Managed IT Services */}
         <section className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8" id="it">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="order-2 lg:order-1 relative h-75 w-full">
+            <div className="relative h-75 w-full">
               <Image
                 src="/images/it-support/it.jpg"
                 alt="Managed Services"
@@ -450,7 +450,7 @@ export default function ItSupport() {
               />
             </div>
 
-            <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Managed IT Services
@@ -489,7 +489,7 @@ export default function ItSupport() {
           id="repair"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+            <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
               <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
                 Device Repair
@@ -507,7 +507,7 @@ export default function ItSupport() {
               </a>
             </div>
 
-            <div className="relative h-75 w-full">
+            <div className="relative h-75 w-full order-1 lg:order-2">
               <Image
                 src="/images/it-support/repair.jpg"
                 alt="Device Repair"

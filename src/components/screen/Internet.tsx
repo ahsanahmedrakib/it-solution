@@ -107,7 +107,7 @@ export default function InternetPage() {
       {/* ================= INTRO TEXT SECTION ================= */}
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+          <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
             <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Business Internet and Voice
@@ -120,7 +120,7 @@ export default function InternetPage() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div className="order-1 lg:order-2 relative h-100 lg:h-125 w-full flex justify-center items-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/internet/voip.jfif"
@@ -138,7 +138,7 @@ export default function InternetPage() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Illustration */}
-          <div className="order-2 lg:order-1">
+          <div>
             <Image
               src="/images/internet/section.png"
               alt="Working seamlessly online"
@@ -148,7 +148,7 @@ export default function InternetPage() {
             />
           </div>
           {/* Right Content */}
-          <div className="order-1 lg:order-2 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
             <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Keeping you online, <br className="hidden lg:block" /> without the
@@ -185,7 +185,7 @@ export default function InternetPage() {
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
+          <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
             <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Let us keep you <br className="hidden lg:block" /> connected.
@@ -245,7 +245,7 @@ export default function InternetPage() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative h-100 lg:h-125 w-full flex justify-center items-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div className="order-1 lg:order-2 relative h-100 lg:h-125 w-full flex justify-center items-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/internet/connected.png"
