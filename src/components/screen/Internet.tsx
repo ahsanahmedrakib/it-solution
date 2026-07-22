@@ -1,3 +1,6 @@
+"use client";
+
+import { useTouchHover } from "@/hooks/useTouchHover";
 import { ChevronRight, HeartHandshake, Users, Wrench } from "lucide-react";
 import Image from "next/image";
 import Hero from "../ui/Hero";
@@ -24,6 +27,44 @@ const heroData = {
     },
   ],
 };
+
+function InternetCard({
+  card,
+}: {
+  card: { title: string; desc: string; img: string };
+}) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <div
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border-2 flex flex-col group transition-all duration-300 ${
+        touched
+          ? "border-blue-400 shadow-xl -translate-y-1"
+          : "border-blue-100 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1"
+      }`}
+    >
+      <div className="relative h-48 w-full overflow-hidden">
+        <Image
+          src={card.img}
+          alt={card.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          className={`object-cover transition-transform duration-700 ${
+            touched ? "scale-105" : "group-hover:scale-105"
+          }`}
+        />
+      </div>
+      <div className="p-6 flex flex-col grow">
+        <h3 className="text-xl font-bold text-slate-800 mb-3">{card.title}</h3>
+        <p className="text-slate-600 text-sm leading-relaxed grow">
+          {card.desc}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function InternetPage() {
   return (
@@ -57,28 +98,7 @@ export default function InternetPage() {
                 img: "/images/internet/starlink.png",
               },
             ].map((card, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border-2 border-blue-100 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
-              >
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6 flex flex-col grow">
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">
-                    {card.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed grow">
-                    {card.desc}
-                  </p>
-                </div>
-              </div>
+              <InternetCard key={idx} card={card} />
             ))}
           </div>
         </div>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useTouchHover } from "@/hooks/useTouchHover";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +16,48 @@ interface Data {
   description?: string;
   bgImage?: string;
   actionButtons?: ActionButtons[];
+}
+
+function HeroActionButton({ btn }: { btn: ActionButtons }) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <Link
+      href={btn.href!}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`group flex cursor-pointer items-center justify-between px-6 py-4 text-white text-sm font-semibold rounded-xl shadow-md transition-all ${
+        touched
+          ? "bg-[#2a4a7f] -translate-y-0.5 shadow-lg"
+          : "bg-[#1a365d] hover:bg-[#2a4a7f] hover:-translate-y-0.5 hover:shadow-lg"
+      }`}
+    >
+      {btn.label}
+      <ChevronRight
+        className={`w-4 h-4 text-sky-300 transition-transform ${
+          touched ? "translate-x-1" : "group-hover:translate-x-1"
+        }`}
+      />
+    </Link>
+  );
+}
+
+function ContactButton() {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <button
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`px-6 py-2.5 bg-white border border-brand-active text-sky-700 text-xs font-bold tracking-wider uppercase rounded-lg shadow-sm cursor-pointer transition-colors ${
+        touched
+          ? "bg-[#2a4a7f] text-white"
+          : "hover:bg-[#2a4a7f] hover:text-white"
+      }`}
+    >
+      Contact Us
+    </button>
+  );
 }
 
 const Hero = ({ data }: { data: Data }) => {
@@ -36,16 +81,7 @@ const Hero = ({ data }: { data: Data }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 md:w-3/4 w-full">
               {data?.actionButtons?.map(
                 (btn) =>
-                  btn?.href && (
-                    <Link
-                      href={btn.href}
-                      key={btn.label}
-                      className="group flex cursor-pointer items-center justify-between px-6 py-4 bg-[#1a365d] hover:bg-[#2a4a7f] text-white text-sm font-semibold rounded-xl shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      {btn.label}
-                      <ChevronRight className="w-4 h-4 text-sky-300 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  ),
+                  btn?.href && <HeroActionButton key={btn.label} btn={btn} />,
               )}
             </div>
           )}
@@ -53,9 +89,7 @@ const Hero = ({ data }: { data: Data }) => {
           {/* Support Link */}
           <div className="pt-6 border-t border-slate-200/60 flex flex-col items-start gap-3">
             <p className="text-sky-700 font-semibold text-sm">Need help?</p>
-            <button className="px-6 py-2.5 bg-white border border-brand-active text-sky-700 text-xs font-bold tracking-wider uppercase rounded-lg shadow-sm hover:bg-[#2a4a7f] hover:text-white cursor-pointer transition-colors">
-              Contact Us
-            </button>
+            <ContactButton />
           </div>
         </div>
 
@@ -82,7 +116,7 @@ const Hero = ({ data }: { data: Data }) => {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.23,28.79,158.46,59.39,235.9,67.65,264.44,70.67,293.12,61.7,321.39,56.44Z"
-            fill="#ffffff"
+            fill="#f8fafc"
           ></path>
         </svg>
       </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTouchHover } from "@/hooks/useTouchHover";
+
 import {
   Activity,
   AlertTriangle,
@@ -126,6 +128,79 @@ const heroData = {
   ],
 };
 
+function CapabilityCard({
+  card,
+}: {
+  card: {
+    icon: React.ReactNode;
+    title: string;
+    text: string;
+    services: string[];
+  };
+}) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <div
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border-2 transition-all relative ${
+        touched
+          ? "border-blue-400 shadow-lg -translate-y-1"
+          : "border-blue-100 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1"
+      }`}
+    >
+      <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+      {card.icon}
+      <h3 className="text-xl font-bold text-slate-800 mb-3">{card.title}</h3>
+      <p className="text-slate-600 mb-4 text-sm">{card.text}</p>
+      <div className="my-1">
+        {card.services.map((a) => (
+          <span
+            key={a}
+            className="block w-fit px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mr-2 mb-2"
+          >
+            {a}
+          </span>
+        ))}
+      </div>
+      <a
+        href="#"
+        className="mt-auto text-blue-600 font-medium flex items-center text-sm hover:text-blue-800"
+      >
+        Read More <ArrowRight className="w-4 h-4 ml-1" />
+      </a>
+    </div>
+  );
+}
+
+function FeatureItemCard({
+  feature,
+}: {
+  feature: { icon: React.ReactNode; label: string };
+}) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <div
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 w-36 md:w-44 transition-all ${
+        touched
+          ? "border-blue-400 bg-blue-50 shadow-md -translate-y-1"
+          : "border-blue-100 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1"
+      }`}
+    >
+      <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
+        {feature.icon}
+      </div>
+      <span className="text-xs font-semibold text-center text-slate-700">
+        {feature.label}
+      </span>
+    </div>
+  );
+}
+
 export default function ItSupport() {
   return (
     <main className="min-h-screen bg-slate-50 overflow-hidden font-sans text-slate-800">
@@ -133,7 +208,7 @@ export default function ItSupport() {
       <Hero data={heroData} />
 
       {/* ================= PARTNERS SECTION ================= */}
-      <section className="bg-white py-12 relative z-10" id="partners">
+      <section className="bg-slate-50 py-12 relative z-10" id="partners">
         <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
           <p className="text-blue-600 font-bold tracking-wide uppercase text-sm mb-8 text-center lg:text-left">
             Our Partners
@@ -256,39 +331,7 @@ export default function ItSupport() {
                 ],
               },
             ].map((card, i) => (
-              <div
-                key={i}
-                className="flex flex-col h-full bg-white p-8 rounded-2xl shadow-sm border-2 border-blue-100 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all relative"
-              >
-                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-                {card.icon}
-
-                <h3 className="text-xl font-bold text-slate-800 mb-3">
-                  {card.title}
-                </h3>
-
-                <p className="text-slate-600 mb-4 text-sm">{card.text}</p>
-
-                {/* Used flex-wrap and gap-2 for better tag wrapping, and mb-6 to push it away from the bottom link */}
-                <div className="my-1">
-                  {card.services.map((a) => (
-                    <span
-                      key={a}
-                      className="block w-fit px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mr-2 mb-2"
-                    >
-                      {a}
-                    </span>
-                  ))}
-                </div>
-
-                {/* mt-auto pushes this element to the very bottom of the flex container */}
-                <a
-                  href="#"
-                  className="mt-auto text-blue-600 font-medium flex items-center text-sm hover:text-blue-800"
-                >
-                  Read More <ArrowRight className="w-4 h-4 ml-1" />
-                </a>
-              </div>
+              <CapabilityCard key={i} card={card} />
             ))}
           </div>
         </section>
@@ -340,17 +383,7 @@ export default function ItSupport() {
               { icon: <AlertTriangle />, label: "INCIDENT RESPONSE" },
               { icon: <Target />, label: "PENETRATION TESTING" },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
-              >
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
-                  {feature.icon}
-                </div>
-                <span className="text-xs font-semibold text-center text-slate-700">
-                  {feature.label}
-                </span>
-              </div>
+              <FeatureItemCard key={i} feature={feature} />
             ))}
           </div>
         </section>
@@ -399,17 +432,7 @@ export default function ItSupport() {
               { icon: <HardDrive />, label: "DESKTOP SUPPORT" },
               { icon: <Activity />, label: "24/4 MONITORING & SUPPORT" },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
-              >
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
-                  {feature.icon}
-                </div>
-                <span className="text-xs font-semibold text-center text-slate-700">
-                  {feature.label}
-                </span>
-              </div>
+              <FeatureItemCard key={i} feature={feature} />
             ))}
           </div>
         </section>
@@ -455,17 +478,7 @@ export default function ItSupport() {
               { icon: <MessageSquare />, label: "IT COMMUNICATION" },
               { icon: <Users />, label: "IT OUTSOURCING" },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
-              >
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
-                  {feature.icon}
-                </div>
-                <span className="text-xs font-semibold text-center text-slate-700">
-                  {feature.label}
-                </span>
-              </div>
+              <FeatureItemCard key={i} feature={feature} />
             ))}
           </div>
         </section>
@@ -513,17 +526,7 @@ export default function ItSupport() {
               { icon: <Smartphone />, label: "TABLETS" },
               { icon: <Server />, label: "SERVER'S" },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border-2 border-blue-100 w-36 md:w-44 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all"
-              >
-                <div className="bg-blue-100 p-3 rounded-full text-blue-600 mb-3">
-                  {feature.icon}
-                </div>
-                <span className="text-xs font-semibold text-center text-slate-700">
-                  {feature.label}
-                </span>
-              </div>
+              <FeatureItemCard key={i} feature={feature} />
             ))}
           </div>
         </section>

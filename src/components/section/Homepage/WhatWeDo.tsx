@@ -1,5 +1,7 @@
+"use client";
+
+import { useTouchHover } from "@/hooks/useTouchHover";
 import { Cloud, Globe, PhoneCall, Wrench } from "lucide-react";
-import React from "react";
 
 interface ServiceItem {
   icon: React.ReactNode;
@@ -34,6 +36,48 @@ const servicesData: ServiceItem[] = [
   },
 ];
 
+function ServiceCard({ service, index }: { service: ServiceItem; index: number }) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <div
+      key={index}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`group relative rounded-2xl p-0.5 transition-all duration-500 bg-linear-to-br border border-brand-blue ${
+        touched
+          ? "from-blue-500 via-indigo-500 to-cyan-400 shadow-[0_20px_40px_-15px_rgba(59,130,246,0.25)] -translate-y-1.5"
+          : "from-gray-200/80 via-gray-100 to-gray-200/40 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.25)] hover:-translate-y-1.5"
+      }`}
+    >
+      <div className="relative flex items-start space-x-5 p-6 sm:p-8 bg-white rounded-[14px] h-full w-full">
+        <div className={`shrink-0 flex items-center justify-center w-12 h-12 rounded-xl ring-1 ring-blue-100 transition-all duration-300 shadow-sm ${
+          touched
+            ? "bg-linear-to-br shadow-md"
+            : "bg-brand-active group-hover:bg-linear-to-br group-hover:shadow-md"
+        }`}>
+          <div className={`transition-colors duration-300 ${
+            touched ? "text-white" : "group-hover:text-white"
+          }`}>
+            {service.icon}
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className={`text-xl font-bold text-gray-900 tracking-tight transition-colors duration-300 ${
+            touched ? "text-brand-active" : "group-hover:text-brand-active"
+          }`}>
+            {service.title}
+          </h3>
+          <p className="text-gray-500 text-sm sm:text-base font-light leading-relaxed">
+            {service.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function WhatWeDo() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
@@ -61,30 +105,7 @@ export default function WhatWeDo() {
           {/* Upgraded Modern Cards Layout with Eye-Catching Borders */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {servicesData.map((service, index) => (
-              <div
-                key={index}
-                className="group relative rounded-2xl p-0.5 transition-all duration-500 bg-linear-to-br from-gray-200/80 via-gray-100 to-gray-200/40 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.25)] hover:-translate-y-1.5 border border-brand-blue"
-              >
-                {/* Internal Card Body */}
-                <div className="relative flex items-start space-x-5 p-6 sm:p-8 bg-white rounded-[14px] h-full w-full">
-                  {/* Refined Geometric Icon container */}
-                  <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-brand-active ring-1 ring-blue-100 group-hover:bg-linear-to-br transition-all duration-300 shadow-sm group-hover:shadow-md">
-                    <div className="group-hover:text-white transition-colors duration-300">
-                      {service.icon}
-                    </div>
-                  </div>
-
-                  {/* Content Block */}
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-gray-900 tracking-tight group-hover:text-brand-active transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm sm:text-base font-light leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ServiceCard key={index} service={service} index={index} />
             ))}
           </div>
         </div>

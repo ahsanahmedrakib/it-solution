@@ -1,5 +1,6 @@
-// Make sure to install lucide-react if you haven't: npm install lucide-react
+"use client";
 
+import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
 
 interface PartnerLogo {
@@ -70,6 +71,30 @@ const partnersData: PartnerLogo[] = [
   },
 ];
 
+function PartnerCard({ partner }: { partner: PartnerLogo }) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <div
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`flex items-center justify-center bg-white rounded-xl border shadow-xs transition-all duration-300 cursor-pointer aspect-square ${
+        touched
+          ? "grayscale-0 opacity-100 border-brand-hover shadow-md scale-[1.02]"
+          : "border-gray-400 opacity-100 hover:grayscale-0 hover:opacity-100 hover:border-brand-hover hover:shadow-md hover:scale-[1.02]"
+      }`}
+    >
+      <Image
+        src={partner.logo}
+        alt={partner.name}
+        width={130}
+        height={130}
+        className="object-contain max-w-full max-h-full p-2 sm:p-0.5"
+      />
+    </div>
+  );
+}
+
 export default function HowWeDo() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
@@ -90,18 +115,7 @@ export default function HowWeDo() {
           {/* Partner Grid with sleek border hover states */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {partnersData.map((partner, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center bg-white rounded-xl border border-gray-400 shadow-xs transition-all duration-300 grayscale opacity-100 hover:grayscale-0 hover:opacity-100  hover:border-brand-hover hover:shadow-md hover:scale-[1.02] cursor-pointer aspect-square"
-              >
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={130}
-                  height={130}
-                  className="object-contain max-w-full max-h-full p-2 sm:p-0.5"
-                />
-              </div>
+              <PartnerCard key={index} partner={partner} />
             ))}
           </div>
         </div>

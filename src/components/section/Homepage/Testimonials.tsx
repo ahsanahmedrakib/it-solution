@@ -1,5 +1,6 @@
 "use client";
 
+import { useTouchHover } from "@/hooks/useTouchHover";
 import { ArrowLeft, ArrowRight, Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -44,6 +45,28 @@ const testimonialsData: Testimonial[] = [
     avatar: "/images/home/avatar-03.jpg",
   },
 ];
+
+function SwiperNavButton({ direction }: { direction: "prev" | "next" }) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+  const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
+  const label = direction === "prev" ? "Previous Slide" : "Next Slide";
+  const cls = direction === "prev" ? "swiper-custom-prev" : "swiper-custom-next";
+
+  return (
+    <button
+      aria-label={label}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`${cls} p-2 rounded-full transition-colors cursor-pointer focus:outline-none ${
+        touched
+          ? "text-white bg-gray-800/80"
+          : "text-gray-300 hover:text-white hover:bg-gray-800/80"
+      }`}
+    >
+      <Icon className="w-6 h-6" />
+    </button>
+  );
+}
 
 export default function Testimonials() {
   return (
@@ -143,24 +166,11 @@ export default function Testimonials() {
 
           {/* Custom Swiper Controls (Navigation & Pagination Dots) */}
           <div className="flex items-center space-x-4 pt-4 border-t border-gray-800/60">
-            {/* Prev Button */}
-            <button
-              aria-label="Previous Slide"
-              className="swiper-custom-prev p-2 rounded-full text-gray-300 hover:text-white hover:bg-gray-800/80 transition-colors cursor-pointer focus:outline-none"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </button>
+            <SwiperNavButton direction="prev" />
 
-            {/* Pagination Dots */}
             <div className="swiper-custom-pagination flex items-center space-x-2" />
 
-            {/* Next Button */}
-            <button
-              aria-label="Next Slide"
-              className="swiper-custom-next p-2 rounded-full text-gray-300 hover:text-white hover:bg-gray-800/80 transition-colors cursor-pointer focus:outline-none"
-            >
-              <ArrowRight className="w-6 h-6" />
-            </button>
+            <SwiperNavButton direction="next" />
           </div>
         </div>
       </div>

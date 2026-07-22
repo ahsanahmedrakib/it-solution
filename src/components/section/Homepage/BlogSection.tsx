@@ -1,5 +1,8 @@
+"use client";
+
 import { MessageSquare, User } from "lucide-react"; // npm install lucide-react
 import Image from "next/image";
+import { useTouchHover } from "@/hooks/useTouchHover";
 
 interface BlogCardProps {
   image: string;
@@ -41,6 +44,75 @@ const blogData: BlogCardProps[] = [
   },
 ];
 
+function BlogCard({ post }: { post: BlogCardProps }) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <article
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`group relative flex flex-col h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.04)] duration-300 outline-none overflow-hidden border border-blue-200 transition-all ${
+        touched
+          ? "border-blue-400 shadow-lg -translate-y-1"
+          : "hover:border-blue-400 hover:shadow-lg hover:-translate-y-1"
+      }`}
+    >
+      {/* Image Container with Badges */}
+      <div className="relative w-full aspect-4/3 bg-gray-100 overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className={`object-cover transition-transform duration-500 ${
+            touched ? "scale-105" : "group-hover:scale-105"
+          }`}
+        />
+
+        {/* Date Badge - Overlaid on image */}
+        <div className="absolute bottom-4 left-4 z-20 flex flex-col items-center justify-center bg-brand-secondary text-white w-16 h-16 rounded-xl shadow-lg">
+          <span className="text-lg font-black tracking-tight leading-none">
+            {post.day}
+          </span>
+          <span className="text-[10px] font-bold tracking-wider uppercase mt-0.5">
+            {post.month}
+          </span>
+        </div>
+      </div>
+
+      {/* Card Body Content */}
+      <div className="flex flex-col flex-1 p-6 sm:p-8 pt-8">
+        {/* Category tag */}
+        <span className="text-xs font-bold text-brand-secondary tracking-wider uppercase mb-3">
+          {post.category}
+        </span>
+
+        {/* Post Title */}
+        <h3
+          className={`text-xl font-bold text-gray-900 leading-snug tracking-tight transition-colors cursor-pointer mb-6 ${
+            touched ? "text-brand-blue" : "hover:text-brand-blue"
+          }`}
+        >
+          {post.title}
+        </h3>
+
+        {/* Footer Metadata - Pushed down evenly with mt-auto */}
+        <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500 font-medium">
+          <div className="flex items-center space-x-2">
+            <User className="w-4 h-4 text-brand-blue/60" />
+            <span>{post.author}</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <MessageSquare className="w-4 h-4 text-brand-blue/60" />
+            <span>{post.commentsCount}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function BlogSection() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 py-20 px-4 sm:px-6 lg:px-8">
@@ -58,60 +130,11 @@ export default function BlogSection() {
         {/* Grid Setup - strictly same height cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-stretch">
           {blogData.map((post, idx) => (
-            <article
-              key={idx}
-              className="group relative flex flex-col h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.04)] duration-300 outline-none overflow-hidden border  border-blue-200 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all"
-            >
-              {/* Image Container with Badges */}
-              <div className="relative w-full aspect-4/3 bg-gray-100 overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Date Badge - Overlaid on image */}
-                <div className="absolute bottom-4 left-4 z-20 flex flex-col items-center justify-center bg-brand-secondary text-white w-16 h-16 rounded-xl shadow-lg">
-                  <span className="text-lg font-black tracking-tight leading-none">
-                    {post.day}
-                  </span>
-                  <span className="text-[10px] font-bold tracking-wider uppercase mt-0.5">
-                    {post.month}
-                  </span>
-                </div>
-              </div>
-
-              {/* Card Body Content */}
-              <div className="flex flex-col flex-1 p-6 sm:p-8 pt-8">
-                {/* Category tag */}
-                <span className="text-xs font-bold text-brand-secondary tracking-wider uppercase mb-3">
-                  {post.category}
-                </span>
-
-                {/* Post Title */}
-                <h3 className="text-xl font-bold text-gray-900 leading-snug tracking-tight hover:text-brand-blue transition-colors cursor-pointer mb-6">
-                  {post.title}
-                </h3>
-
-                {/* Footer Metadata - Pushed down evenly with mt-auto */}
-                <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500 font-medium">
-                  <div className="flex items-center space-x-2">
-                    <User className="w-4 h-4 text-brand-blue/60" />
-                    <span>{post.author}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <MessageSquare className="w-4 h-4 text-brand-blue/60" />
-                    <span>{post.commentsCount}</span>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <BlogCard key={idx} post={post} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+

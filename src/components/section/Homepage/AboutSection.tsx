@@ -1,11 +1,59 @@
 "use client";
 
+import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
+
+function NavLink({ btn }: { btn: { label: string; href: string } }) {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <Link
+      href={btn.href}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`inline-flex items-center justify-center px-7 py-3 text-white text-xs sm:text-sm font-bold tracking-wider uppercase rounded-lg shadow-xl transition-all duration-200 group border border-slate-700/30 ${
+        touched
+          ? "bg-[#12273d] shadow-2xl"
+          : "bg-[#17324d] hover:bg-[#12273d] hover:shadow-2xl"
+      }`}
+    >
+      <span>{btn.label}</span>
+      <span className={`ml-2 transform text-base leading-none transition-transform ${
+        touched ? "translate-x-1" : "group-hover:translate-x-1"
+      }`}>
+        &rsaquo;
+      </span>
+    </Link>
+  );
+}
+
+function AboutImage() {
+  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
+
+  return (
+    <div
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      className={`relative w-full max-w-md aspect-4/3 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 ${
+        touched ? "scale-[1.01]" : "hover:scale-[1.01]"
+      }`}
+    >
+      <Image
+        src="/images/home/about.jpeg"
+        alt="Bismillah Computer landscape view"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+        className="object-cover"
+        priority
+      />
+    </div>
+  );
+}
 
 export default function AboutSection() {
   const navButtons = [
@@ -95,16 +143,7 @@ export default function AboutSection() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
             {navButtons.map((btn, idx) => (
-              <Link
-                key={idx}
-                href={btn.href}
-                className="inline-flex items-center justify-center px-7 py-3 bg-[#17324d] hover:bg-[#12273d] text-white text-xs sm:text-sm font-bold tracking-wider uppercase rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 group border border-slate-700/30"
-              >
-                <span>{btn.label}</span>
-                <span className="ml-2 transform text-base leading-none transition-transform group-hover:translate-x-1">
-                  &rsaquo;
-                </span>
-              </Link>
+              <NavLink key={idx} btn={btn} />
             ))}
           </nav>
         </div>
@@ -115,16 +154,7 @@ export default function AboutSection() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Image */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md aspect-4/3 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-[1.01]">
-              <Image
-                src="/images/home/about.jpeg"
-                alt="Bismillah Computer landscape view"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                className="object-cover"
-                priority
-              />
-            </div>
+            <AboutImage />
           </div>
 
           {/* Right Column: Content */}
