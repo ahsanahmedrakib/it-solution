@@ -55,11 +55,32 @@ const gridServices = [
 ];
 
 const faqs = [
-  "What is ACSC Essential Eight strategy?",
-  "What is a Cyber Assessment process?",
-  "How can Cyber Security protection benefit my business?",
-  "What are the key components of a complete Cyber Security strategy?",
-  "Why is Australian Cyber Security important?",
+  {
+    title: "What is data breach in cyber security?",
+    description:
+      "A data breach occurs when information is stolen from a system without the owner’s knowledge or permission. Whether for a small business or a large organization, such an incident can happen to anyone, posing serious risks to data security.",
+  },
+  {
+    title: "What is data security and privacy?",
+    description:
+      "Data security protects information from unauthorized access by external attackers, malware, or malicious cyber activity. On the other hand, data privacy refers to the rules governing how data is collected, used, and shared.",
+  },
+  {
+    title: "What is multi factor authentication cyber security?",
+    description:
+      "Multifactor authentication (MFA) is a layered security approach that requires users to provide multiple credentials to verify their identity before accessing a resource.",
+  },
+  {
+    title:
+      "What are the different roles of the Australian Cyber Security Centre?",
+    description:
+      "The role of the ACSC is to lead the Australian Government’s operational responses to cybersecurity incidents and coordinate national cybersecurity operations and resources. Additionally, it is responsible for raising awareness about the levels of cyber threats facing Australia.",
+  },
+  {
+    title: "Why is Australian Cyber Security important?",
+    description:
+      "A cybersecurity strategy is a high-level plan for securing your organization’s assets over the next three to five years. However, because technology and cyber threats can change unpredictably, you may need to update your strategy sooner than expected, even if it seems unnecessary right now. Consequently, it’s important to remain flexible and, at the same time, prepared for evolving risks.",
+  },
 ];
 
 const partnerLogos = [
@@ -155,7 +176,9 @@ function FaqAccordion() {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="w-full flex justify-between items-center px-6 py-5 text-left cursor-pointer hover:bg-slate-50 transition-colors"
             >
-              <span className="font-medium text-slate-900 pr-4">{faq}</span>
+              <span className="font-medium text-slate-900 pr-4">
+                {faq.title}
+              </span>
               <span
                 className={`text-2xl text-blue-600 font-semibold shrink-0 transition-transform duration-300 ${
                   isOpen ? "rotate-45" : ""
@@ -173,10 +196,7 @@ function FaqAccordion() {
             >
               <div className="overflow-hidden">
                 <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed text-justify">
-                  Cyber security involves the practices, technologies, and
-                  processes designed to protect your networks, devices,
-                  programs, and data from attack, damage, or unauthorised
-                  access.
+                  {faq.description}
                 </p>
               </div>
             </div>
@@ -388,7 +408,7 @@ export default function CyberSecurityPage() {
       {/* Section 6: FAQ */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-brand-blue mb-12">
             FAQs
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

@@ -2,6 +2,7 @@
 
 import Hero from "@/components/ui/Hero";
 import HoverableContentCard from "@/components/ui/HoverableContentCard";
+import { Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -9,12 +10,36 @@ export default function EndPointSecurityPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const whyNeedItems = [
-    "Preventing Unauthorized Access",
-    "Protecting Against Malware and Cyberattacks",
-    "Data Protection",
-    "Ensuring Compliance",
-    "Maintaining System Integrity",
-    "Preventing Data Loss",
+    {
+      title: "Preventing Unauthorized Access",
+      description:
+        "Endpoint security helps in preventing unauthorized access to the network and sensitive data by securing each device that connects to the network.",
+    },
+    {
+      title: "Protecting Against Malware and Cyberattacks",
+      description:
+        "With the rise of malware, ransomware, and other cyber threats, endpoint security is essential for detecting and blocking these threats before they can compromise the system.",
+    },
+    {
+      title: "Data Protection",
+      description:
+        "Endpoints often contain sensitive information. Endpoint security ensures that this data is encrypted and protected from unauthorized access or breaches.",
+    },
+    {
+      title: "Ensuring Compliance",
+      description:
+        "Many industries have regulatory requirements for data protection. Endpoint security helps organizations comply with these regulations by providing necessary protections and audit trails.",
+    },
+    {
+      title: "Maintaining System Integrity",
+      description:
+        "A compromised endpoint can serve as a gateway for attackers to infiltrate the entire network. Endpoint security helps maintain the integrity of the network by securing each access point.",
+    },
+    {
+      title: "Preventing Data Loss",
+      description:
+        "Endpoint security often includes data loss prevention (DLP) features that prevent sensitive data from being transferred outside the organization in an unauthorized manner.",
+    },
   ];
 
   const heroData = {
@@ -172,17 +197,15 @@ export default function EndPointSecurityPage() {
                       >
                         <span className="font-medium text-xs sm:text-sm text-slate-800 flex items-center">
                           <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 shrink-0"></span>
-                          {item}
+                          {item.title}
                         </span>
                         <span className="text-slate-400 text-xs">
-                          {isOpen ? "▲" : "▼"}
+                          {isOpen ? <Plus className="rotate-45" /> : <Plus />}
                         </span>
                       </button>
                       {isOpen && (
                         <div className="px-5 pb-3.5 pt-1 text-xs text-slate-600 border-t border-slate-100 bg-white text-justify">
-                          Endpoint protection guarantees {item.toLowerCase()}{" "}
-                          across all connected devices within your network
-                          ecosystem.
+                          {item.description}
                         </div>
                       )}
                     </div>
