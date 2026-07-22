@@ -97,7 +97,7 @@ const Hero = ({ data }: { data: Data }) => {
           <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:col-span-1">
             <Image
               src={data?.bgImage}
-              alt="IT Support Illustration"
+              alt="BG Image"
               height={400}
               width={600}
             />
