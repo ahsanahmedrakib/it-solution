@@ -80,7 +80,20 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                               ) : (
                                 <div className="h-5 invisible">Empty</div>
                               )}
-                              <span>{category.title}</span>
+                              {category.href ? (
+                                <Link
+                                  href={category.href}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    onClose();
+                                    setOpenMenuLabel(null);
+                                  }}
+                                >
+                                  <span>{category.title}</span>
+                                </Link>
+                              ) : (
+                                <span>{category.title}</span>
+                              )}
                             </div>
                             {category.description && (
                               <p className="text-[12px] leading-relaxed text-slate-500 font-normal">
