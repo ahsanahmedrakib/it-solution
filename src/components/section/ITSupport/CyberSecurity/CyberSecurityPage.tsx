@@ -1,6 +1,7 @@
 "use client";
 
 import Hero from "@/components/ui/Hero";
+import HoverableContentCard from "@/components/ui/HoverableContentCard";
 import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
 import { useState } from "react";
@@ -137,25 +138,6 @@ function CyberCard({
   );
 }
 
-function SplitContentCard({ children }: { children: React.ReactNode }) {
-  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
-
-  return (
-    <div
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-      className={`bg-white p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 transition-all relative ${
-        touched
-          ? "border-blue-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-          : "border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-      }`}
-    >
-      <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-      {children}
-    </div>
-  );
-}
-
 function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -250,7 +232,7 @@ export default function CyberSecurityPage() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <SplitContentCard>
+            <HoverableContentCard>
               <span className="text-blue-500 font-bold text-sm tracking-wide mb-3 block">
                 Security is a Necessity
               </span>
@@ -272,7 +254,7 @@ export default function CyberSecurityPage() {
                 ensure business continuity and maintain the trust of your
                 clients and partners.
               </p>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
           <div className="order-1 lg:order-2 flex justify-center">
             <Image
@@ -300,7 +282,7 @@ export default function CyberSecurityPage() {
               />
             </div>
             <div>
-              <SplitContentCard>
+              <HoverableContentCard>
                 <span className="text-blue-500 font-bold text-sm tracking-wide mb-3 block">
                   What is Cyber Security
                 </span>
@@ -321,7 +303,7 @@ export default function CyberSecurityPage() {
                   solutions combine technology, processes, and people to create
                   a multi-layered defense system.
                 </p>
-              </SplitContentCard>
+              </HoverableContentCard>
             </div>
           </div>
         </div>
@@ -331,7 +313,7 @@ export default function CyberSecurityPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <SplitContentCard>
+            <HoverableContentCard>
               <span className="text-blue-500 font-bold text-sm tracking-wide mb-3 block">
                 What We Do
               </span>
@@ -349,7 +331,7 @@ export default function CyberSecurityPage() {
                 assessment and vulnerability management to 24/7 monitoring,
                 incident response, and employee awareness training.
               </p>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
           <div className="flex justify-center order-1 lg:order-2">
             <Image
@@ -377,7 +359,7 @@ export default function CyberSecurityPage() {
               />
             </div>
             <div>
-              <SplitContentCard>
+              <HoverableContentCard>
                 <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6 mt-2 uppercase tracking-tight">
                   WHAT IS ACSC ESSENTIAL EIGHT?
                 </h2>
@@ -397,7 +379,7 @@ export default function CyberSecurityPage() {
                 <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition-colors">
                   ESSENTIAL EIGHT STRATEGIES
                 </button>
-              </SplitContentCard>
+              </HoverableContentCard>
             </div>
           </div>
         </div>

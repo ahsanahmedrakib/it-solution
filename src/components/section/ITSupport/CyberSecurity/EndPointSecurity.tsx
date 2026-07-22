@@ -1,29 +1,9 @@
 "use client";
 
 import Hero from "@/components/ui/Hero";
-import { useTouchHover } from "@/hooks/useTouchHover";
+import HoverableContentCard from "@/components/ui/HoverableContentCard";
 import Image from "next/image";
-import React, { useState } from "react";
-
-// Split Content Card component matching the signature design architecture
-function SplitContentCard({ children }: { children: React.ReactNode }) {
-  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
-
-  return (
-    <div
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-      className={`bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 transition-all relative ${
-        touched
-          ? "border-blue-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-          : "border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-      }`}
-    >
-      <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-      {children}
-    </div>
-  );
-}
+import { useState } from "react";
 
 export default function EndPointSecurityPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -59,7 +39,7 @@ export default function EndPointSecurityPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Text Overview Card */}
           <div className="order-2 lg:order-1">
-            <SplitContentCard>
+            <HoverableContentCard>
               <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 <p className="text-justify">
                   <strong className="text-blue-600 font-medium">
@@ -135,7 +115,7 @@ export default function EndPointSecurityPage() {
                   </strong>
                 </p>
               </div>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
 
           {/* Right Column: Computer Dashboard Illustration */}
@@ -173,7 +153,7 @@ export default function EndPointSecurityPage() {
 
           {/* Right Column: Why Need List Card */}
           <div>
-            <SplitContentCard>
+            <HoverableContentCard>
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">
                 Why do you need EndPoint Protection?
               </h2>
@@ -209,7 +189,7 @@ export default function EndPointSecurityPage() {
                   );
                 })}
               </div>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
         </div>
       </section>
@@ -227,7 +207,7 @@ export default function EndPointSecurityPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Solution Card */}
           <div className="order-2 lg:order-1">
-            <SplitContentCard>
+            <HoverableContentCard>
               {/* Header Icon + Title */}
               <div className="flex items-start space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 mt-1">
@@ -289,7 +269,7 @@ export default function EndPointSecurityPage() {
               <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-6 rounded-md uppercase tracking-wider transition-colors shadow-sm">
                 LEARN MORE
               </button>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
 
           {/* Right Column: Microsoft Defender Graphic */}
@@ -326,7 +306,7 @@ export default function EndPointSecurityPage() {
           </div>
           {/* Right Column: Solution Card */}
           <div>
-            <SplitContentCard>
+            <HoverableContentCard>
               {/* Header Icon + Title */}
               <div className="flex items-start space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-purple-600 shrink-0 mt-1">
@@ -387,7 +367,7 @@ export default function EndPointSecurityPage() {
               <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-6 rounded-md uppercase tracking-wider transition-colors shadow-sm">
                 LEARN MORE
               </button>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
         </div>
       </section>
@@ -399,7 +379,7 @@ export default function EndPointSecurityPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Right Column: Solution Card */}
           <div className="order-2 lg:order-1">
-            <SplitContentCard>
+            <HoverableContentCard>
               {/* Header Icon + Title */}
               <div className="flex items-start space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-red-600 shrink-0 mt-1">
@@ -461,7 +441,7 @@ export default function EndPointSecurityPage() {
               <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-6 rounded-md uppercase tracking-wider transition-colors shadow-sm">
                 LEARN MORE
               </button>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
 
           {/* Left Column: Bitdefender Logo Graphic */}

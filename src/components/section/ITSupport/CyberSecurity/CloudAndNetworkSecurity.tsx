@@ -1,28 +1,6 @@
-"use client";
-
 import Hero from "@/components/ui/Hero";
-import { useTouchHover } from "@/hooks/useTouchHover";
+import HoverableContentCard from "@/components/ui/HoverableContentCard";
 import Image from "next/image";
-
-// Split Content Card component matching the design architecture
-function SplitContentCard({ children }: { children: React.ReactNode }) {
-  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
-
-  return (
-    <div
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-      className={`bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 transition-all relative ${
-        touched
-          ? "border-blue-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-          : "border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-      }`}
-    >
-      <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-      {children}
-    </div>
-  );
-}
 
 const heroData = {
   title1: "Cloud and Network Security",
@@ -44,7 +22,7 @@ const CloudAndNetworkSecurity = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Content Card */}
           <div className="order-2 lg:order-1">
-            <SplitContentCard>
+            <HoverableContentCard>
               {/* Header Badge & Title */}
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
@@ -170,7 +148,7 @@ const CloudAndNetworkSecurity = () => {
                   </span>
                 </li>
               </ul>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
 
           {/* Right Column: Illustration Image */}
@@ -190,7 +168,7 @@ const CloudAndNetworkSecurity = () => {
 
       {/* ==================== SECTION 2: Key Elements of Cloud Security ==================== */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <SplitContentCard>
+        <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">
             Key Elements of Cloud Security:
           </h2>
@@ -231,7 +209,7 @@ const CloudAndNetworkSecurity = () => {
               access from compromised credentials.
             </li>
           </ol>
-        </SplitContentCard>
+        </HoverableContentCard>
       </section>
 
       {/* ==================== SECTION 3: Understanding Network Security ==================== */}
@@ -252,7 +230,7 @@ const CloudAndNetworkSecurity = () => {
 
           {/* Right Column: Content Card */}
           <div>
-            <SplitContentCard>
+            <HoverableContentCard>
               {/* Header Badge & Title */}
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
@@ -426,14 +404,14 @@ const CloudAndNetworkSecurity = () => {
                   </span>
                 </li>
               </ul>
-            </SplitContentCard>
+            </HoverableContentCard>
           </div>
         </div>
       </section>
 
       {/* ==================== SECTION 4: Network Consulting, Design, and Installation ==================== */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <SplitContentCard>
+        <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
             Network Consulting, Design, and Installation
           </h2>
@@ -515,12 +493,12 @@ const CloudAndNetworkSecurity = () => {
               </span>
             </li>
           </ul>
-        </SplitContentCard>
+        </HoverableContentCard>
       </section>
 
       {/* ==================== SECTION 5: Best Practices for Strengthening Security ==================== */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <SplitContentCard>
+        <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">
             Best Practices for Strengthening Cloud and Network Security
           </h2>
@@ -561,12 +539,12 @@ const CloudAndNetworkSecurity = () => {
               impact of any potential cyber incident.
             </li>
           </ol>
-        </SplitContentCard>
+        </HoverableContentCard>
       </section>
 
       {/* ==================== SECTION 6: Emerging Trends ==================== */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <SplitContentCard>
+        <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">
             Emerging Trends in Cloud and Network Security
           </h2>
@@ -608,12 +586,12 @@ const CloudAndNetworkSecurity = () => {
               data.
             </li>
           </ol>
-        </SplitContentCard>
+        </HoverableContentCard>
       </section>
 
       {/* ==================== SECTION 7: Why Choose Us ==================== */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <SplitContentCard>
+        <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
             Why Choose Us For Cloud and Network Security?
           </h2>
@@ -666,12 +644,12 @@ const CloudAndNetworkSecurity = () => {
               </span>
             </li>
           </ul>
-        </SplitContentCard>
+        </HoverableContentCard>
       </section>
 
       {/* ==================== SECTION 8: Call To Action / Get Started ==================== */}
       <section className="py-10 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <SplitContentCard>
+        <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
             Get Started Today with the Best Cloud and Network Security Solutions
           </h2>
@@ -695,7 +673,7 @@ const CloudAndNetworkSecurity = () => {
             Secure your business. Protect your data. Stay ahead of cyber
             threats.
           </p>
-        </SplitContentCard>
+        </HoverableContentCard>
       </section>
     </main>
   );

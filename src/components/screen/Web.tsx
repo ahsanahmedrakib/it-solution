@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Hero from "../ui/Hero";
+import HoverableContentCard from "../ui/HoverableContentCard";
 
 const heroData = {
   title1: "All your website",
@@ -55,25 +56,6 @@ function WebFeatureCard({
         {feature.title}
       </h3>
       <p className="text-slate-600 text-sm mb-4 text-justify">{feature.desc}</p>
-    </div>
-  );
-}
-
-function SplitContentCard({ children }: { children: React.ReactNode }) {
-  const { touched, onTouchStart, onTouchEnd } = useTouchHover();
-
-  return (
-    <div
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-      className={`bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 transition-all relative ${
-        touched
-          ? "border-blue-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-          : "border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
-      }`}
-    >
-      <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-      {children}
     </div>
   );
 }
@@ -164,7 +146,7 @@ export default function WebPage() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <SplitContentCard>
+          <HoverableContentCard>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Your website represents your company.
             </h2>
@@ -191,7 +173,7 @@ export default function WebPage() {
               <ChevronRight className="w-4 h-4 mr-2" />
               More
             </a>
-          </SplitContentCard>
+          </HoverableContentCard>
 
           {/* Right Illustration */}
           <div className="flex justify-center">
@@ -221,7 +203,7 @@ export default function WebPage() {
           </div>
 
           {/* Right Content */}
-          <SplitContentCard>
+          <HoverableContentCard>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Keeping you online, without the hassle.
             </h2>
@@ -248,7 +230,7 @@ export default function WebPage() {
               <ChevronRight className="w-4 h-4 mr-2" />
               More
             </a>
-          </SplitContentCard>
+          </HoverableContentCard>
         </div>
       </section>
 
