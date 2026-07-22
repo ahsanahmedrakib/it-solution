@@ -190,7 +190,7 @@ function FaqAccordion() {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed text-justify">
                   Cyber security involves the practices, technologies, and
                   processes designed to protect your networks, devices,
                   programs, and data from attack, damage, or unauthorised
@@ -217,13 +217,13 @@ export default function CyberSecurityPage() {
             <h2 className="text-blue-600 font-bold text-xl mb-6 tracking-wide">
               Cyber Security
             </h2>
-            <p className="text-slate-600 text-sm mb-6 leading-loose">
+            <p className="text-slate-600 text-sm mb-6 leading-loose text-justify">
               Managed Cyber Security Services are standard solutions for large
               businesses, enterprise-level companies, and even Small to Medium
               Enterprises (SME). Cybersecurity has become essential for modern
               business operations and continuity.
             </p>
-            <p className="text-slate-600 text-sm leading-loose">
+            <p className="text-slate-600 text-sm leading-loose text-justify">
               At Cyber, information security is prioritized above all else.
               Cyber Security Services are tailored to safeguard your IT
               Infrastructure and data against cyber threats. We deliver
@@ -258,13 +258,13 @@ export default function CyberSecurityPage() {
                 <br />
                 Caught Up
               </h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 text-justify">
                 As businesses expand, their digital exposure increases, making
                 cybersecurity a top priority. Ransomware, data breaches, and
                 insider threats are becoming more sophisticated, posing serious
                 risks to operations, reputation, and financial stability.
               </p>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-500 text-sm leading-relaxed text-justify">
                 Proactive cybersecurity measures, such as threat monitoring,
                 data encryption, and employee training, help protect your
                 critical assets. By staying ahead of cyber threats, you can
@@ -306,14 +306,14 @@ export default function CyberSecurityPage() {
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 leading-tight">
                   How Does It Work
                 </h2>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                <p className="text-slate-500 text-sm leading-relaxed mb-6 text-justify">
                   Cybersecurity is the practice of protecting systems, networks,
                   and programs from digital attacks. These cyberattacks are
                   usually aimed at accessing, changing, or destroying sensitive
                   information; extorting money from users; or interrupting
                   normal business processes.
                 </p>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed text-justify">
                   Implementing effective cybersecurity measures is particularly
                   challenging today because there are more devices than people,
                   and attackers are becoming more innovative. Cybersecurity
@@ -337,13 +337,13 @@ export default function CyberSecurityPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 leading-tight">
                 To Protect Your Data
               </h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 text-justify">
                 Cyber Security is an essential requirement for modern
                 businesses. We offer comprehensive security solutions to protect
                 your IT infrastructure, sensitive data, and business operations
                 against evolving threats.
               </p>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-500 text-sm leading-relaxed text-justify">
                 Our end-to-end security services cover everything from risk
                 assessment and vulnerability management to 24/7 monitoring,
                 incident response, and employee awareness training.
@@ -380,14 +380,14 @@ export default function CyberSecurityPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6 mt-2 uppercase tracking-tight">
                   WHAT IS ACSC ESSENTIAL EIGHT?
                 </h2>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                <p className="text-slate-500 text-sm leading-relaxed mb-6 text-justify">
                   Developed by the Australian Cyber Security Centre (ACSC), the
                   Essential Eight is a baseline set of strategies designed to
                   help organizations mitigate cyber security threats.
                   Implementing these strategies makes it significantly harder
                   for adversaries to compromise systems.
                 </p>
-                <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                <p className="text-slate-500 text-sm leading-relaxed mb-8 text-justify">
                   We help businesses implement and maintain the Essential Eight
                   strategies to build a robust defense mechanism. Contact us
                   today to learn more about how we can strengthen your

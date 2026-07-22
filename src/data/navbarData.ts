@@ -172,13 +172,13 @@ export const IT_MEGA_MENU = {
       links: [
         {
           label: "Cloud & Network Security",
-          href: "/cyber-security/cloud",
+          href: "/it-support/cyber-security/cloud-and-network-security",
           icon: ShieldCheck,
           image: "/images/navbar/it/network.svg",
         },
         {
           label: "EndPoint Security",
-          href: "/cyber-security/endpoint",
+          href: "/it-support/cyber-security/endpoint-security",
           icon: Monitor,
           image: "/images/navbar/it/computer.svg",
         },
