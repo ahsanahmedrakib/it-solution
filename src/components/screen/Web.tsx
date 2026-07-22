@@ -27,7 +27,15 @@ const heroData = {
   ],
 };
 
-function WebFeatureCard({ feature }: { feature: { title: string; desc: string; icon: React.ComponentType<{ size?: number }> } }) {
+function WebFeatureCard({
+  feature,
+}: {
+  feature: {
+    title: string;
+    desc: string;
+    icon: React.ComponentType<{ size?: number }>;
+  };
+}) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
   const Icon = feature.icon;
 
@@ -36,9 +44,7 @@ function WebFeatureCard({ feature }: { feature: { title: string; desc: string; i
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       className={`border-2 rounded-2xl p-6 relative shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all ${
-        touched
-          ? "border-blue-300"
-          : "border-blue-100 hover:border-blue-300"
+        touched ? "border-blue-300" : "border-blue-100 hover:border-blue-300"
       }`}
     >
       <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
@@ -48,9 +54,7 @@ function WebFeatureCard({ feature }: { feature: { title: string; desc: string; i
       <h3 className="text-xl font-bold text-brand-blue text-center mb-3">
         {feature.title}
       </h3>
-      <p className="text-slate-600 text-sm mb-4 text-justify">
-        {feature.desc}
-      </p>
+      <p className="text-slate-600 text-sm mb-4 text-justify">{feature.desc}</p>
     </div>
   );
 }
@@ -74,7 +78,11 @@ function SplitContentCard({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ServiceListCard({ feature }: { feature: { title: string; services: string[] } }) {
+function ServiceListCard({
+  feature,
+}: {
+  feature: { title: string; services: string[] };
+}) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
 
   return (
@@ -82,22 +90,21 @@ function ServiceListCard({ feature }: { feature: { title: string; services: stri
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       className={`relative border-2 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white transition-all ${
-        touched
-          ? "border-blue-300"
-          : "border-blue-100 hover:border-blue-300"
+        touched ? "border-blue-300" : "border-blue-100 hover:border-blue-300"
       }`}
     >
       <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-      <h3 className="text-xl font-bold text-slate-900 mb-3">
-        {feature.title}
-      </h3>
+      <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
       {feature.services.map((service, j) => (
         <div key={j} className="flex items-start mb-3">
           <ChevronRight className="w-5 h-5 mr-2 mt-0.5 text-blue-500 shrink-0" />
           <span className="text-slate-600 text-sm">{service}</span>
         </div>
       ))}
-      <a href="#" className="text-blue-600 font-semibold text-sm hover:underline pt-2">
+      <a
+        href="#"
+        className="text-blue-600 font-semibold text-sm hover:underline pt-2"
+      >
         Read More &rarr;
       </a>
     </div>
@@ -115,7 +122,7 @@ export default function WebPage() {
         <h2 className="text-3xl text-center font-bold text-blue-900 mb-12">
           Services that make your Website Perform
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
             {
               title: "Web Design",
