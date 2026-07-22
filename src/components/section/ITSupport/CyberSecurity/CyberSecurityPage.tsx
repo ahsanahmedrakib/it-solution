@@ -144,7 +144,7 @@ function SplitContentCard({ children }: { children: React.ReactNode }) {
     <div
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
-      className={`bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 transition-all relative ${
+      className={`bg-white p-10 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 transition-all relative ${
         touched
           ? "border-blue-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
           : "border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
@@ -208,6 +208,7 @@ function FaqAccordion() {
 export default function CyberSecurityPage() {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
+      {/* HERO SECTION  */}
       <Hero data={heroData} />
 
       {/* Section 1: Cyber Security Grid */}

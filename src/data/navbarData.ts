@@ -184,7 +184,7 @@ export const IT_MEGA_MENU = {
         },
         {
           label: "Essential Eight",
-          href: "/cyber-security/essential-eight",
+          href: "/it-support/cyber-security/essential-eight",
           icon: Shield,
           image: "/images/navbar/it/internet-security.svg",
         },
