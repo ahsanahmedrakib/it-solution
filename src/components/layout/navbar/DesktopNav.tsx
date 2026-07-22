@@ -157,9 +157,20 @@ export default function DesktopNav() {
                       ) : (
                         <div className="h-6 invisible">Empty</div>
                       )}
-                      <h3 className="font-bold text-base tracking-tight text-brand-blue">
-                        {category.title}
-                      </h3>
+                      {category.href ? (
+                        <Link
+                          href={category.href}
+                          className="border-b-2 border-white hover:border-brand-blue"
+                        >
+                          <h3 className="font-bold text-base tracking-tight text-brand-blue">
+                            {category.title}
+                          </h3>
+                        </Link>
+                      ) : (
+                        <h3 className="font-bold text-base tracking-tight text-brand-blue">
+                          {category.title}
+                        </h3>
+                      )}
                     </div>
                     {category.description && (
                       <p className="text-[14px] leading-relaxed text-slate-500 font-normal">

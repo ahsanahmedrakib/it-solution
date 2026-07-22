@@ -78,7 +78,7 @@ const heroData = {
   description: "",
   bgImage: "/images/it-support/cyber-security/hero.png",
   actionButtons: [
-    { label: "LEARN MORE", href: "#cybersecuiryt" },
+    { label: "LEARN MORE", href: "#cybersecurity" },
     { label: "ACSC", href: "#acsc" },
   ],
 };
@@ -243,7 +243,10 @@ export default function CyberSecurityPage() {
       </section>
 
       {/* Section 2: Security is a Necessity */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+        id="cybersecurity"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
             <SplitContentCard>
@@ -301,7 +304,7 @@ export default function CyberSecurityPage() {
                   What is Cyber Security
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-                  and How Does It Work
+                  How Does It Work
                 </h2>
                 <p className="text-slate-500 text-sm leading-relaxed mb-6">
                   Cybersecurity is the practice of protecting systems, networks,
@@ -360,7 +363,7 @@ export default function CyberSecurityPage() {
       </section>
 
       {/* Section 5: ACSC Essential Eight */}
-      <section className="bg-white">
+      <section className="bg-white" id="acsc">
         <div className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
@@ -374,7 +377,7 @@ export default function CyberSecurityPage() {
             </div>
             <div>
               <SplitContentCard>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 mt-2 uppercase tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6 mt-2 uppercase tracking-tight">
                   WHAT IS ACSC ESSENTIAL EIGHT?
                 </h2>
                 <p className="text-slate-500 text-sm leading-relaxed mb-6">

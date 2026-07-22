@@ -110,6 +110,7 @@ export interface MegaMenuCategory {
 export interface MegaMenuData {
   categories: Array<{
     title: string;
+    href?: string;
     icon?: React.ComponentType<{ className?: string }> | "";
     description?: string;
     links: Array<{
@@ -164,6 +165,7 @@ export const IT_MEGA_MENU = {
   categories: [
     {
       title: "Cyber Security",
+      href: "/it-support/cyber-security",
       icon: Lock,
       description:
         "Advanced Endpoint security, email security, Australian Cyber Security Centre (ASCS) standards and recommendations.",
