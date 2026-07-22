@@ -3,7 +3,7 @@
 import { useTouchHover } from "@/hooks/useTouchHover";
 import { ChevronRight, HeartHandshake, Users, Wrench } from "lucide-react";
 import Image from "next/image";
-import Hero from "../ui/Hero";
+import Hero from "../common/ui/Hero";
 
 const heroData = {
   title1: "Keeping you",

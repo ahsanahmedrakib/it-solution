@@ -2,7 +2,7 @@
 
 import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
-import Hero from "../ui/Hero";
+import Hero from "../common/ui/Hero";
 
 const heroData = {
   title1: "Ask us about",

@@ -2,7 +2,7 @@
 
 import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
-import Hero from "../ui/Hero";
+import Hero from "../common/ui/Hero";
 
 const industriesData = [
   {
@@ -90,7 +90,11 @@ const heroData = {
   ],
 };
 
-function IndustryCard({ service }: { service: (typeof industriesData)[number] }) {
+function IndustryCard({
+  service,
+}: {
+  service: (typeof industriesData)[number];
+}) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
 
   return (
@@ -117,9 +121,7 @@ function IndustryCard({ service }: { service: (typeof industriesData)[number] })
         <h3 className="font-bold text-lg text-slate-900 mb-3">
           {service.title}
         </h3>
-        <p className="text-sm text-slate-600">
-          {service.description}
-        </p>
+        <p className="text-sm text-slate-600">{service.description}</p>
       </div>
     </div>
   );

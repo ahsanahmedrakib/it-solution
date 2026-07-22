@@ -3,7 +3,7 @@
 import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
 import { useState } from "react";
-import Hero from "../ui/Hero";
+import Hero from "../common/ui/Hero";
 
 const faqs = [
   {

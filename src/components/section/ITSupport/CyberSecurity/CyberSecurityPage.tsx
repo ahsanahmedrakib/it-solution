@@ -1,7 +1,7 @@
 "use client";
 
-import Hero from "@/components/ui/Hero";
-import HoverableContentCard from "@/components/ui/HoverableContentCard";
+import Hero from "@/components/common/ui/Hero";
+import HoverableContentCard from "@/components/common/ui/HoverableContentCard";
 import { useTouchHover } from "@/hooks/useTouchHover";
 import Image from "next/image";
 import { useState } from "react";

@@ -11,8 +11,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Image from "next/image";
-import Hero from "../ui/Hero";
-import HoverableContentCard from "../ui/HoverableContentCard";
+import Hero from "../common/ui/Hero";
+import HoverableContentCard from "../common/ui/HoverableContentCard";
 
 const heroData = {
   title1: "All your website",

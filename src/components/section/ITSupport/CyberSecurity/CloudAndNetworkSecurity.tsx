@@ -1,5 +1,5 @@
-import Hero from "@/components/ui/Hero";
-import HoverableContentCard from "@/components/ui/HoverableContentCard";
+import Hero from "@/components/common/ui/Hero";
+import HoverableContentCard from "@/components/common/ui/HoverableContentCard";
 import Image from "next/image";
 
 const heroData = {

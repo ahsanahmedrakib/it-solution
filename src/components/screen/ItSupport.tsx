@@ -33,7 +33,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import Hero from "../ui/Hero";
+import Hero from "../common/ui/Hero";
 
 interface PartnerLogo {
   name: string;
