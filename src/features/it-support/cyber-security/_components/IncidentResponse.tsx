@@ -27,7 +27,7 @@ const IncidentResponse = () => {
       <Hero data={heroData} />
 
       {/* ==================== SECTION 1: Introduction ==================== */}
-      <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full  text-justify">
+      <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-justify">
         <HoverableContentCard>
           <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed">
             Our experienced incident response team supports Australian
@@ -41,7 +41,7 @@ const IncidentResponse = () => {
       </section>
 
       {/* ==================== SECTION 2: How Does It Work? ==================== */}
-      <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full  text-justify">
+      <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-justify">
         <HoverableContentCard>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-4 uppercase tracking-tight">
             HOW DOES IT WORK?
@@ -55,9 +55,9 @@ const IncidentResponse = () => {
 
           <ul className="space-y-4 text-xs sm:text-sm text-slate-500">
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   CONTAINMENT:
                 </strong>{" "}
                 Our incident response team swiftly isolates the affected segment
@@ -66,9 +66,9 @@ const IncidentResponse = () => {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   MONITORING:
                 </strong>{" "}
                 We collaborate with our partners to help your business regain
@@ -78,9 +78,9 @@ const IncidentResponse = () => {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   ATTACK INVESTIGATION:
                 </strong>{" "}
                 Post-attack, we gather crucial information—such as logs, errors,
@@ -90,9 +90,9 @@ const IncidentResponse = () => {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   REPORTING:
                 </strong>{" "}
                 We provide detailed analysis and documentation of the incident
@@ -156,9 +156,9 @@ const IncidentResponse = () => {
 
           <ul className="space-y-3 text-xs sm:text-sm text-slate-500 mb-6">
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   DESTRUCTIVE ATTACKS:
                 </strong>{" "}
                 Safeguarding against malware, phishing, denial of service
@@ -166,9 +166,9 @@ const IncidentResponse = () => {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   DATA BREACHES:
                 </strong>{" "}
                 Preventing the exposure of customer data, personally
@@ -176,9 +176,9 @@ const IncidentResponse = () => {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   FINANCIAL ATTACKS:
                 </strong>{" "}
                 Defending against extortion, ransomware, payment card theft, and
@@ -186,9 +186,9 @@ const IncidentResponse = () => {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2 font-bold">•</span>
+              <span className="text-brand-blue mr-2 font-bold">•</span>
               <span>
-                <strong className="text-slate-800 font-bold uppercase">
+                <strong className="text-brand-blue font-bold uppercase">
                   IP THEFT:
                 </strong>{" "}
                 Protecting against the sophisticated theft of intellectual
@@ -218,7 +218,7 @@ const IncidentResponse = () => {
             }{" "}
             <a
               href="tel:+8801972721388"
-              className="text-blue-600 font-semibold hover:underline"
+              className="text-brand-blue font-semibold hover:underline"
             >
               +880 1972-721388
             </a>
@@ -231,3 +231,4 @@ const IncidentResponse = () => {
 };
 
 export default IncidentResponse;
+

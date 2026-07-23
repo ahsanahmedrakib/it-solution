@@ -196,7 +196,7 @@ export const IT_MEGA_MENU = {
         },
         {
           label: "Security Awareness Training",
-          href: "/cyber-security/training",
+          href: "/it-support/cyber-security/security-awareness-training",
           icon: Users,
           image: "/images/navbar/it/leadership.svg",
         },
@@ -857,3 +857,4 @@ export const INDUSTRIES_MEGA_MENU = {
     },
   ],
 };
+
