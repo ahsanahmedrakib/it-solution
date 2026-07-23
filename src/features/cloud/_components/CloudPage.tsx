@@ -1,13 +1,13 @@
 "use client";
 
+import Hero from "@/shared/components/ui/Hero";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import Image from "next/image";
-import Hero from "@/shared/components/ui/Hero";
 
 const heroData = {
   title1: "Ask us about",
   title2: "Microsoft 365 for your business",
-  description:
+  description1:
     "If you are considering migrating to the cloud, let Total Solutions IT guide you on your journey. Our team of accredited specialists have the expertise and reputation to support a smooth and successful cloud transition. We will work closely with you to assess your needs and choose the platform that is right for you. Our team will assist with each step of the journey - from implementation, through adoption and to optimisation.",
   bgImage: "/images/cloud/hero.png",
   actionButtons: [
@@ -166,3 +166,4 @@ export default function CloudPage() {
     </main>
   );
 }
+

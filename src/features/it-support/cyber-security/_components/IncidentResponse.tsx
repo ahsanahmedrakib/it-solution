@@ -6,7 +6,7 @@ import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 const heroData = {
   title1: "Cyber Security",
   title2: "Incident Response",
-  description:
+  description1:
     "Protect your business from costly and damaging cybersecurity incidents with Total Solutions IT. Our incident response services are designed to swiftly address and mitigate incidents, minimizing and, where possible, reversing the impact of breaches.",
   bgImage: "/images/it-support/cyber-security/incident-response/hero.jpg",
   actionButtons: [

@@ -5,7 +5,7 @@ import Image from "next/image";
 const heroData = {
   title1: "Cloud and Network Security",
   title2: "Protecting Your Digital Assets",
-  description:
+  description1:
     "In an era where digital transformation is at the core of business operations, ensuring the security of cloud environments and networks is more critical than ever. With cyber threats evolving rapidly, organizations must adopt robust security measures to protect sensitive data, applications, and infrastructure. This blog post explores key aspects of cloud and network security, best practices, and emerging trends to help businesses stay ahead of potential threats.",
   bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
   actionButtons: [],
@@ -680,3 +680,4 @@ const CloudAndNetworkSecurity = () => {
 };
 
 export default CloudAndNetworkSecurity;
+

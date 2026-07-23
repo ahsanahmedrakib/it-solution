@@ -1,5 +1,7 @@
 "use client";
 
+import Hero from "@/shared/components/ui/Hero";
+import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import {
   Captions,
@@ -11,13 +13,11 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Image from "next/image";
-import Hero from "@/shared/components/ui/Hero";
-import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 
 const heroData = {
   title1: "All your website",
   title2: "development needs",
-  description: "",
+  description1: "",
   bgImage: "/images/web/hero.png",
   actionButtons: [
     { label: "Web Development", href: "/" },
@@ -305,3 +305,4 @@ export default function WebPage() {
     </main>
   );
 }
+

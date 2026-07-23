@@ -99,7 +99,7 @@ function FaqAccordion() {
 const heroData = {
   title1: "Essential Eight",
   title2: "",
-  description:
+  description1:
     "The ACSC Essential Eight is a cybersecurity framework from Australia's Cyber Security Centre, outlining eight strategies to protect against cyber threats. These include patching, application control, user access management, backups, and more, aimed at minimizing the risk of cyber attacks and ensuring robust defense for organizations.",
   bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
   actionButtons: [
@@ -178,3 +178,4 @@ const EssentialEight = () => {
 };
 
 export default EssentialEight;
+

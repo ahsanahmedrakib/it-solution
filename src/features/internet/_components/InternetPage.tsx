@@ -1,14 +1,14 @@
 "use client";
 
+import Hero from "@/shared/components/ui/Hero";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import { ChevronRight, HeartHandshake, Users, Wrench } from "lucide-react";
 import Image from "next/image";
-import Hero from "@/shared/components/ui/Hero";
 
 const heroData = {
   title1: "Keeping you",
   title2: "connected",
-  description:
+  description1:
     "Business Internet and Voice solutions designed to keep your operations running smoothly, ensuring you stay connected with clients, colleagues, and partners.",
   bgImage: "/images/internet/hero.png",
   actionButtons: [
@@ -261,3 +261,4 @@ export default function InternetPage() {
     </main>
   );
 }
+

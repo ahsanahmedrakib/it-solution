@@ -1,8 +1,8 @@
 "use client";
 
+import Hero from "@/shared/components/ui/Hero";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import Image from "next/image";
-import Hero from "@/shared/components/ui/Hero";
 
 const industriesData = [
   {
@@ -70,8 +70,8 @@ const industriesData = [
 const heroData = {
   title1: "Industry-Specific",
   title2: "IT Solutions",
-  description:
-    " Tailored technology support designed to meet the unique demands of your industry, ensuring compliance, efficiency, and growth.",
+  description1:
+    "Tailored technology support designed to meet the unique demands of your industry, ensuring compliance, efficiency, and growth.",
   bgImage: "/images/industry/hero.png",
   actionButtons: [
     {
@@ -151,3 +151,4 @@ const IndustriesPage = () => {
 };
 
 export default IndustriesPage;
+

@@ -97,7 +97,7 @@ const partnerLogos = [
 const heroData = {
   title1: "Cyber Security",
   title2: "Stay Secure, Stay Ahead",
-  description: "",
+  description1: "",
   bgImage: "/images/it-support/cyber-security/hero.png",
   actionButtons: [
     { label: "LEARN MORE", href: "#cybersecurity" },
@@ -448,3 +448,4 @@ export default function CyberSecurityPage() {
     </main>
   );
 }
+

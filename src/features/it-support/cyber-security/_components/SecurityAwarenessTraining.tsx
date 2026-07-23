@@ -5,7 +5,7 @@ const SecurityAwarenessTraining = () => {
   const heroData = {
     title1: "Security Awareness",
     title2: "Training",
-    description:
+    description1:
       "Endpoint security protects devices like computers, smartphones, and servers from cyber threats. It includes antivirus, anti-malware, firewalls, and real-time threat detection to prevent unauthorized access, malware, and data breaches. This protection is vital for securing individual devices and the broader network they connect to.",
     bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
     actionButtons: [],

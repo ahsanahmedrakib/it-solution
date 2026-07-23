@@ -1,9 +1,9 @@
 "use client";
 
+import Hero from "@/shared/components/ui/Hero";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import Image from "next/image";
 import { useState } from "react";
-import Hero from "@/shared/components/ui/Hero";
 
 const faqs = [
   {
@@ -80,7 +80,7 @@ export default function VoicePage() {
   const heroData = {
     title1: "Telecom Systems to help",
     title2: "simplify your business",
-    description:
+    description1:
       "Connecting with our dedicated team of professionals to ensure your business communication runs smoothly.",
     bgImage: "/images/voice/hero.png",
 
@@ -595,3 +595,4 @@ export default function VoicePage() {
     </main>
   );
 }
+

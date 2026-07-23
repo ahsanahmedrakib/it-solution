@@ -32,8 +32,8 @@ import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
 import Hero from "@/shared/components/ui/Hero";
+import "swiper/css";
 
 interface PartnerLogo {
   name: string;
@@ -106,7 +106,7 @@ const partnersData: PartnerLogo[] = [
 const heroData = {
   title1: "IT Support Services",
   title2: "for Professionals",
-  description:
+  description1:
     "We provide enterprise-grade IT support and secure digital workspaces for small to medium businesses. Focus on your growth while we handle the technology.",
   bgImage: "/images/it-support/hero.png",
   actionButtons: [
@@ -534,3 +534,4 @@ export default function ItSupportPage() {
     </main>
   );
 }
+
