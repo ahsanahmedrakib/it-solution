@@ -202,7 +202,7 @@ export const IT_MEGA_MENU = {
         },
         {
           label: "Zero Trust Framework",
-          href: "/cyber-security/zero-trust",
+          href: "/it-support/cyber-security/zero-trust-framework",
           icon: CheckCircle,
           image: "/images/navbar/it/requirement.svg",
         },

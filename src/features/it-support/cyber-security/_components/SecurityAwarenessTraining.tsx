@@ -13,6 +13,7 @@ const SecurityAwarenessTraining = () => {
 
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
+      {/* HERO SECTION  */}
       <Hero data={heroData} />
       {/* ==================== SECTION 1: Introduction (Human Error) ==================== */}
       <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-justify">
