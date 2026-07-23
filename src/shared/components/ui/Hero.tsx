@@ -13,7 +13,8 @@ interface ActionButtons {
 interface Data {
   title1?: string;
   title2?: string;
-  description?: string;
+  description1?: string;
+  description2?: string;
   bgImage?: string;
   actionButtons?: ActionButtons[];
 }
@@ -72,9 +73,18 @@ const Hero = ({ data }: { data: Data }) => {
               <span className="text-blue-600 block mt-2"> {data?.title2}</span>
             )}
           </h1>
-          <p className="text-lg text-justify md:text-xl text-slate-700 font-medium leading-relaxed">
-            {data?.description && data?.description}
-          </p>
+
+          {data?.description1 && (
+            <p className="text-lg text-justify md:text-xl text-slate-700 font-medium leading-relaxed">
+              {data?.description1}
+            </p>
+          )}
+
+          {data?.description2 && (
+            <p className="text-lg text-justify md:text-xl text-slate-700 font-medium leading-relaxed mt-2">
+              {data?.description2}
+            </p>
+          )}
 
           {/* Action Buttons Grid */}
           {!!data?.actionButtons && (
@@ -126,3 +136,4 @@ const Hero = ({ data }: { data: Data }) => {
 };
 
 export default Hero;
+
