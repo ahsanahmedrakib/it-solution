@@ -1,4 +1,4 @@
-import WebPage from "@/components/screen/Web";
+import { WebPage } from "@/features/web/_components";
 
 const page = () => {
   return (

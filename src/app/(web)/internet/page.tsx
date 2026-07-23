@@ -1,4 +1,4 @@
-import InternetPage from "@/components/screen/Internet";
+import { InternetPage } from "@/features/internet/_components";
 
 const page = () => {
   return (

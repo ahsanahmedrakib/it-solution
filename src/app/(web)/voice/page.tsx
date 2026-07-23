@@ -1,4 +1,4 @@
-import VoicePage from "@/components/screen/Voice";
+import { VoicePage } from "@/features/voice/_components";
 
 const page = () => {
   return (

@@ -1,4 +1,4 @@
-import EndPointSecurityPage from "@/components/section/ITSupport/CyberSecurity/EndPointSecurity";
+import { EndPointSecurityPage } from "@/features/it-support/cyber-security/_components";
 
 const page = () => {
   return (

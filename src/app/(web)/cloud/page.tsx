@@ -1,4 +1,4 @@
-import CloudPage from "@/components/screen/Cloud";
+import { CloudPage } from "@/features/cloud/_components";
 
 const page = () => {
   return (

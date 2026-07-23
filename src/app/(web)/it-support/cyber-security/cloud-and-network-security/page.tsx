@@ -1,4 +1,4 @@
-import CloudAndNetworkSecurity from "@/components/section/ITSupport/CyberSecurity/CloudAndNetworkSecurity";
+import { CloudAndNetworkSecurity } from "@/features/it-support/cyber-security/_components";
 
 const page = () => {
   return (

@@ -1,4 +1,4 @@
-import IndustriesPage from "@/components/screen/Industries";
+import { IndustriesPage } from "@/features/industries/_components";
 
 const page = () => {
   return (

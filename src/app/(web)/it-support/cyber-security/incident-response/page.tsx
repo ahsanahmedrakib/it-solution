@@ -1,4 +1,4 @@
-import IncidentResponse from "@/components/section/ITSupport/CyberSecurity/IncidentResponse";
+import { IncidentResponse } from "@/features/it-support/cyber-security/_components";
 
 const page = () => {
   return (

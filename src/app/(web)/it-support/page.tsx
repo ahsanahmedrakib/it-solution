@@ -1,4 +1,4 @@
-import ItSupport from "@/components/screen/ItSupport";
+import { ItSupportPage as ItSupport } from "@/features/it-support/_components";
 
 const page = () => {
   return (
