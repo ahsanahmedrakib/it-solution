@@ -1,9 +1,5 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 import {
   CLOUD_MEGA_MENU,
   INDUSTRIES_MEGA_MENU,
@@ -14,6 +10,10 @@ import {
   VOICE_MEGA_MENU,
   WEB_MEGA_MENU,
 } from "@/shared/data/navbar";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   IT: IT_MEGA_MENU,
@@ -105,24 +105,44 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                             {category.links.map((subLink) => {
                               const SubIcon = subLink.icon;
                               return (
-                                <Link
-                                  key={subLink.label}
-                                  href={subLink.href}
-                                  onClick={() => onClose()}
-                                  className="flex gap-1 text-xs font-semibold text-brand-blue hover:text-brand-hover py-1"
-                                >
-                                  {subLink.image ? (
-                                    <Image
-                                      src={subLink.image}
-                                      alt={subLink.label}
-                                      width={20}
-                                      height={20}
-                                    />
-                                  ) : SubIcon ? (
-                                    <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
-                                  ) : null}
-                                  <span>{subLink.label}</span>
-                                </Link>
+                                <div key={subLink.label}>
+                                  {subLink?.href ? (
+                                    <Link
+                                      href={subLink.href}
+                                      onClick={() => onClose()}
+                                      className="flex gap-1 text-xs font-semibold text-brand-blue hover:text-brand-hover py-1"
+                                    >
+                                      {subLink.image ? (
+                                        <Image
+                                          src={subLink.image}
+                                          alt={subLink.label}
+                                          width={20}
+                                          height={20}
+                                        />
+                                      ) : SubIcon ? (
+                                        <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                                      ) : null}
+                                      <span>{subLink.label}</span>
+                                    </Link>
+                                  ) : (
+                                    <div
+                                      onClick={() => onClose()}
+                                      className="flex gap-1 text-xs font-semibold text-brand-blue hover:text-brand-hover py-1"
+                                    >
+                                      {subLink.image ? (
+                                        <Image
+                                          src={subLink.image}
+                                          alt={subLink.label}
+                                          width={20}
+                                          height={20}
+                                        />
+                                      ) : SubIcon ? (
+                                        <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                                      ) : null}
+                                      <span>{subLink.label}</span>
+                                    </div>
+                                  )}
+                                </div>
                               );
                             })}
                           </div>
@@ -160,3 +180,4 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
     </div>
   );
 }
+

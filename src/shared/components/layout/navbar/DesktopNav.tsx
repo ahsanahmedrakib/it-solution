@@ -1,14 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
 import {
   CLOUD_MEGA_MENU,
   INDUSTRIES_MEGA_MENU,
@@ -19,6 +10,15 @@ import {
   VOICE_MEGA_MENU,
   WEB_MEGA_MENU,
 } from "@/shared/data/navbar";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 const MEGA_MENU_DATA: Record<string, MegaMenuData> = {
   IT: IT_MEGA_MENU,
@@ -185,22 +185,38 @@ export default function DesktopNav() {
                       const SubIcon = subLink.icon;
                       return (
                         <li key={subLink.label}>
-                          <Link
-                            href={subLink.href}
-                            className="flex items-center gap-2 text-[13px] font-semibold text-brand-blue hover:text-brand-hover hover:translate-x-1 transition-all duration-150"
-                          >
-                            {subLink.image ? (
-                              <Image
-                                src={subLink.image}
-                                alt={subLink.label}
-                                width={20}
-                                height={20}
-                              />
-                            ) : SubIcon ? (
-                              <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
-                            ) : null}
-                            <span>{subLink.label}</span>
-                          </Link>
+                          {subLink?.href ? (
+                            <Link
+                              href={subLink.href}
+                              className="flex items-center gap-2 text-[13px] font-semibold text-brand-blue hover:text-brand-hover hover:translate-x-1 transition-all duration-150"
+                            >
+                              {subLink.image ? (
+                                <Image
+                                  src={subLink.image}
+                                  alt={subLink.label}
+                                  width={20}
+                                  height={20}
+                                />
+                              ) : SubIcon ? (
+                                <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                              ) : null}
+                              <span>{subLink.label}</span>
+                            </Link>
+                          ) : (
+                            <div className="flex items-center gap-2 text-[13px] font-semibold text-brand-blue hover:text-brand-hover hover:translate-x-1 transition-all duration-150">
+                              {subLink.image ? (
+                                <Image
+                                  src={subLink.image}
+                                  alt={subLink.label}
+                                  width={20}
+                                  height={20}
+                                />
+                              ) : SubIcon ? (
+                                <SubIcon className="w-4 h-4 stroke-2 shrink-0 text-brand-blue" />
+                              ) : null}
+                              <span>{subLink.label}</span>
+                            </div>
+                          )}
                         </li>
                       );
                     })}
@@ -214,3 +230,4 @@ export default function DesktopNav() {
     </div>
   );
 }
+

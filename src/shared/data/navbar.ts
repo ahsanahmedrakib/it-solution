@@ -217,37 +217,37 @@ export const IT_MEGA_MENU = {
       links: [
         {
           label: "Network Consulting and Design",
-          href: "/networking/consulting",
+          href: "",
           icon: Cpu,
           image: "/images/navbar/it/networking.svg",
         },
         {
           label: "Network Installation",
-          href: "/networking/installation",
+          href: "",
           icon: Globe,
           image: "/images/navbar/it/net.svg",
         },
         {
           label: "Wi-Fi Networking",
-          href: "/networking/wifi",
+          href: "",
           icon: Wifi,
           image: "/images/navbar/it/router.svg",
         },
         {
           label: "Network Security",
-          href: "/networking/security",
+          href: "",
           icon: ShieldAlert,
           image: "/images/navbar/it/credibility.svg",
         },
         {
           label: "VPN Solutions",
-          href: "/networking/vpn",
+          href: "",
           icon: KeyRound,
           image: "/images/navbar/it/vpn.svg",
         },
         {
           label: "Windows Server",
-          href: "/networking/windows-server",
+          href: "",
           icon: Server,
           image: "/images/navbar/it/server.svg",
         },
@@ -255,43 +255,44 @@ export const IT_MEGA_MENU = {
     },
     {
       title: "Managed IT",
+      href: "/it-support/managed-it",
       icon: Box,
       description:
         "Maintaining and enhancing an organisation's IT Infrastructure.",
       links: [
         {
           label: "Managed IT Services",
-          href: "/managed-it/services",
+          href: "",
           icon: Headphones,
           image: "/images/navbar/it/corporate.svg",
         },
         {
           label: "Procurement",
-          href: "/managed-it/procurement",
+          href: "",
           icon: ShoppingBag,
           image: "/images/navbar/it/supply-chain.svg",
         },
         {
           label: "Help Desk Support",
-          href: "/managed-it/help-desk",
+          href: "",
           icon: HelpCircle,
           image: "/images/navbar/it/leadership.svg",
         },
         {
           label: "Data Management",
-          href: "/managed-it/data-management",
+          href: "",
           icon: HardDrive,
           image: "/images/navbar/it/development.svg",
         },
         {
           label: "IT Consulting",
-          href: "/managed-it/consulting",
+          href: "",
           icon: Laptop,
           image: "/images/navbar/it/online-meeting.svg",
         },
         {
           label: "IT Outsourcing",
-          href: "/managed-it/outsourcing",
+          href: "",
           icon: Briefcase,
           image: "/images/navbar/it/teamwork.svg",
         },
@@ -299,31 +300,32 @@ export const IT_MEGA_MENU = {
     },
     {
       title: "Device Repair",
+      href: "/it-support/device-repair",
       icon: Monitor,
       description:
         "Repairs for Laptop's, Desktop, Tablets, Mobile Phones and more.",
       links: [
         {
           label: "Virus/Malware Removal",
-          href: "/device-repair/virus-removal",
+          href: "",
           icon: Bug,
           image: "/images/navbar/it/computer.svg",
         },
         {
           label: "Data Recovery",
-          href: "/device-repair/data-recovery",
+          href: "",
           icon: Activity,
           image: "/images/navbar/it/recovery.svg",
         },
         {
           label: "Upgrades",
-          href: "/device-repair/upgrades",
+          href: "",
           icon: Wrench,
           image: "/images/navbar/it/supply-chain.svg",
         },
         {
           label: "PC & Laptop Repairs",
-          href: "/device-repair/pc-repairs",
+          href: "",
           icon: Monitor,
           image: "/images/navbar/it/cloud-computing.svg",
         },
