@@ -10,47 +10,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-interface Testimonial {
-  id: number;
-  quote: string;
-  name: string;
-  role: string;
-  avatar: string;
-}
-
-const testimonialsData: Testimonial[] = [
-  {
-    id: 1,
-    quote:
-      "Their IT solutions greatly improved our workflow and enhanced productivity across teams. Reliable technology services we can always trust. The team delivered innovative strategies.",
-    name: "Bisirat Futsum",
-    role: "Digital Manager",
-    avatar: "/images/home/avatar-01.jpg",
-  },
-  {
-    id: 2,
-    quote:
-      "Working with this team transformed our digital operations. Their proactive support and seamless implementation exceeded all our initial expectations.",
-    name: "Marcus Vance",
-    role: "CTO, TechCorp",
-    avatar: "/images/home/avatar-02.jpg",
-  },
-  {
-    id: 3,
-    quote:
-      "Exceptional quality of work and incredible communication. They guided us every step of the way to complete our cloud migration smoothly.",
-    name: "Sarah Jenkins",
-    role: "Operations Lead",
-    avatar: "/images/home/avatar-03.jpg",
-  },
-];
+import { testimonialsData } from "../data/homeData";
 
 function SwiperNavButton({ direction }: { direction: "prev" | "next" }) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
   const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
   const label = direction === "prev" ? "Previous Slide" : "Next Slide";
-  const cls = direction === "prev" ? "swiper-custom-prev" : "swiper-custom-next";
+  const cls =
+    direction === "prev" ? "swiper-custom-prev" : "swiper-custom-next";
 
   return (
     <button
@@ -174,8 +141,7 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 }
+

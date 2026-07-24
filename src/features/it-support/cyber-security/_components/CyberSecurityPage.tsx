@@ -3,107 +3,17 @@
 import Hero from "@/shared/components/ui/Hero";
 import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
+import { Check } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-const topServices = [
-  {
-    title: "Threat Hunting",
-    text: "Threat hunting is a proactive approach to identifying hidden security threats within a network. It looks for indicators of compromise (IoCs) that may have bypassed automated defenses.",
-    hasLink: true,
-  },
-  {
-    title: "IT Security Incident & Event Management",
-    text: "SIEM (Security Information and Event Management) collects and analyzes log data from various sources to provide real-time visibility into security events across your entire IT infrastructure.",
-    hasLink: true,
-  },
-];
-
-const gridServices = [
-  {
-    title: "Security Assessment",
-    text: "A security assessment evaluates your organization's security posture to identify vulnerabilities and risks. It helps you prioritize security improvements and comply with regulations.",
-  },
-  {
-    title: "Security Advisory",
-    text: "Security advisory services provide expert guidance on security strategy, governance, risk management, and compliance. They help organizations make informed decisions and build a strong security posture.",
-  },
-  {
-    title: "Managed Firewalls",
-    text: "Managed firewalls protect your network from unauthorized access and cyber threats. They are configured, monitored, and maintained by security experts to ensure optimal protection.",
-  },
-  {
-    title: "Security Awareness Training",
-    text: "Security awareness training educates employees on security best practices, such as recognizing phishing attacks and creating strong passwords, reducing the risk of human error.",
-  },
-  {
-    title: "Email Filtering",
-    text: "Email filtering inspects incoming and outgoing emails to block spam, phishing attempts, malware, and other malicious content before it reaches your inbox or infects your systems.",
-  },
-  {
-    title: "Web Filtering",
-    text: "Web filtering restricts access to dangerous or inappropriate websites, protecting your network from malware infection and enforcing acceptable use policies.",
-  },
-  {
-    title: "Risk Management",
-    text: "Risk management involves identifying, assessing, and prioritizing risks to minimize their impact on your organization. It helps you allocate resources effectively and build resilience against potential threats.",
-  },
-  {
-    title: "Compliance",
-    text: "Regulatory compliance is essential for meeting industry standards and regulations, such as GDPR, HIPAA, and PCI-DSS. Compliance services help you navigate complex requirements and avoid costly penalties.",
-  },
-];
-
-const faqs = [
-  {
-    title: "What is data breach in cyber security?",
-    description:
-      "A data breach occurs when information is stolen from a system without the owner's knowledge or permission. Whether for a small business or a large organization, such an incident can happen to anyone, posing serious risks to data security.",
-  },
-  {
-    title: "What is data security and privacy?",
-    description:
-      "Data security protects information from unauthorized access by external attackers, malware, or malicious cyber activity. On the other hand, data privacy refers to the rules governing how data is collected, used, and shared.",
-  },
-  {
-    title: "What is multi factor authentication cyber security?",
-    description:
-      "Multifactor authentication (MFA) is a layered security approach that requires users to provide multiple credentials to verify their identity before accessing a resource.",
-  },
-  {
-    title:
-      "What are the different roles of the Australian Cyber Security Centre?",
-    description:
-      "The role of the ACSC is to lead the Australian Government's operational responses to cybersecurity incidents and coordinate national cybersecurity operations and resources. Additionally, it is responsible for raising awareness about the levels of cyber threats facing Australia.",
-  },
-  {
-    title: "Why is Australian Cyber Security important?",
-    description:
-      "A cybersecurity strategy is a high-level plan for securing your organization's assets over the next three to five years. However, because technology and cyber threats can change unpredictably, you may need to update your strategy sooner than expected, even if it seems unnecessary right now. Consequently, it's important to remain flexible and, at the same time, prepared for evolving risks.",
-  },
-];
-
-const partnerLogos = [
-  { alt: "Partner Logo", src: "/images/it-support/cyber-security/cove.png" },
-  { alt: "N-ABLE", src: "/images/it-support/cyber-security/nable.png" },
-  {
-    alt: "Microsoft Defender",
-    src: "/images/it-support/cyber-security/defender.png",
-  },
-  { alt: "Datto", src: "/images/it-support/cyber-security/datto.png" },
-  { alt: "Acronis", src: "/images/it-support/cyber-security/acronis.png" },
-];
-
-const heroData = {
-  title1: "Cyber Security",
-  title2: "Stay Secure, Stay Ahead",
-  description1: "",
-  bgImage: "/images/it-support/cyber-security/hero.png",
-  actionButtons: [
-    { label: "LEARN MORE", href: "#cybersecurity" },
-    { label: "ACSC", href: "#acsc" },
-  ],
-};
+import {
+  topServices,
+  gridServices,
+  cyberFaqs,
+  partnerLogos,
+  cyberSecurityHeroData,
+} from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
 function CyberCard({
   title,
@@ -127,19 +37,7 @@ function CyberCard({
       }`}
     >
       <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center border-4 border-white shadow-sm">
-        <svg
-          className="w-4 h-4 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={3}
-            d="M5 13l4 4L19 7"
-          />
-        </svg>
+        <Check size={16} strokeWidth={3} className="text-white" />
       </div>
       <h4 className="font-bold text-slate-800 mb-3 text-[15px] leading-tight">
         {title}
@@ -164,7 +62,7 @@ function FaqAccordion() {
 
   return (
     <div className="space-y-4">
-      {faqs.map((faq, index) => {
+      {cyberFaqs.map((faq, index) => {
         const isOpen = openIndex === index;
         return (
           <div
@@ -211,7 +109,7 @@ export default function CyberSecurityPage() {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION  */}
-      <Hero data={heroData} />
+      <Hero data={cyberSecurityHeroData} />
 
       {/* Section 1: Cyber Security Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">

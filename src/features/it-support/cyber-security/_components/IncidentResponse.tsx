@@ -3,28 +3,13 @@
 import Hero from "@/shared/components/ui/Hero";
 import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 
-const heroData = {
-  title1: "Cyber Security",
-  title2: "Incident Response",
-  description1:
-    "Protect your business from costly and damaging cybersecurity incidents with Total Solutions IT. Our incident response services are designed to swiftly address and mitigate incidents, minimizing and, where possible, reversing the impact of breaches.",
-  bgImage: "/images/it-support/cyber-security/incident-response/hero.jpg",
-  actionButtons: [
-    {
-      label: "MICROSOFT ACCOUNT",
-      href: "https://learn.microsoft.com/en-us/defender-office-365/responding-to-a-compromised-email-account",
-    },
-    { label: "REPORT INCIDENT", href: "#" },
-    { label: "INCIDENT PLAN", href: "#" },
-    { label: "INCIDENT RESPONSE PLAN", href: "#" },
-  ],
-};
+import { incidentResponseHeroData } from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
 const IncidentResponse = () => {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION  */}
-      <Hero data={heroData} />
+      <Hero data={incidentResponseHeroData} />
 
       {/* ==================== SECTION 1: Introduction ==================== */}
       <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-justify">

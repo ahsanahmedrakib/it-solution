@@ -3,20 +3,13 @@ import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 import { Lock } from "lucide-react";
 import Image from "next/image";
 
-const heroData = {
-  title1: "Zero Trust",
-  title2: "Framework",
-  description1:
-    "Endpoint security protects devices like computers, smartphones, and servers from cyber threats. It includes antivirus, anti-malware, firewalls, and real-time threat detection to prevent unauthorized access, malware, and data breaches. This protection is vital for securing individual devices and the broader network they connect to.",
-  bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
-  actionButtons: [],
-};
+import { zeroTrustHeroData } from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
 const ZeroTrustFramework = () => {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION  */}
-      <Hero data={heroData} />
+      <Hero data={zeroTrustHeroData} />
       {/* ==================== SECTION 1: Header / Overview ==================== */}
       <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-justify">
         <HoverableContentCard>

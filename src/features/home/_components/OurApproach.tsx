@@ -2,58 +2,15 @@
 
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import { CheckCheck } from "lucide-react";
+import { ApproachCardItem, approachData } from "../data/homeData";
 
-interface CardItem {
-  stepNumber: string;
-  title: string;
-  subtitle: string;
-  description?: string;
-  listHeading: string;
-  points: string[];
-}
-
-const approachData: CardItem[] = [
-  {
-    stepNumber: "1. Stabilise",
-    title: "Bringing your IT up to standard",
-    subtitle:
-      "We start by gaining a deep understanding of your business and your existing IT environment. From there, we address gaps, risks, and inefficiencies to create a stable, secure foundation you can rely on.",
-    listHeading: "How we stabilise:",
-    points: [
-      "Comprehensive IT audit and health check",
-      "Review of your current systems and workflows",
-      "Identification of risks and problem areas",
-      "Clear, prioritised recommendations",
-      "Development of a practical IT roadmap",
-    ],
-  },
-  {
-    stepNumber: "2. Optimise",
-    title: "Fine-tuning your operations",
-    subtitle:
-      "Once your IT is stable, we focus on proactive management and continuous improvement. Our team monitors, maintains, and supports your systems to minimise downtime and resolve issues before they impact your business.",
-    listHeading: "How we optimise:",
-    points: [
-      "24/7 system monitoring",
-      "Proactive maintenance and patching",
-      "Continuous efficiency improvements",
-    ],
-  },
-  {
-    stepNumber: "3. Enhance",
-    title: "Accelerating your growth",
-    subtitle:
-      "With a solid and optimised IT environment in place, we work with you to align technology with your business goals. This stage is about leveraging IT to improve efficiency, support growth, and maximise return on investment.",
-    listHeading: "How we enhance:",
-    points: [
-      "Alignment of IT with business strategy",
-      "Technology planning and future-proofing",
-      "Scalable infrastructure upgrades",
-    ],
-  },
-];
-
-function ApproachCard({ item, index }: { item: CardItem; index: number }) {
+function ApproachCard({
+  item,
+  index,
+}: {
+  item: ApproachCardItem;
+  index: number;
+}) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
 
   return (
@@ -66,9 +23,11 @@ function ApproachCard({ item, index }: { item: CardItem; index: number }) {
           : "border-gray-800 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.2)]"
       }`}
     >
-      <div className={`absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-gray-700 to-transparent rounded-t-2xl transition-all duration-500 ${
-        touched ? "via-blue-500" : "group-hover:via-blue-500"
-      }`} />
+      <div
+        className={`absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-gray-700 to-transparent rounded-t-2xl transition-all duration-500 ${
+          touched ? "via-blue-500" : "group-hover:via-blue-500"
+        }`}
+      />
 
       <div className="flex justify-center mb-8">
         <CheckCheck size={30} className="text-brand-blue" strokeWidth={3} />
@@ -156,3 +115,4 @@ export default function OurApproach() {
     </section>
   );
 }
+

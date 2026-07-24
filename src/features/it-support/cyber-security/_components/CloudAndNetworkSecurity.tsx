@@ -1,21 +1,15 @@
 import Hero from "@/shared/components/ui/Hero";
 import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
+import { Cloud, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 
-const heroData = {
-  title1: "Cloud and Network Security",
-  title2: "Protecting Your Digital Assets",
-  description1:
-    "In an era where digital transformation is at the core of business operations, ensuring the security of cloud environments and networks is more critical than ever. With cyber threats evolving rapidly, organizations must adopt robust security measures to protect sensitive data, applications, and infrastructure. This blog post explores key aspects of cloud and network security, best practices, and emerging trends to help businesses stay ahead of potential threats.",
-  bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
-  actionButtons: [],
-};
+import { cloudAndNetworkHeroData } from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
 const CloudAndNetworkSecurity = () => {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION  */}
-      <Hero data={heroData} />
+      <Hero data={cloudAndNetworkHeroData} />
 
       {/* ==================== SECTION 1: Cloud Security Services ==================== */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
@@ -26,19 +20,9 @@ const CloudAndNetworkSecurity = () => {
               {/* Header Badge & Title */}
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 15a4 4 0 004 4h9a5 5 0 001-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"
-                    />
-                  </svg>
+                  <span className="text-slate-700">
+                    <Cloud size={20} />
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
@@ -234,19 +218,9 @@ const CloudAndNetworkSecurity = () => {
               {/* Header Badge & Title */}
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
+                  <span className="text-slate-700">
+                    <ShieldCheck size={20} />
+                  </span>
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">
                   Understanding Network Security

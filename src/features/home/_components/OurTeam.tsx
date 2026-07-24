@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { teamMembers } from "../data/homeData";
 
 const socialIconMap: Record<
   string,
@@ -15,59 +16,6 @@ const socialIconMap: Record<
   Instagram: FaInstagram,
   LinkedIn: FaLinkedinIn,
 };
-
-const teamMembers = [
-  {
-    id: 1,
-    name: "Tamzid Hasan",
-    role: "IT Consultant",
-    bgLabel: "Consultant",
-    image: "/images/home/team/1.png",
-    social: [
-      { label: "Facebook", href: "#" },
-      { label: "X", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "LinkedIn", href: "#" },
-    ],
-  },
-  {
-    id: 2,
-    name: "Tanzim Hasan Anik",
-    role: "Director",
-    bgLabel: "Director",
-    image: "/images/home/team/2.jpg",
-    social: [
-      { label: "Facebook", href: "#" },
-      { label: "LinkedIn", href: "#" },
-    ],
-  },
-  {
-    id: 3,
-    name: "Habibullah Mezbah",
-    role: "Web Developer",
-    bgLabel: "Developer",
-    image: "/images/home/team/3.png",
-    social: [
-      { label: "Facebook", href: "#" },
-      { label: "X", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "LinkedIn", href: "#" },
-    ],
-  },
-  {
-    id: 4,
-    name: "Ahsan Ahmed Rakib",
-    role: "Software Engineer",
-    bgLabel: "Engineer",
-    image: "/images/home/team/4.jpg",
-    social: [
-      { label: "Facebook", href: "#" },
-      { label: "X", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "LinkedIn", href: "#" },
-    ],
-  },
-];
 
 function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
@@ -101,11 +49,13 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
           </span>
         </div>
 
-        <div className={`absolute left-4 bottom-4 bg-[#f05c26] text-white p-3 rounded-lg shadow-xl flex flex-col gap-4 transition-all duration-300 ease-out z-10 ${
-          touched
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0"
-        }`}>
+        <div
+          className={`absolute left-4 bottom-4 bg-[#f05c26] text-white p-3 rounded-lg shadow-xl flex flex-col gap-4 transition-all duration-300 ease-out z-10 ${
+            touched
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0"
+          }`}
+        >
           {member.social?.map(({ label, href }) => {
             const Icon = socialIconMap[label];
             if (!Icon) return null;
@@ -128,9 +78,11 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
         <p className="text-[13px] font-semibold text-gray-500 tracking-wide">
           / {member.role} /
         </p>
-        <h3 className={`text-xl font-bold text-[#111620] transition-colors duration-300 ${
-          touched ? "text-[#f05c26]" : "group-hover:text-[#f05c26]"
-        }`}>
+        <h3
+          className={`text-xl font-bold text-[#111620] transition-colors duration-300 ${
+            touched ? "text-[#f05c26]" : "group-hover:text-[#f05c26]"
+          }`}
+        >
           {member.name}
         </h3>
       </div>
@@ -160,3 +112,4 @@ export default function OurTeam() {
     </section>
   );
 }
+

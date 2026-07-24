@@ -1,20 +1,13 @@
 import Hero from "@/shared/components/ui/Hero";
 import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 
-const SecurityAwarenessTraining = () => {
-  const heroData = {
-    title1: "Security Awareness",
-    title2: "Training",
-    description1:
-      "Endpoint security protects devices like computers, smartphones, and servers from cyber threats. It includes antivirus, anti-malware, firewalls, and real-time threat detection to prevent unauthorized access, malware, and data breaches. This protection is vital for securing individual devices and the broader network they connect to.",
-    bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
-    actionButtons: [],
-  };
+import { securityAwarenessHeroData } from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
+const SecurityAwarenessTraining = () => {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION  */}
-      <Hero data={heroData} />
+      <Hero data={securityAwarenessHeroData} />
       {/* ==================== SECTION 1: Introduction (Human Error) ==================== */}
       <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-justify">
         <HoverableContentCard>

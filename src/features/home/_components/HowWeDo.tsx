@@ -1,75 +1,9 @@
 "use client";
 
+import { partnersData } from "@/features/it-support/data/itSupportData";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import Image from "next/image";
-
-interface PartnerLogo {
-  name: string;
-  logo: string;
-}
-
-const partnersData: PartnerLogo[] = [
-  {
-    name: "MikroTik",
-    logo: "/images/home/how-we-do/mikrotik.png",
-  },
-  {
-    name: "N-Able",
-    logo: "/images/home/how-we-do/nable.png",
-  },
-  {
-    name: "Grandstream",
-    logo: "/images/home/how-we-do/grandstream.png",
-  },
-  {
-    name: "WordPress",
-    logo: "/images/home/how-we-do/wordpress.png",
-  },
-  {
-    name: "Microsoft 365",
-    logo: "/images/home/how-we-do/microsoft365.png",
-  },
-  {
-    name: "Ingram",
-    logo: "/images/home/how-we-do/ingram.png",
-  },
-  {
-    name: "Cellfi",
-    logo: "/images/home/how-we-do/cellfi.png",
-  },
-  {
-    name: "Ipecs",
-    logo: "/images/home/how-we-do/ipecs.png",
-  },
-  {
-    name: "HPE",
-    logo: "/images/home/how-we-do/hpe.png",
-  },
-  {
-    name: "Avaya",
-    logo: "/images/home/how-we-do/avaya.png",
-  },
-  {
-    name: "Cove",
-    logo: "/images/home/how-we-do/cove.png",
-  },
-  {
-    name: "Veeam",
-    logo: "/images/home/how-we-do/veeam.png",
-  },
-  {
-    name: "Datto",
-    logo: "/images/home/how-we-do/datto.png",
-  },
-  {
-    name: "Recaptcha",
-    logo: "/images/home/how-we-do/recaptcha.png",
-  },
-  {
-    name: "Woo",
-    logo: "/images/home/how-we-do/woo.png",
-  },
-];
+import { PartnerLogo } from "../data/homeData";
 
 function PartnerCard({ partner }: { partner: PartnerLogo }) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
@@ -99,7 +33,14 @@ export default function HowWeDo() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Background Decorative Ambient Blurs */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-125 h-125 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(191,219,254,0.15) 0%, transparent 70%)", willChange: "transform" }} />
+      <div
+        className="absolute top-20 left-1/2 -translate-x-1/2 w-125 h-125 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(191,219,254,0.15) 0%, transparent 70%)",
+          willChange: "transform",
+        }}
+      />
 
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
         <div className="">
@@ -123,3 +64,4 @@ export default function HowWeDo() {
     </section>
   );
 }
+

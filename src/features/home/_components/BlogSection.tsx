@@ -1,48 +1,9 @@
 "use client";
 
+import { useTouchHover } from "@/shared/hooks/useTouchHover";
 import { MessageSquare, User } from "lucide-react"; // npm install lucide-react
 import Image from "next/image";
-import { useTouchHover } from "@/shared/hooks/useTouchHover";
-
-interface BlogCardProps {
-  image: string;
-  category: string;
-  title: string;
-  day: string;
-  month: string;
-  author: string;
-  commentsCount: number;
-}
-
-const blogData: BlogCardProps[] = [
-  {
-    image: "/images/home/blog/blog-01.jpg",
-    category: "CLOUD",
-    title: "Cloud solutions for scalable IT infrastructure.",
-    day: "09",
-    month: "APR",
-    author: "Admin",
-    commentsCount: 0,
-  },
-  {
-    image: "/images/home/blog/blog-02.jpg",
-    category: "SOFTWARE",
-    title: "Innovative software solutions for businesses.",
-    day: "09",
-    month: "APR",
-    author: "Admin",
-    commentsCount: 0,
-  },
-  {
-    image: "/images/home/blog/blog-03.jpg",
-    category: "CYBERSAFE",
-    title: "Practical tips for secure it systems checklist.",
-    day: "09",
-    month: "APR",
-    author: "Admin",
-    commentsCount: 0,
-  },
-];
+import { BlogCardProps, blogData } from "../data/homeData";
 
 function BlogCard({ post }: { post: BlogCardProps }) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();

@@ -1,42 +1,15 @@
 "use client";
 
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
-import { Cloud, Globe, PhoneCall, Wrench } from "lucide-react";
+import { ServiceItem, servicesData } from "../data/homeData";
 
-interface ServiceItem {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const servicesData: ServiceItem[] = [
-  {
-    icon: <Wrench className="w-6 h-6 text-brand-light-bg" />,
-    title: "IT Support",
-    description:
-      "Plan, design, implement and manage IT infrastructure for small business, medium-sized business and residential.",
-  },
-  {
-    icon: <PhoneCall className="w-6 h-6 text-brand-light-bg" />,
-    title: "Phone Systems",
-    description:
-      "Providing on-demand service for supply, installation and maintenance of telephone systems.",
-  },
-  {
-    icon: <Globe className="w-6 h-6 text-brand-light-bg" />,
-    title: "Internet",
-    description:
-      "See what we provide in terms of internet services, including NBN, Cel-Fi, Starlink and LTE solutions.",
-  },
-  {
-    icon: <Cloud className="w-6 h-6 text-brand-light-bg" />,
-    title: "Cloud Services",
-    description:
-      "Managed cloud & data solutions, securely managed across hybrid, private or public cloud platforms.",
-  },
-];
-
-function ServiceCard({ service, index }: { service: ServiceItem; index: number }) {
+function ServiceCard({
+  service,
+  index,
+}: {
+  service: ServiceItem;
+  index: number;
+}) {
   const { touched, onTouchStart, onTouchEnd } = useTouchHover();
 
   return (
@@ -51,22 +24,28 @@ function ServiceCard({ service, index }: { service: ServiceItem; index: number }
       }`}
     >
       <div className="relative flex items-start space-x-5 p-6 sm:p-8 bg-white rounded-[14px] h-full w-full">
-        <div className={`shrink-0 flex items-center justify-center w-12 h-12 rounded-xl ring-1 ring-blue-100 transition-all duration-300 shadow-sm ${
-          touched
-            ? "bg-linear-to-br shadow-md"
-            : "bg-brand-active group-hover:bg-linear-to-br group-hover:shadow-md"
-        }`}>
-          <div className={`transition-colors duration-300 ${
-            touched ? "text-white" : "group-hover:text-white"
-          }`}>
+        <div
+          className={`shrink-0 flex items-center justify-center w-12 h-12 rounded-xl ring-1 ring-blue-100 transition-all duration-300 shadow-sm ${
+            touched
+              ? "bg-linear-to-br shadow-md"
+              : "bg-brand-active group-hover:bg-linear-to-br group-hover:shadow-md"
+          }`}
+        >
+          <div
+            className={`transition-colors duration-300 ${
+              touched ? "text-white" : "group-hover:text-white"
+            }`}
+          >
             {service.icon}
           </div>
         </div>
 
         <div className="space-y-2">
-          <h3 className={`text-xl font-bold text-gray-900 tracking-tight transition-colors duration-300 ${
-            touched ? "text-brand-active" : "group-hover:text-brand-active"
-          }`}>
+          <h3
+            className={`text-xl font-bold text-gray-900 tracking-tight transition-colors duration-300 ${
+              touched ? "text-brand-active" : "group-hover:text-brand-active"
+            }`}
+          >
             {service.title}
           </h3>
           <p className="text-gray-500 text-sm sm:text-base font-light leading-relaxed">
@@ -82,7 +61,14 @@ export default function WhatWeDo() {
   return (
     <section className="bg-linear-to-b from-gray-50 via-white to-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Background Decorative Ambient Blurs */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-125 h-125 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(191,219,254,0.15) 0%, transparent 70%)", willChange: "transform" }} />
+      <div
+        className="absolute top-20 left-1/2 -translate-x-1/2 w-125 h-125 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(191,219,254,0.15) 0%, transparent 70%)",
+          willChange: "transform",
+        }}
+      />
 
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
         <div className="mb-24">
@@ -113,3 +99,4 @@ export default function WhatWeDo() {
     </section>
   );
 }
+

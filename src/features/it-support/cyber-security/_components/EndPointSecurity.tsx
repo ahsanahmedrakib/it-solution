@@ -2,63 +2,24 @@
 
 import Hero from "@/shared/components/ui/Hero";
 import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
-import { Plus } from "lucide-react";
+import { Hexagon, Plus, Shield, TriangleAlert } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+
+import {
+  whyNeedItems,
+  endPointHeroData,
+  defenderFeatures,
+  sentinelFeatures,
+  bitdefenderFeatures,
+} from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
 export default function EndPointSecurityPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const whyNeedItems = [
-    {
-      title: "Preventing Unauthorized Access",
-      description:
-        "Endpoint security helps in preventing unauthorized access to the network and sensitive data by securing each device that connects to the network.",
-    },
-    {
-      title: "Protecting Against Malware and Cyberattacks",
-      description:
-        "With the rise of malware, ransomware, and other cyber threats, endpoint security is essential for detecting and blocking these threats before they can compromise the system.",
-    },
-    {
-      title: "Data Protection",
-      description:
-        "Endpoints often contain sensitive information. Endpoint security ensures that this data is encrypted and protected from unauthorized access or breaches.",
-    },
-    {
-      title: "Ensuring Compliance",
-      description:
-        "Many industries have regulatory requirements for data protection. Endpoint security helps organizations comply with these regulations by providing necessary protections and audit trails.",
-    },
-    {
-      title: "Maintaining System Integrity",
-      description:
-        "A compromised endpoint can serve as a gateway for attackers to infiltrate the entire network. Endpoint security helps maintain the integrity of the network by securing each access point.",
-    },
-    {
-      title: "Preventing Data Loss",
-      description:
-        "Endpoint security often includes data loss prevention (DLP) features that prevent sensitive data from being transferred outside the organization in an unauthorized manner.",
-    },
-  ];
-
-  const heroData = {
-    title1: "EndPoint Security",
-    title2: "",
-    description1:
-      "Endpoint security protects devices like computers, smartphones, and servers from cyber threats. It includes antivirus, anti-malware, firewalls, and real-time threat detection to prevent unauthorized access, malware, and data breaches. This protection is vital for securing individual devices and the broader network they connect to.",
-    bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
-    actionButtons: [
-      { label: "WHY IS IT NEEDED", href: "#why-need" },
-      { label: "DEFENDER FOR BUSINESS", href: "#defender-for-business" },
-      { label: "SENTINEL ONE", href: "#sentinel-one" },
-      { label: "BIT DEFENDER", href: "#bit-defender" },
-    ],
-  };
-
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
-      <Hero data={heroData} />
+      <Hero data={endPointHeroData} />
       {/* ==================== SECTION 1: Endpoint Security Overview ==================== */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -234,13 +195,9 @@ export default function EndPointSecurityPage() {
               {/* Header Icon + Title */}
               <div className="flex items-start space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 mt-1">
-                  <svg
-                    className="w-5 h-5 text-blue-600"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-                  </svg>
+                  <span className="text-blue-600">
+                    <Shield size={20} />
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
@@ -269,15 +226,7 @@ export default function EndPointSecurityPage() {
 
               {/* Feature Bars */}
               <div className="space-y-2 mb-6">
-                {[
-                  "Ransomware Protection",
-                  "Automated Investigation and Response",
-                  "Threat & Vulnerability Management",
-                  "Next-Generation Protection",
-                  "Cross-Platform Support",
-                  "Integrated Security Controls",
-                  "Attack Surface Reduction",
-                ].map((feature, idx) => (
+                {defenderFeatures.map((feature, idx) => (
                   <div
                     key={idx}
                     className="bg-slate-50 border border-slate-100 rounded-lg px-4 py-2 text-xs font-medium text-slate-700 flex items-center justify-between"
@@ -333,13 +282,9 @@ export default function EndPointSecurityPage() {
               {/* Header Icon + Title */}
               <div className="flex items-start space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-purple-600 shrink-0 mt-1">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L19.2 8 12 11.2 4.8 8 12 4.8z" />
-                  </svg>
+                  <span className="text-purple-600">
+                    <Hexagon size={20} />
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
@@ -367,15 +312,7 @@ export default function EndPointSecurityPage() {
 
               {/* Feature Bars */}
               <div className="space-y-2 mb-6">
-                {[
-                  "Real-Time Prevention and Protection",
-                  "Behavioral AI and Machine Learning",
-                  "Automated Threat Response",
-                  "Endpoint Detection and Response (EDR)",
-                  "Ransomware Rollback",
-                  "Cross-Platform Protection",
-                  "Visibility and Tracking",
-                ].map((feature, idx) => (
+                {sentinelFeatures.map((feature, idx) => (
                   <div
                     key={idx}
                     className="bg-slate-50 border border-slate-100 rounded-lg px-4 py-2 text-xs font-medium text-slate-700 flex items-center justify-between"
@@ -406,13 +343,9 @@ export default function EndPointSecurityPage() {
               {/* Header Icon + Title */}
               <div className="flex items-start space-x-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-red-600 shrink-0 mt-1">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2L1 21h22L12 2zm0 3.5L19.5 19h-15L12 5.5z" />
-                  </svg>
+                  <span className="text-red-600">
+                    <TriangleAlert size={20} />
+                  </span>
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
@@ -440,16 +373,7 @@ export default function EndPointSecurityPage() {
 
               {/* Feature Bars */}
               <div className="space-y-2 mb-6">
-                {[
-                  "Advanced Threat Defense (ATD)",
-                  "Anti-Ransomware Protection",
-                  "Behavioral Protection",
-                  "Risk Management and Analytics",
-                  "Network Threat Prevention",
-                  "Endpoint Detection and Response (EDR)",
-                  "Centralized Management Console",
-                  "Performance Optimization",
-                ].map((feature, idx) => (
+                {bitdefenderFeatures.map((feature, idx) => (
                   <div
                     key={idx}
                     className="bg-slate-50 border border-slate-100 rounded-lg px-4 py-2 text-xs font-medium text-slate-700 flex items-center justify-between"

@@ -5,55 +5,17 @@ import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 import Image from "next/image";
 import { useState } from "react";
 
-const faqs = [
-  {
-    title: "Application Control",
-    description:
-      "This relates to the level of application control and constraints you have over user applications and the ability for staff to execute unapproved and malicious programs on workstations. This includes .exe, DLL, scripts and installers.",
-  },
-  {
-    title: "Application Patching",
-    description:
-      "Updating third-party applications quickly is essential for ensuring the latest security updates and patches are in place. For example, using the latest version of applications and patches of web browsers, Microsoft Office, Java and PDF viewers. This requires frequent use of security vulnerability scanners to detect missing patches and updates as well as removing solutions that are no longer supported by their vendors.",
-  },
-  {
-    title: "Configure Microsoft Office Macro Settings",
-    description:
-      "This is the amount of freedom your users have to run macros in Microsoft Office applications. Most users should have macros blocked as default unless they have a specific organisational requirement. Only allow vetted macros, either in 'trusted locations' with limited write access or digitally signed with a trusted certificate.",
-  },
-  {
-    title: "User Application Hardening",
-    description:
-      "Limitations should be placed on user applications. At its most basic, web browsers should block Flash, ads and Java, with users unable to change these settings. Disable unneeded features in Microsoft Office (such as OLE), and in web browsers and PDF viewers. Internet Explorer 11 should also be disabled.",
-  },
-  {
-    title: "Restrict Administrative Privileges",
-    description:
-      "Tightly manage administrative privileges and access to operating systems and applications based on user duties. This includes regularly revalidating requests for privileged access to systems and applications, blocking privileged accounts from accessing the internet and using separate operating environments for privileged and unprivileged users. Privileged accounts should not be used for reading email and browsing the web.",
-  },
-  {
-    title: "Patch Operating Systems",
-    description:
-      "This focuses on keeping operating systems up to date to ensure that OS patches, updates, and security mitigations for internet-facing services are applied within two weeks of release. All computers and network devices with 'extreme security risk' vulnerabilities should be patched within 48 hours. Security Vulnerability scanners should also be used to identify any missing patches, and any OS that is no longer vendor supported should be replaced.",
-  },
-  {
-    title: "Multi-factor Authentication",
-    description:
-      "Enforce MFA for all privileged access. Turn on MFA for VPNs, RDP, SSH and other remote access, and for all users when they access an important data repository. Maturity starts by enforcing MFA for all users before they access internet-facing services and third-party providers.",
-  },
-  {
-    title: "Daily Bacups",
-    description:
-      "Perform daily backups of important new or changed data, software and configuration settings. All unprivileged accounts should be restricted to their own backup environments. Store backups disconnected from the Internet and retain them for at least three months. Test restoration initially, annually and whenever IT infrastructure changes.",
-  },
-];
+import {
+  essentialEightFaqs,
+  essentialEightHeroData,
+} from "@/features/it-support/cyber-security/data/cyberSecurityData";
 
 function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="space-y-4">
-      {faqs.map((faq, index) => {
+      {essentialEightFaqs.map((faq, index) => {
         const isOpen = openIndex === index;
         return (
           <div
@@ -96,23 +58,11 @@ function FaqAccordion() {
   );
 }
 
-const heroData = {
-  title1: "Essential Eight",
-  title2: "",
-  description1:
-    "The ACSC Essential Eight is a cybersecurity framework from Australia's Cyber Security Centre, outlining eight strategies to protect against cyber threats. These include patching, application control, user access management, backups, and more, aimed at minimizing the risk of cyber attacks and ensuring robust defense for organizations.",
-  bgImage: "/images/it-support/cyber-security/cloud-and-network/hero.png",
-  actionButtons: [
-    { label: "WHAT IS IT", href: "#what-is-it" },
-    { label: "WHAT ARE ESSENTIALS", href: "#what-are-essentials" },
-  ],
-};
-
 const EssentialEight = () => {
   return (
     <main className="flex min-h-screen flex-col font-sans text-slate-800 bg-slate-50">
       {/* HERO SECTION  */}
-      <Hero data={heroData} />
+      <Hero data={essentialEightHeroData} />
 
       {/* Section 2: ACSC Essential Eight */}
       <section className="bg-white" id="what-is-it">

@@ -8,68 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
-interface SlideData {
-  badge: string;
-  title: string;
-  subtitle: string;
-  buttonText: string;
-  image: string;
-  indicatorTitle: string;
-  indicatorSubtitle: string;
-}
-
-const slides: SlideData[] = [
-  {
-    badge: "Quick Support >",
-    title: "Microsoft 365 &\nCloud Services",
-    subtitle:
-      "Secure email, collaboration and cloud services — set up the right way.",
-    buttonText: "FIND OUT MORE >",
-    image: "/images/home/hero/cloud-hero.png",
-    indicatorTitle: "Cloud Services & Microsoft 365",
-    indicatorSubtitle: "Modern cloud tools",
-  },
-  {
-    badge: "IT Services >",
-    title: "IT Services for Business\nand Home",
-    subtitle:
-      "Professional, reliable tech support and system engineering when you need it.",
-    buttonText: "FIND OUT MORE >",
-    image: "/images/home/hero/administrator-hero.png",
-    indicatorTitle: "IT Services for Business and Home",
-    indicatorSubtitle: "Fully Managed & AdHoc",
-  },
-  {
-    badge: "Cyber Security >",
-    title: "Cyber Security &\nData Protection",
-    subtitle:
-      "Proactive real-time monitoring and defenses to keep your data safe.",
-    buttonText: "FIND OUT MORE >",
-    image: "/images/home/hero/cybersecurity-hero.png",
-    indicatorTitle: "Cyber Security & Data Protection",
-    indicatorSubtitle: "Proactive Security",
-  },
-  {
-    badge: "Telecoms >",
-    title: "Telecommunications &\nPhone Systems",
-    subtitle:
-      "Modern voice solutions configured seamlessly for modern remote workflows.",
-    buttonText: "FIND OUT MORE >",
-    image: "/images/home/hero/telecom-hero.png",
-    indicatorTitle: "Telecommunications & Phone Systems",
-    indicatorSubtitle: "Modern voice solutions",
-  },
-  {
-    badge: "Internet >",
-    title: "NBN & Business\nInternet",
-    subtitle:
-      "High-speed, redundant pipelines keeping your office fast and reliable.",
-    buttonText: "FIND OUT MORE >",
-    image: "/images/home/hero/internet-hero.png",
-    indicatorTitle: "NBN & Business Internet",
-    indicatorSubtitle: "Internet, Home & Business",
-  },
-];
+import { slides } from "@/features/home/data/homeData";
 
 export default function HeroSlider() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
