@@ -11,15 +11,16 @@ import Hero from "@/shared/components/ui/Hero";
 import "swiper/css";
 
 import {
-  partnersData,
-  heroData,
   capabilitiesList,
   capabilityCards,
   cyberSecurityFeatures,
-  networkingFeatures,
-  managedITFeatures,
   deviceRepairFeatures,
+  heroData,
+  managedITFeatures,
+  networkingFeatures,
+  partnersData,
 } from "@/features/it-support/data/itSupportData";
+import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 
 function CapabilityCard({
   card,
@@ -143,29 +144,31 @@ export default function ItSupportPage() {
           id="capabilities"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
-              <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
-                Our Capabilities
-              </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Total Solutions IT provides proactive IT support and strategic
-                guidance. From server installations to daily troubleshooting,
-                our expert team is ready to enhance your technological
-                efficiency.
-              </p>
-              <ul className="space-y-3">
-                {capabilitiesList.map(({ icon: Icon, label }) => (
-                  <li
-                    key={label}
-                    className="flex items-center text-blue-700 font-medium"
-                  >
-                    <Icon className="w-5 h-5 mr-3 text-blue-500" />
-                    {label}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <HoverableContentCard className="order-2 lg:order-1">
+              <div>
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
+                  Our Capabilities
+                </h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Total Solutions IT provides proactive IT support and strategic
+                  guidance. From server installations to daily troubleshooting,
+                  our expert team is ready to enhance your technological
+                  efficiency.
+                </p>
+                <ul className="space-y-3">
+                  {capabilitiesList.map(({ icon: Icon, label }) => (
+                    <li
+                      key={label}
+                      className="flex items-center text-blue-700 font-medium"
+                    >
+                      <Icon className="w-5 h-5 mr-3 text-blue-500" />
+                      {label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </HoverableContentCard>
 
             <div className="relative h-75 w-full order-1 lg:order-2">
               <Image
@@ -202,24 +205,26 @@ export default function ItSupportPage() {
                 />
               </div>
             </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
-              <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
-                Cyber Security.
-              </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Protect your business assets with our multi-layered security
-                solutions. We identify vulnerabilities before they are exploited
-                and ensure your data remains completely secure and compliant.
-              </p>
-              <a
-                href="#"
-                className="text-blue-600 font-medium flex items-center hover:text-blue-800"
-              >
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+            <HoverableContentCard>
+              <div>
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
+                  Cyber Security.
+                </h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Protect your business assets with our multi-layered security
+                  solutions. We identify vulnerabilities before they are
+                  exploited and ensure your data remains completely secure and
+                  compliant.
+                </p>
+                <a
+                  href="#"
+                  className="text-blue-600 font-medium flex items-center hover:text-blue-800"
+                >
+                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </HoverableContentCard>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -231,28 +236,30 @@ export default function ItSupportPage() {
 
         {/* 3. Servers + Networking */}
         <section
-          className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           id="networking"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
-              <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
-                Servers + Networking
-              </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Robust infrastructure is the backbone of your operations. We
-                design, implement, and maintain high-speed networks and reliable
-                server environments tailored to your workload.
-              </p>
-              <a
-                href="#"
-                className="text-blue-600 font-medium flex items-center hover:text-blue-800"
-              >
-                View Infrastructure Solutions{" "}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+            <HoverableContentCard className="order-2 lg:order-1">
+              <div>
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
+                  Servers + Networking
+                </h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Robust infrastructure is the backbone of your operations. We
+                  design, implement, and maintain high-speed networks and
+                  reliable server environments tailored to your workload.
+                </p>
+                <a
+                  href="#"
+                  className="text-blue-600 font-medium flex items-center hover:text-blue-800"
+                >
+                  View Infrastructure Solutions{" "}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </HoverableContentCard>
 
             <div className="relative h-75 w-full order-1 lg:order-2">
               <Image
@@ -284,24 +291,25 @@ export default function ItSupportPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-
-            <div className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
-              <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
-                Managed IT Services
-              </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Outsource your IT management to us. We offer predictable monthly
-                costs for comprehensive support, ensuring your systems are
-                always up to date, secure, and performing optimally.
-              </p>
-              <a
-                href="#"
-                className="text-blue-600 font-medium flex items-center hover:text-blue-800"
-              >
-                Explore Managed IT <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+            <HoverableContentCard>
+              <div>
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
+                  Managed IT Services
+                </h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Outsource your IT management to us. We offer predictable
+                  monthly costs for comprehensive support, ensuring your systems
+                  are always up to date, secure, and performing optimally.
+                </p>
+                <a
+                  href="#"
+                  className="text-blue-600 font-medium flex items-center hover:text-blue-800"
+                >
+                  Explore Managed IT <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </HoverableContentCard>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -317,23 +325,25 @@ export default function ItSupportPage() {
           id="repair"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="order-2 lg:order-1 bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-blue-100 hover:border-blue-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative">
-              <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
-                Device Repair
-              </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Hardware failures can bring work to a halt. Our skilled
-                technicians provide rapid diagnostic and repair services for
-                laptops, desktops, and peripherals to minimize your downtime.
-              </p>
-              <a
-                href="#"
-                className="text-blue-600 font-medium flex items-center hover:text-blue-800"
-              >
-                Book a Repair <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
+            <HoverableContentCard className="order-2 lg:order-1">
+              <div>
+                <div className="absolute top-0 left-8 w-16 h-1 bg-blue-600 rounded-b-md"></div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
+                  Device Repair
+                </h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Hardware failures can bring work to a halt. Our skilled
+                  technicians provide rapid diagnostic and repair services for
+                  laptops, desktops, and peripherals to minimize your downtime.
+                </p>
+                <a
+                  href="#"
+                  className="text-blue-600 font-medium flex items-center hover:text-blue-800"
+                >
+                  Book a Repair <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </HoverableContentCard>
 
             <div className="relative h-75 w-full order-1 lg:order-2">
               <Image
