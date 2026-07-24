@@ -1,9 +1,14 @@
 "use client";
 
+import {
+  heroData,
+  serviceListData,
+  webFeatures,
+  webPartnerLogos,
+} from "@/features/web/data/webData";
 import Hero from "@/shared/components/ui/Hero";
 import HoverableContentCard from "@/shared/components/ui/HoverableContentCard";
 import { useTouchHover } from "@/shared/hooks/useTouchHover";
-import { heroData, webFeatures, serviceListData, webPartnerLogos } from "@/features/web/data/webData";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
@@ -93,7 +98,18 @@ export default function WebPage() {
       {/* ================= SPLIT SECTION 1 ================= */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
+          {/* Left Illustration */}
+          <div className="flex justify-center">
+            <Image
+              src="/images/web/web.png"
+              alt="Working seamlessly online"
+              height={400}
+              width={400}
+              className="object-cover"
+            />
+          </div>
+
+          {/* Right Content */}
           <HoverableContentCard>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Your website represents your company.
@@ -122,36 +138,14 @@ export default function WebPage() {
               More
             </a>
           </HoverableContentCard>
-
-          {/* Right Illustration */}
-          <div className="flex justify-center">
-            <Image
-              src="/images/web/web.png"
-              alt="Working seamlessly online"
-              height={400}
-              width={400}
-              className="object-cover"
-            />{" "}
-          </div>
         </div>
       </section>
 
       {/* ================= SPLIT SECTION 2 ================= */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Illustration */}
-          <div className="flex justify-center order-2 lg:order-1">
-            <Image
-              src="/images/web/seo.png"
-              alt="Working seamlessly online"
-              height={400}
-              width={400}
-              className="object-cover"
-            />
-          </div>
-
-          {/* Right Content */}
-          <HoverableContentCard>
+          {/* Left Content */}
+          <HoverableContentCard className="order-2 lg:order-1">
             <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-2">
               Keeping you online, without the hassle.
             </h2>
@@ -179,6 +173,17 @@ export default function WebPage() {
               More
             </a>
           </HoverableContentCard>
+
+          {/* Right Illustration */}
+          <div className="flex justify-center order-1 lg:order-2">
+            <Image
+              src="/images/web/seo.png"
+              alt="Working seamlessly online"
+              height={400}
+              width={400}
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
